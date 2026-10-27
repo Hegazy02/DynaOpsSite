@@ -74,6 +74,15 @@ switches the family and every role's metrics. Never set `font-arabic` or `font-l
 a component unless it deliberately shows the other language inside a page; in that case
 put `lang` on the wrapper and the base styles handle the rest.
 
+**Icons come from `public/icons`, inline, coloured by text utilities.** Shared UI icons
+(arrows, chevron, globe, contact and social) live in `public/icons/shared/`; page-only
+icons sit under their page folder. They use `currentColor`, so paste the SVG markup into
+the template (or an icon component), colour it with `text-fg-brand` and friends, and size
+it with `size-4` / `size-4.5` / `size-6`. Never load them through `<img src>` (the colour
+falls back to black), never hard-code a colour inside the SVG, and never drop a new Figma
+export beside an existing icon; reuse the shared one and flip directional arrows with
+`rtl:-scale-x-100`.
+
 **No dark mode.** Do not add `dark:` classes or dark colour variants; the project ships
 light only. The Figma file has a dark mode, but it is intentionally not implemented.
 

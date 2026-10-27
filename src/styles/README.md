@@ -44,6 +44,30 @@ Tailwind v4 (CSS-first) configuration generated from the Figma design system
 The default Tailwind colour palette is intentionally removed (`bg-blue-500` will not compile),
 and the `text-*` size scale is replaced with the Figma one, so `text-sm` is 16px here.
 
+## Icons
+
+Figma exports live in `public/icons/` and are served at `/icons/...`:
+
+- `shared/`: 17 icons used on two or more pages (nav chevron, arrows, globe, and the
+  contact and social icons at 28px and 60px).
+- `landing-page/`, `features/`, `about-us/`, `industries/`, `blog/`: icons used on one
+  page only.
+
+Single-colour icons use `stroke="currentColor"` (or `fill="currentColor"`), so the colour
+comes from the surrounding text colour (`text-fg`, `text-fg-brand`, `text-fg-on-brand`)
+and follows hover and state changes. That is also why one shared file replaces the dark,
+white and blue copies Figma exported per page. Render them inline (template markup or an
+icon component), not through `<img src>`, where `currentColor` falls back to black. Size
+with `size-*` utilities (`size-4` = 16px, `size-4.5` = 18px); every file has a `viewBox`,
+and the width/height attributes are only Figma's default export size.
+
+One icon keeps its original colour: `about-us/sparkles.svg` is drawn in `#5BE396`, a green
+that is not part of the palette, so it stays hard-coded until the designer decides whether
+that accent becomes a token. Directional arrows flip under RTL with `rtl:-scale-x-100`.
+
+Source of the exports: `C:\Users\Hegazy\Desktop\dyna_site_icons` (Hugeicons names, one
+export folder per page).
+
 ## Deviations worth knowing
 
 - Button heights are fixed at 32 / 48 / 56 px. Figma's `lg` resolves to 57.6 px because of
