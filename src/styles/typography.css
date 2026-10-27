@@ -1,0 +1,113 @@
+/* ==========================================================================
+   Type roles — Figma text styles "EN/…" and "AR/…".
+   Each role fixes size, weight and tracking; family and line-height follow
+   the active language mode (tokens.css §3), so Arabic gets its metrics with
+   no extra classes. Prefer these over composing text-, leading- and font-
+   utilities by hand.
+
+   Works with variants: md:text-h1, rtl:… etc.
+   ========================================================================== */
+
+/* Display/Large — 56px · 600 · hero headlines */
+@utility text-display-lg {
+  font-size: var(--font-size-4xl);
+  line-height: var(--line-height-display-lg);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-display);
+}
+
+/* Display/Medium — 44px · 600 */
+@utility text-display-md {
+  font-size: var(--font-size-3xl);
+  line-height: var(--line-height-display-md);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+/* Heading/H1 — 36px · 600 */
+@utility text-h1 {
+  font-size: var(--font-size-2xl);
+  line-height: var(--line-height-h1);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+/* Heading/H2 — 28px · 600 */
+@utility text-h2 {
+  font-size: var(--font-size-xl);
+  line-height: var(--line-height-h2);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+/* Heading/H3 — 22px · 600 */
+@utility text-h3 {
+  font-size: var(--font-size-lg);
+  line-height: var(--line-height-h3);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-heading);
+}
+
+/* Heading/H4 — 18px · 600 */
+@utility text-h4 {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-h4);
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+/* Body/Large — 18px · 400 · lead paragraphs */
+@utility text-body-lg {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-body-lg);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Body/Medium — 16px · 400 · default body copy */
+@utility text-body-md {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-body-md);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Body/Small — 14px · 400 */
+@utility text-body-sm {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-body-sm);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Label/Medium — 14px · 500 · buttons, form labels */
+@utility text-label-md {
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-label-md);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Label/Small — 12px · 500 · badges, small buttons */
+@utility text-label-sm {
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-label-sm);
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+/* Caption — 12px · 400 · helper text */
+@utility text-caption {
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-caption);
+  font-weight: 400;
+  letter-spacing: 0;
+}
+
+/* Eyebrow — 12px · 600 · section kickers (content is typed in caps) */
+@utility text-eyebrow {
+  font-size: var(--font-size-2xs);
+  line-height: var(--line-height-eyebrow);
+  font-weight: 600;
+  letter-spacing: 0;
+}

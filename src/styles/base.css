@@ -1,0 +1,59 @@
+/* ==========================================================================
+   Element defaults — applied after Tailwind's preflight.
+   ========================================================================== */
+@layer base {
+  html {
+    font-family: var(--font-family-base);
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    accent-color: var(--action-primary);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
+
+  /* Any element that switches language (lang="ar" / lang="en") re-resolves
+     its family; descendants inherit it. */
+  [lang] {
+    font-family: var(--font-family-base);
+  }
+
+  body {
+    min-height: 100dvh;
+    /* Body/Medium */
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-body-md);
+  }
+
+  ::selection {
+    background-color: var(--bg-brand);
+    color: var(--text-on-brand);
+  }
+
+  ::placeholder {
+    color: var(--text-tertiary);
+    opacity: 1;
+  }
+
+  :focus-visible {
+    outline: var(--border-thick) solid var(--border-brand);
+    outline-offset: 2px;
+  }
+
+  hr {
+    border-color: var(--border-subtle);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    ::before,
+    ::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

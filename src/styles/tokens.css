@@ -1,0 +1,176 @@
+/* ==========================================================================
+   DynaOps365 — design tokens
+   Source of truth: Figma "DynaOps365 Website" → Design System (node 8021-2)
+   https://www.figma.com/design/PMrpOG7kirRGVTrhdQ55ju/DynaOps365-Website?node-id=8021-2
+
+   Variable names match the Figma variables 1:1, so code copied from Figma
+   Dev Mode (e.g. `var(--text-primary, #14171a)`) resolves unchanged here.
+   Tailwind utilities are mapped on top of these in ./theme.css.
+   Radii (--radius-*) and shadows (--shadow-*) live in ./theme.css because
+   Tailwind owns those namespaces; they are still emitted on :root.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Primitives (identical in every mode)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Brand — primary colour #3252cc is brand-500 */
+  --brand-50: #eff1fb;
+  --brand-100: #e0e5f7;
+  --brand-200: #c2cbf0;
+  --brand-300: #99a9e6;
+  --brand-400: #6b82da;
+  --brand-500: #3252cc;
+  --brand-600: #2b46ad;
+  --brand-700: #23398f;
+  --brand-800: #192966;
+  --brand-900: #121d47;
+
+  /* Neutral — near-black ramp */
+  --neutral-0: #ffffff;
+  --neutral-50: #f7f8fa;
+  --neutral-100: #edeff2;
+  --neutral-200: #dde1e6;
+  --neutral-300: #c3c9d1;
+  --neutral-400: #9ba3ae;
+  --neutral-500: #6e7681;
+  --neutral-600: #4e555f;
+  --neutral-700: #363c44;
+  --neutral-800: #22262c;
+  --neutral-900: #14171a;
+  --neutral-950: #0a0b0d;
+
+  /* Feedback */
+  --success-subtle: #e8f6ec;
+  --success-base: #16a34a;
+  --success-strong: #15803d;
+  --warning-subtle: #fef3e0;
+  --warning-base: #f59e0b;
+  --warning-strong: #b45309;
+  --error-subtle: #fdecec;
+  --error-base: #dc2626;
+  --error-strong: #b91c1c;
+
+  /* Spacing — 4 px base. Tailwind's default `--spacing: 0.25rem` already
+     matches this scale (p-1 = 4px … p-24 = 96px). */
+  --space-2: 0.125rem;
+  --space-4: 0.25rem;
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-24: 1.5rem;
+  --space-32: 2rem;
+  --space-48: 3rem;
+  --space-64: 4rem;
+  --space-96: 6rem;
+
+  /* Font sizes — shared by the EN and AR type modes */
+  --font-size-2xs: 0.75rem; /* 12 */
+  --font-size-xs: 0.875rem; /* 14 */
+  --font-size-sm: 1rem; /* 16 */
+  --font-size-md: 1.125rem; /* 18 */
+  --font-size-lg: 1.375rem; /* 22 */
+  --font-size-xl: 1.75rem; /* 28 */
+  --font-size-2xl: 2.25rem; /* 36 */
+  --font-size-3xl: 2.75rem; /* 44 */
+  --font-size-4xl: 3.5rem; /* 56 */
+
+  /* Border widths */
+  --border-hairline: 1px;
+  --border-thick: 2px;
+
+  /* Font stacks */
+  --font-family-latin:
+    'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
+  --font-family-arabic:
+    'IBM Plex Sans Arabic', 'Montserrat', 'Segoe UI', Tahoma, Arial, sans-serif;
+}
+
+/* --------------------------------------------------------------------------
+   2. Semantic tokens (Figma "Light" mode — the site ships light only)
+   -------------------------------------------------------------------------- */
+:root {
+  color-scheme: light;
+
+  --bg-canvas: var(--neutral-50);
+  --bg-surface: var(--neutral-0);
+  --bg-subtle: var(--neutral-100);
+  --bg-inverse: var(--neutral-950);
+  --bg-brand: var(--brand-500);
+  --bg-brand-subtle: var(--brand-50);
+
+  --text-primary: var(--neutral-900);
+  --text-secondary: var(--neutral-600);
+  --text-tertiary: var(--neutral-400);
+  --text-inverse: var(--neutral-0);
+  --text-brand: var(--brand-600);
+  --text-on-brand: var(--neutral-0);
+
+  --border-subtle: var(--neutral-100);
+  --border-default: var(--neutral-200);
+  --border-strong: var(--neutral-400);
+  --border-brand: var(--brand-500);
+
+  --action-primary: var(--brand-500);
+  --action-primary-hover: var(--brand-600);
+  --action-primary-pressed: var(--brand-700);
+  --action-secondary: var(--neutral-0);
+  --action-secondary-hover: var(--neutral-100);
+
+  --status-success: var(--success-base);
+  --status-success-subtle: var(--success-subtle);
+  --status-warning: var(--warning-base);
+  --status-warning-subtle: var(--warning-subtle);
+  --status-error: var(--error-base);
+  --status-error-subtle: var(--error-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography mode — English (default) / Arabic
+   Figma "Typography" collection: EN = Montserrat, AR = IBM Plex Sans Arabic.
+   Sizes are shared; family, line-height and tracking switch with the
+   language. Set <html lang="ar" dir="rtl"> for Arabic pages, or lang="ar"
+   on any subtree for mixed content.
+   -------------------------------------------------------------------------- */
+:root,
+:lang(en) {
+  --font-family-base: var(--font-family-latin);
+
+  --line-height-display-lg: 3.75rem; /* 60 */
+  --line-height-display-md: 1.2;
+  --line-height-h1: 1.2;
+  --line-height-h2: 1.2;
+  --line-height-h3: 1.875rem; /* 30 */
+  --line-height-h4: 1.625rem; /* 26 */
+  --line-height-body-lg: 1.2;
+  --line-height-body-md: 1.4;
+  --line-height-body-sm: 1.4;
+  --line-height-label-md: 1.25rem; /* 20 */
+  --line-height-label-sm: 1rem; /* 16 */
+  --line-height-caption: 1.125rem; /* 18 */
+  --line-height-eyebrow: 1rem; /* 16 */
+
+  --letter-spacing-display: -1.5px;
+  --letter-spacing-heading: -1px;
+}
+
+:lang(ar) {
+  --font-family-base: var(--font-family-arabic);
+
+  --line-height-display-lg: 4.75rem; /* 76 */
+  --line-height-display-md: 3.75rem; /* 60 */
+  --line-height-h1: 3.25rem; /* 52 */
+  --line-height-h2: 2.625rem; /* 42 */
+  --line-height-h3: 2.125rem; /* 34 */
+  --line-height-h4: 1.75rem; /* 28 */
+  --line-height-body-lg: 2rem; /* 32 */
+  --line-height-body-md: 1.75rem; /* 28 */
+  --line-height-body-sm: 1.5rem; /* 24 */
+  --line-height-label-md: 1.375rem; /* 22 */
+  --line-height-label-sm: 1.25rem; /* 20 */
+  --line-height-caption: 1.25rem; /* 20 */
+  --line-height-eyebrow: 1.125rem; /* 18 */
+
+  --letter-spacing-display: 0;
+  --letter-spacing-heading: 0;
+}

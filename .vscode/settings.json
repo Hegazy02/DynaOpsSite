@@ -1,0 +1,12 @@
+{
+  // Tailwind v4 at-rules (@theme, @utility, @custom-variant) are valid in this project.
+  "css.lint.unknownAtRules": "ignore",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  // Class completions inside Angular templates and bindings.
+  "editor.quickSuggestions": {
+    "strings": "on"
+  },
+  "tailwindCSS.classAttributes": ["class", "className", "ngClass", "\\[class\\]", "\\[ngClass\\]"]
+}

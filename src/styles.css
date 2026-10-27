@@ -1,3 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
-
+/* DynaOps365 — global stylesheet (Tailwind v4, CSS-first configuration)
+   Tokens come from Figma: see src/styles/README.md for the mapping. */
 @import 'tailwindcss';
+
+@import './styles/tokens.css'; /* Figma variables → CSS custom properties (EN/AR type modes) */
+@import './styles/theme.css'; /* @theme: tokens → Tailwind utilities, container-page */
+@import './styles/base.css'; /* element defaults */
+@import './styles/typography.css'; /* text-display-lg … text-eyebrow role utilities */
+@import './styles/components.css'; /* .btn .input .badge .card */
