@@ -2,12 +2,49 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8" />
-    <title>DynaOpsSite</title>
+    <title>DynaOps365</title>
     <base href="/" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="color-scheme" content="light" />
     <meta name="theme-color" content="#f7f8fa" />
-    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <!-- Favicon: the DynaOps365 mark (public/icons/logo/dynaops365-mark.svg). SVG for modern
+         browsers, ICO (16/32/48) as fallback, 180px PNG for iOS home screens. -->
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon.ico" sizes="32x32" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+    <meta name="application-name" content="DynaOps365" />
+
+    <!-- Social sharing defaults (Open Graph / Twitter). Per-page title, description,
+         canonical and image will be set by the SEO service once pages exist; these are the
+         site-wide fallbacks. Scrapers need absolute URLs.
+         TODO: replace https://www.dynaops365.com with the confirmed production origin. -->
+    <meta property="og:site_name" content="DynaOps365" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content="https://www.dynaops365.com/brand/og-default.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="DynaOps365 - Dynamics 365 Ops, in your hands" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://www.dynaops365.com/brand/og-default.png" />
+
+    <!-- Organization structured data: Dyna Systems is the legal entity, DynaOps365 the
+         product brand. Lets Google attach the logo to the organization in search results. -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Dyna Systems",
+        "url": "https://www.dynaops365.com/",
+        "logo": "https://www.dynaops365.com/brand/logo-512.png",
+        "brand": {
+          "@type": "Brand",
+          "name": "DynaOps365",
+          "logo": "https://www.dynaops365.com/brand/logo-512.png"
+        }
+      }
+    </script>
 
     <!-- Design-system fonts: Montserrat (EN) · IBM Plex Sans Arabic (AR), weights 400/500/600.
          Angular inlines this stylesheet into the HTML on production builds. -->
