@@ -1,6 +1,7 @@
 # Project Instructions
 
 - Address the user by name, "Hegazy", in every response.
+- Comments: only where necessary and precise, one line (two at most). No multi-line blocks or JSDoc paragraphs, and no comments on obvious code.
 
 ## UI and styling
 

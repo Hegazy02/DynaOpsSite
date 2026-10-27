@@ -1,0 +1,183 @@
+<div class="container-page">
+  <div class="flex items-center justify-between gap-6 py-4">
+    <a
+      [routerLink]="content().home"
+      class="flex shrink-0 items-center rounded-sm"
+      (click)="closeAll()"
+    >
+      <img
+        src="/icons/logo/dynaops365Logo.svg"
+        [alt]="content().logoAlt"
+        width="237"
+        height="44"
+        class="h-9 w-auto xl:h-11"
+      />
+    </a>
+
+    <nav class="hidden xl:block" [attr.aria-label]="content().menu.label">
+      <app-tabs [tabs]="content().tabs" [(active)]="openPanel" (navigate)="closeAll()" />
+    </nav>
+
+    <div class="hidden items-center gap-2 xl:flex">
+      <button
+        appButton
+        variant="secondary"
+        type="button"
+        class="group shadow-xs"
+        [attr.lang]="content().language.lang"
+        [attr.aria-label]="content().language.ariaLabel"
+        (click)="toggleLanguage()"
+      >
+        {{ content().language.label }}
+        <img src="/icons/shared/internet.svg" alt="" class="size-4.5 group-hover:hidden" />
+        <img
+          src="/icons/shared/internet-brand.svg"
+          alt=""
+          class="hidden size-4.5 group-hover:block"
+        />
+      </button>
+      <a appButton class="shadow-xs" [routerLink]="content().cta.href" (click)="closeAll()">
+        {{ content().cta.label }}
+        <img
+          src="/icons/shared/arrow-right-02-white.svg"
+          alt=""
+          class="size-4.5 rtl:-scale-x-100"
+        />
+      </a>
+    </div>
+
+    <button
+      appButton
+      variant="ghost"
+      iconOnly
+      type="button"
+      class="size-11 xl:hidden"
+      [attr.aria-label]="content().menu.open"
+      [attr.aria-expanded]="menuOpen()"
+      aria-controls="site-menu"
+      (click)="openMenu()"
+    >
+      <!-- Figma "menu-two-line" has no file in public/icons yet; bars drawn in CSS. -->
+      <span class="flex w-7 flex-col items-start gap-1.5">
+        <span class="block h-0.5 w-5 rounded-full bg-current"></span>
+        <span class="block h-0.5 w-3 rounded-full bg-current"></span>
+      </span>
+    </button>
+  </div>
+</div>
+
+@if (panel(); as open) {
+  <div
+    class="pointer-events-none absolute inset-x-0 top-full hidden justify-center px-4 pt-1 xl:flex"
+    [id]="'nav-panel-' + openPanel()"
+  >
+    <app-mega-panel
+      class="pointer-events-auto"
+      [class.w-full]="open.wide"
+      [class.max-w-240]="open.wide"
+      [items]="open.items"
+      [featured]="open.featured ?? null"
+      [viewAll]="open.viewAll ?? null"
+      [gap]="open.gap"
+      (itemSelect)="closeAll()"
+      (viewAllSelect)="closeAll()"
+    />
+  </div>
+}
+
+@if (menuOpen()) {
+  <div
+    id="site-menu"
+    role="dialog"
+    aria-modal="true"
+    [attr.aria-label]="content().menu.label"
+    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-surface/60 p-4 backdrop-blur-md xl:hidden"
+  >
+    <div class="flex items-center justify-between py-4">
+      <a
+        [routerLink]="content().home"
+        class="flex shrink-0 items-center rounded-sm"
+        (click)="closeAll()"
+      >
+        <img
+          src="/icons/logo/dynaops365Logo.svg"
+          [alt]="content().logoAlt"
+          width="237"
+          height="44"
+          class="h-9 w-auto"
+        />
+      </a>
+      <button
+        appButton
+        variant="ghost"
+        iconOnly
+        type="button"
+        #closeButton
+        class="size-11"
+        [attr.aria-label]="content().menu.close"
+        (click)="closeAll()"
+      >
+        <!-- Figma "cancel-01" has no file in public/icons yet; add-01 rotated instead. -->
+        <img src="/icons/landing-page/add-01.svg" alt="" class="size-7 rotate-45" />
+      </button>
+    </div>
+
+    <nav [attr.aria-label]="content().menu.label">
+      <app-tabs
+        orientation="vertical"
+        [tabs]="content().tabs"
+        [(active)]="expanded"
+        (navigate)="closeAll()"
+      >
+        <ng-template #panel let-tab>
+          @if (content().panels[tab.id]; as p) {
+            <app-mega-panel
+              compact
+              [items]="p.items"
+              [featured]="p.featured ?? null"
+              [viewAll]="p.viewAll ?? null"
+              [gap]="p.gap"
+              (itemSelect)="closeAll()"
+              (viewAllSelect)="closeAll()"
+            />
+          }
+        </ng-template>
+      </app-tabs>
+    </nav>
+
+    <div class="mt-auto flex flex-col gap-2 pt-30">
+      <button
+        appButton
+        variant="secondary"
+        size="lg"
+        type="button"
+        class="group w-full shadow-xs"
+        [attr.lang]="content().language.lang"
+        [attr.aria-label]="content().language.ariaLabel"
+        (click)="toggleLanguage()"
+      >
+        {{ content().language.label }}
+        <img src="/icons/shared/internet.svg" alt="" class="size-4.5 group-hover:hidden" />
+        <img
+          src="/icons/shared/internet-brand.svg"
+          alt=""
+          class="hidden size-4.5 group-hover:block"
+        />
+      </button>
+      <a
+        appButton
+        size="lg"
+        class="w-full shadow-xs"
+        [routerLink]="content().cta.href"
+        (click)="closeAll()"
+      >
+        {{ content().cta.label }}
+        <img
+          src="/icons/shared/arrow-right-02-white.svg"
+          alt=""
+          class="size-4.5 rtl:-scale-x-100"
+        />
+      </a>
+    </div>
+  </div>
+}

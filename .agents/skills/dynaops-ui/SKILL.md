@@ -60,7 +60,9 @@ for the utility: `space/8` → `2`, `space/24` → `6`, `space/96` → `24`.
 **Components start from the recipes.** `.btn .btn-md .btn-primary`, `.input`,
 `.badge .badge-success`, `.card .card-raised`. Extend them with utilities (`w-full`,
 `mt-6`) rather than rebuilding them from scratch, so a change to the recipe reaches every
-instance. Sizes: `btn-sm` 32px, `btn-md` 48px, `btn-lg` 56px; inputs are 44px.
+instance. Sizes: `btn-sm` 32px, `btn-md` 48px, `btn-lg` 56px; `btn-icon` makes a square
+icon-only button; inputs are 44px. In templates, `<button appButton variant="…" size="…">`
+(`src/app/shared/ui/button`) applies these classes.
 
 **Layout is bidirectional from day one.** The site ships in English and Arabic, so use
 logical properties only: `ps-4` not `pl-4`, `ms-auto` not `ml-auto`, `text-start` not
@@ -74,14 +76,14 @@ switches the family and every role's metrics. Never set `font-arabic` or `font-l
 a component unless it deliberately shows the other language inside a page; in that case
 put `lang` on the wrapper and the base styles handle the rest.
 
-**Icons come from `public/icons`, inline, coloured by text utilities.** Shared UI icons
+**Icons are the files in `public/icons`, used as-is through `<img>`.** Shared UI icons
 (arrows, chevron, globe, contact and social) live in `public/icons/shared/`; page-only
-icons sit under their page folder. They use `currentColor`, so paste the SVG markup into
-the template (or an icon component), colour it with `text-fg-brand` and friends, and size
-it with `size-4` / `size-4.5` / `size-6`. Never load them through `<img src>` (the colour
-falls back to black), never hard-code a colour inside the SVG, and never drop a new Figma
-export beside an existing icon; reuse the shared one and flip directional arrows with
-`rtl:-scale-x-100`.
+icons sit under their page folder. Reference them by root-relative path
+(`<img src="/icons/shared/arrow-right-02.svg" alt="" class="size-4.5" />`); never inline
+their markup or write an `<svg>` tag. Colour is baked into the file: when a design needs the
+same glyph in another colour, add a colour-variant file next to it rather than styling it.
+Size with `size-4` / `size-4.5` / `size-6`, flip directional arrows with `rtl:-scale-x-100`,
+and never add a new icon file without asking first.
 
 **No dark mode.** Do not add `dark:` classes or dark colour variants; the project ships
 light only. The Figma file has a dark mode, but it is intentionally not implemented.

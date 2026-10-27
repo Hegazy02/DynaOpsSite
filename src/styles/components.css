@@ -7,6 +7,7 @@
   /* ---- Button ----------------------------------------------------------
      style: .btn-primary | .btn-secondary | .btn-ghost
      size:  .btn-sm (32) | .btn-md (48) | .btn-lg (56)
+     shape: .btn-icon (square, icon only; pair with aria-label)
      Heights are fixed so EN and AR labels produce the same control size. */
   .btn {
     display: inline-flex;
@@ -61,6 +62,12 @@
     line-height: 1.2;
   }
 
+  /* Icon-only square; the caller sizes the icon (size-7 for the 28px nav glyphs). */
+  .btn-icon {
+    aspect-ratio: 1;
+    padding-inline: 0;
+  }
+
   .btn-primary {
     background-color: var(--action-primary);
     color: var(--text-on-brand);
@@ -80,6 +87,7 @@
   .btn-secondary:hover {
     background-color: var(--action-secondary-hover);
     border-color: var(--border-brand);
+    color: var(--text-brand);
   }
 
   .btn-ghost {

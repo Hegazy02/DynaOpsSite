@@ -53,27 +53,22 @@ Figma exports live in `public/icons/` and are served at `/icons/...`:
 - `landing-page/`, `features/`, `about-us/`, `industries/`, `blog/`: icons used on one
   page only.
 
-Single-colour icons use `stroke="currentColor"` (or `fill="currentColor"`), so the colour
-comes from the surrounding text colour (`text-fg`, `text-fg-brand`, `text-fg-on-brand`)
-and follows hover and state changes. That is also why one shared file replaces the dark,
-white and blue copies Figma exported per page. Render them inline (template markup or an
-icon component), not through `<img src>`, where `currentColor` falls back to black. Size
-with `size-*` utilities (`size-4` = 16px, `size-4.5` = 18px); every file has a `viewBox`,
-and the width/height attributes are only Figma's default export size.
-
-One icon keeps its original colour: `about-us/sparkles.svg` is drawn in `#5BE396`, a green
-that is not part of the palette, so it stays hard-coded until the designer decides whether
-that accent becomes a token. Directional arrows flip under RTL with `rtl:-scale-x-100`.
-
-Source of the exports: `C:\Users\Hegazy\Desktop\dyna_site_icons` (Hugeicons names, one
-export folder per page).
+Icons are used as files: `<img src="/icons/shared/arrow-right-02.svg" alt="" class="size-4.5" />`,
+never inlined as `<svg>` markup. Colour is baked into each file (Figma's single-colour exports
+carry `currentColor`, which renders black inside `<img>`), so when a design needs the same glyph
+in another colour, add a colour-variant file next to the original instead of styling it,
+named after the colour (`arrow-right-02-white.svg`). Size with
+`size-*` utilities (`size-4` = 16px, `size-4.5` = 18px); every file has a `viewBox`, and the
+width/height attributes are only Figma's default export size.
 
 ## Deviations worth knowing
 
+- `.btn-icon` (square, icon only) is a code-side addition for the hamburger / close
+  controls; Figma draws those as ad-hoc 44 px frames rather than Button variants.
 - Button heights are fixed at 32 / 48 / 56 px. Figma's `lg` resolves to 57.6 px because of
   its 1.2 line-height; 56 keeps the 4 px grid and makes EN and AR buttons the same height.
 - Input height is fixed at 44 px (Figma: 43.6 px EN, 46 px AR).
-- Secondary button hover adds the `action/secondary-hover` fill alongside the brand border
-  Figma shows, since the token exists for exactly that state.
+- Secondary button hover adds the `action/secondary-hover` fill and brand text alongside the
+  brand border Figma shows, since the tokens exist for exactly that state.
 - The typography frames are labelled "Inter" and "Cairo", but every text style in the file
   uses Montserrat and IBM Plex Sans Arabic. The code follows the styles.
