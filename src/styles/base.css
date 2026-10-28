@@ -60,6 +60,11 @@
 
 /* View transitions (Figma "Smart animate", ease-out 300ms): only named elements animate;
    the page itself swaps instantly so nothing else flashes. */
+/* The language switch loads the other locale build; opting in keeps that swap flash-free too. */
+@view-transition {
+  navigation: auto;
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation: none;

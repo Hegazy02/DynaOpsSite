@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, effect, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
+import { LanguageService } from './core/i18n/language';
+import { SeoService } from './core/seo/seo';
 import { Header } from './layout/header/header';
 
 @Component({
@@ -9,4 +11,11 @@ import { Header } from './layout/header/header';
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
-export class App {}
+export class App {
+  private readonly language = inject(LanguageService);
+  private readonly seo = inject(SeoService);
+
+  constructor() {
+    effect(() => this.seo.setLocaleLinks(this.language.path(), this.language.lang));
+  }
+}

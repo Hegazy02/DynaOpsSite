@@ -40,20 +40,18 @@ export class Header {
   // The close control hosts Button, so read the element rather than the component.
   private readonly closeButton = viewChild('closeButton', { read: ElementRef });
 
-  protected readonly content = computed(() => HEADER_CONTENT[this.language.lang()]);
+  protected readonly content = HEADER_CONTENT;
+  protected readonly otherLang = this.language.other;
+  protected readonly alternateUrl = this.language.alternateUrl;
 
   protected readonly openPanel = signal<string | null>(null);
   protected readonly panel = computed(() => {
     const id = this.openPanel();
-    return id === null ? null : (this.content().panels[id] ?? null);
+    return id === null ? null : (this.content.panels[id] ?? null);
   });
 
   protected readonly menuOpen = signal(false);
   protected readonly expanded = signal<string | null>(null);
-
-  protected toggleLanguage(): void {
-    this.language.toggle();
-  }
 
   protected openMenu(): void {
     this.menuOpen.set(true);

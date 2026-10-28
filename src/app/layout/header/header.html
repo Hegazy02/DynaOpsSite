@@ -1,22 +1,18 @@
 <div class="bg-surface/60 backdrop-blur-lg">
   <div class="container-page flex items-center justify-between gap-6 py-4">
-    <a
-      [routerLink]="content().home"
-      class="flex shrink-0 items-center rounded-sm"
-      (click)="closeAll()"
-    >
+    <a routerLink="/" class="flex shrink-0 items-center rounded-sm" (click)="closeAll()">
       <img
         src="/icons/logo/dynaops365Logo.svg"
-        [alt]="content().logoAlt"
+        [alt]="content.logoAlt"
         width="237"
         height="44"
         class="h-9 w-auto xl:h-11"
       />
     </a>
 
-    <nav class="hidden xl:block" [attr.aria-label]="content().menu.label">
+    <nav class="hidden xl:block" [attr.aria-label]="content.menu.label">
       <app-tabs
-        [tabs]="content().tabs"
+        [tabs]="content.tabs"
         [active]="openPanel()"
         (activeChange)="setPanel($event)"
         (navigate)="closeAll()"
@@ -24,28 +20,28 @@
     </nav>
 
     <div class="hidden items-center gap-2 xl:flex">
-      <button
+      <a
         appButton
         variant="secondary"
-        type="button"
         class="shadow-xs"
         icon="/icons/shared/internet.svg"
         iconHover="/icons/shared/internet-brand.svg"
-        [attr.lang]="content().language.lang"
-        [attr.aria-label]="content().language.ariaLabel"
-        (click)="toggleLanguage()"
+        [attr.lang]="otherLang"
+        [attr.aria-label]="content.language.ariaLabel"
+        [href]="alternateUrl()"
+        [attr.hreflang]="otherLang"
       >
-        {{ content().language.label }}
-      </button>
+        {{ content.language.label }}
+      </a>
       <a
         appButton
         class="shadow-xs"
         icon="/icons/shared/arrow-right-02-white.svg"
         directionalIcon
-        [routerLink]="content().cta.href"
+        [routerLink]="content.cta.href"
         (click)="closeAll()"
       >
-        {{ content().cta.label }}
+        {{ content.cta.label }}
       </a>
     </div>
 
@@ -55,7 +51,7 @@
       iconOnly
       type="button"
       class="size-11 xl:hidden"
-      [attr.aria-label]="content().menu.open"
+      [attr.aria-label]="content.menu.open"
       [attr.aria-expanded]="menuOpen()"
       aria-controls="site-menu"
       (click)="openMenu()"
@@ -94,18 +90,14 @@
     id="site-menu"
     role="dialog"
     aria-modal="true"
-    [attr.aria-label]="content().menu.label"
+    [attr.aria-label]="content.menu.label"
     class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-surface/60 p-4 backdrop-blur-lg xl:hidden"
   >
     <div class="flex items-center justify-between py-4">
-      <a
-        [routerLink]="content().home"
-        class="flex shrink-0 items-center rounded-sm"
-        (click)="closeAll()"
-      >
+      <a routerLink="/" class="flex shrink-0 items-center rounded-sm" (click)="closeAll()">
         <img
           src="/icons/logo/dynaops365Logo.svg"
-          [alt]="content().logoAlt"
+          [alt]="content.logoAlt"
           width="237"
           height="44"
           class="h-9 w-auto"
@@ -118,23 +110,23 @@
         type="button"
         #closeButton
         class="size-11"
-        [attr.aria-label]="content().menu.close"
+        [attr.aria-label]="content.menu.close"
         (click)="closeAll()"
       >
         <img src="/icons/shared/close.svg" alt="" class="size-7" />
       </button>
     </div>
 
-    <nav [attr.aria-label]="content().menu.label">
+    <nav [attr.aria-label]="content.menu.label">
       <app-tabs
         orientation="vertical"
-        [tabs]="content().tabs"
+        [tabs]="content.tabs"
         [active]="expanded()"
         (activeChange)="setExpanded($event)"
         (navigate)="closeAll()"
       >
         <ng-template #panel let-tab>
-          @if (content().panels[tab.id]; as p) {
+          @if (content.panels[tab.id]; as p) {
             <app-mega-panel
               compact
               [items]="p.items"
@@ -150,30 +142,30 @@
     </nav>
 
     <div class="mt-auto flex flex-col gap-2 pt-30">
-      <button
+      <a
         appButton
         variant="secondary"
         size="lg"
-        type="button"
         class="w-full shadow-xs"
         icon="/icons/shared/internet.svg"
         iconHover="/icons/shared/internet-brand.svg"
-        [attr.lang]="content().language.lang"
-        [attr.aria-label]="content().language.ariaLabel"
-        (click)="toggleLanguage()"
+        [attr.lang]="otherLang"
+        [attr.aria-label]="content.language.ariaLabel"
+        [href]="alternateUrl()"
+        [attr.hreflang]="otherLang"
       >
-        {{ content().language.label }}
-      </button>
+        {{ content.language.label }}
+      </a>
       <a
         appButton
         size="lg"
         class="w-full shadow-xs"
         icon="/icons/shared/arrow-right-02-white.svg"
         directionalIcon
-        [routerLink]="content().cta.href"
+        [routerLink]="content.cta.href"
         (click)="closeAll()"
       >
-        {{ content().cta.label }}
+        {{ content.cta.label }}
       </a>
     </div>
   </div>

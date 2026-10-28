@@ -1,32 +1,49 @@
-import { computed, DOCUMENT, effect, inject, Injectable, signal } from '@angular/core';
+import { Location } from '@angular/common';
+import { computed, DOCUMENT, inject, Injectable, LOCALE_ID } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router } from '@angular/router';
+import { filter, map } from 'rxjs';
 
 export type Lang = 'en' | 'ar';
 export type Dir = 'ltr' | 'rtl';
 
-// Owns <html lang dir>; tokens.css and the logical-property layout follow them.
+export const LANGS: readonly Lang[] = ['en', 'ar'];
+export const DEFAULT_LANG: Lang = 'en';
+
+// Mirrors the i18n sub paths in angular.json: English at the root, Arabic under /ar.
+export function localeUrl(path: string, lang: Lang): string {
+  if (lang === DEFAULT_LANG) {
+    return path;
+  }
+  return path === '/' ? `/${lang}` : `/${lang}${path}`;
+}
+
+// Each language is its own build, so the language is fixed and only the page path moves.
 @Injectable({ providedIn: 'root' })
 export class LanguageService {
   private readonly document = inject(DOCUMENT);
+  private readonly router = inject(Router);
 
-  readonly lang = signal<Lang>(
-    this.document.documentElement.getAttribute('lang') === 'ar' ? 'ar' : 'en',
+  readonly lang: Lang = inject(LOCALE_ID).startsWith('ar') ? 'ar' : 'en';
+  readonly dir: Dir = this.lang === 'ar' ? 'rtl' : 'ltr';
+  readonly other: Lang = this.lang === 'ar' ? 'en' : 'ar';
+
+  private readonly url = toSignal(
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+      map(() => this.router.url),
+    ),
+    { initialValue: inject(Location).path() },
   );
-  readonly dir = computed<Dir>(() => (this.lang() === 'ar' ? 'rtl' : 'ltr'));
-  readonly other = computed<Lang>(() => (this.lang() === 'ar' ? 'en' : 'ar'));
+
+  /** Current page path relative to the base href, without query or hash. */
+  readonly path = computed(() => this.url().replace(/[?#].*$/, '') || '/');
+  /** The current page in the other language, for the switcher link. */
+  readonly alternateUrl = computed(() => localeUrl(this.path(), this.other));
 
   constructor() {
-    effect(() => {
-      const html = this.document.documentElement;
-      html.setAttribute('lang', this.lang());
-      html.setAttribute('dir', this.dir());
-    });
-  }
-
-  set(lang: Lang): void {
-    this.lang.set(lang);
-  }
-
-  toggle(): void {
-    this.lang.set(this.other());
+    const html = this.document.documentElement;
+    html.setAttribute('lang', this.lang);
+    html.setAttribute('dir', this.dir);
   }
 }

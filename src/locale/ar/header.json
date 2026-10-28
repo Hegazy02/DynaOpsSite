@@ -1,0 +1,67 @@
+{
+  "locale": "ar",
+  "translations": {
+    "header.logoAlt": "DynaOps365 – إدارة عمليات Dynamics 365 بين يديك",
+
+    "header.tab.features": "الميزات",
+    "header.tab.industries": "القطاعات",
+    "header.tab.integration": "التكامل",
+    "header.tab.blog": "المدونة",
+    "header.tab.about": "عن الشركة",
+
+    "header.feature.customer-management.title": "إدارة العملاء",
+    "header.feature.customer-management.description": "الملفات الشخصية، المواقع، نشاط الحساب",
+    "header.feature.workflow-approvals.title": "سير العمل والموافقات",
+    "header.feature.workflow-approvals.description": "تدفقات موافقة متعددة المستويات قابلة للتكوين",
+    "header.feature.gps-tracking.title": "تتبع GPS",
+    "header.feature.gps-tracking.description": "تسجيل الدخول/الخروج ورؤية فريق الميدان",
+    "header.feature.commission-management.title": "إدارة العمولة",
+    "header.feature.commission-management.description": "خطط حوافز مرنة",
+    "header.feature.van-sales.title": "مبيعات المركبات ومخزون المركبات",
+    "header.feature.van-sales.description": "المبيعات المباشرة مع رؤية مخزون المركبة",
+    "header.feature.sales-order-management.title": "إدارة أوامر البيع",
+    "header.feature.sales-order-management.description": "المنتجات، التسعير، إنشاء الطلبات",
+    "header.feature.dashboards-analytics.title": "لوحات المعلومات والتحليلات",
+    "header.feature.dashboards-analytics.description": "رؤى المبيعات، المندوبين، المسارات والمناطق",
+    "header.feature.inventory-visibility.title": "رؤية المخزون",
+    "header.feature.inventory-visibility.description": "رؤية المخزون عبر المستودعات",
+    "header.feature.sales-targets-kpis.title": "أهداف المبيعات ومؤشرات الأداء",
+    "header.feature.sales-targets-kpis.description": "الأهداف، التغطية، أداء المبيعات",
+    "header.feature.collections-management.title": "إدارة التحصيلات",
+    "header.feature.collections-management.description": "النقد، الشيكات، المدفوعات والإيصالات",
+    "header.feature.crm-activity-management.title": "إدارة علاقات العملاء والأنشطة",
+    "header.feature.crm-activity-management.description": "الجدول الزمني للعميل، الأنشطة، المتابعات",
+    "header.feature.visit-planning.title": "تخطيط الزيارات",
+    "header.feature.visit-planning.description": "الخطط اليومية والزيارات المخططة مقابل الفعلية",
+    "header.feature.route-optimization.title": "تحسين المسارات",
+    "header.feature.route-optimization.description": "مسارات محسّنة، المناطق، تغطية الميدان",
+    "header.feature.trade-promotions.title": "عروض التجارة الترويجية",
+    "header.feature.trade-promotions.description": "العروض المعتمدة أثناء مبيعات العملاء",
+    "header.feature.offline-mode.title": "الوضع غير المتصل",
+    "header.feature.offline-mode.description": "استمرار العمليات الميدانية بدون اتصال",
+
+    "header.featured.title": "DynaOps365 AI",
+    "header.featured.description": "طبقة ذكاء اصطناعي متطورة لرؤى المبيعات، العمليات الميدانية، ودعم القرار",
+
+    "header.industry.fmcg": "السلع الاستهلاكية سريعة التداول",
+    "header.industry.food-beverage": "الأغذية والمشروبات",
+    "header.industry.wholesale-distribution": "التوزيع بالجملة",
+    "header.industry.retail-distribution": "توزيع التجزئة",
+    "header.industry.manufacturing": "التصنيع",
+    "header.industry.pharmaceuticals": "الأدوية",
+    "header.industry.consumer-goods": "السلع الاستهلاكية",
+    "header.industry.building-materials": "مواد البناء",
+    "header.industry.industrial-supplies": "الإمدادات الصناعية",
+
+    "header.viewAllFeatures": "عرض جميع الميزات",
+
+    "header.language.label": "English",
+    "header.language.ariaLabel": "التبديل إلى الإنجليزية",
+
+    "header.cta": "احجز عرضًا تجريبيًا",
+
+    "header.menu.open": "فتح القائمة",
+    "header.menu.close": "إغلاق القائمة",
+    "header.menu.label": "قائمة الموقع"
+  }
+}
