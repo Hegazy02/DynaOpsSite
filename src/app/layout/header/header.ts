@@ -23,7 +23,7 @@ import { HEADER_CONTENT } from './header-content';
   imports: [RouterLink, Button, MegaPanel, Tabs],
   templateUrl: './header.html',
   host: {
-    class: 'relative z-40 block',
+    class: 'sticky top-0 z-40 block',
     '(document:keydown.escape)': 'closeAll()',
     '(document:click)': 'onDocumentClick($event)',
   },

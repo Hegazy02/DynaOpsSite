@@ -26,7 +26,8 @@
       color 150ms ease;
   }
 
-  .btn > svg {
+  .btn > svg,
+  .btn > img {
     width: 1.125rem; /* 18 */
     height: 1.125rem;
     flex-shrink: 0;

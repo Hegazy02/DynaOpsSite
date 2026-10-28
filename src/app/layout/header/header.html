@@ -1,5 +1,5 @@
-<div class="container-page">
-  <div class="flex items-center justify-between gap-6 py-4">
+<div class="bg-surface/60 backdrop-blur-lg">
+  <div class="container-page flex items-center justify-between gap-6 py-4">
     <a
       [routerLink]="content().home"
       class="flex shrink-0 items-center rounded-sm"
@@ -23,26 +23,24 @@
         appButton
         variant="secondary"
         type="button"
-        class="group shadow-xs"
+        class="shadow-xs"
+        icon="/icons/shared/internet.svg"
+        iconHover="/icons/shared/internet-brand.svg"
         [attr.lang]="content().language.lang"
         [attr.aria-label]="content().language.ariaLabel"
         (click)="toggleLanguage()"
       >
         {{ content().language.label }}
-        <img src="/icons/shared/internet.svg" alt="" class="size-4.5 group-hover:hidden" />
-        <img
-          src="/icons/shared/internet-brand.svg"
-          alt=""
-          class="hidden size-4.5 group-hover:block"
-        />
       </button>
-      <a appButton class="shadow-xs" [routerLink]="content().cta.href" (click)="closeAll()">
+      <a
+        appButton
+        class="shadow-xs"
+        icon="/icons/shared/arrow-right-02-white.svg"
+        directionalIcon
+        [routerLink]="content().cta.href"
+        (click)="closeAll()"
+      >
         {{ content().cta.label }}
-        <img
-          src="/icons/shared/arrow-right-02-white.svg"
-          alt=""
-          class="size-4.5 rtl:-scale-x-100"
-        />
       </a>
     </div>
 
@@ -91,7 +89,7 @@
     role="dialog"
     aria-modal="true"
     [attr.aria-label]="content().menu.label"
-    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-surface/60 p-4 backdrop-blur-md xl:hidden"
+    class="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-surface/60 p-4 backdrop-blur-lg xl:hidden"
   >
     <div class="flex items-center justify-between py-4">
       <a
@@ -117,8 +115,7 @@
         [attr.aria-label]="content().menu.close"
         (click)="closeAll()"
       >
-        <!-- Figma "cancel-01" has no file in public/icons yet; add-01 rotated instead. -->
-        <img src="/icons/landing-page/add-01.svg" alt="" class="size-7 rotate-45" />
+        <img src="/icons/shared/close.svg" alt="" class="size-7" />
       </button>
     </div>
 
@@ -151,32 +148,25 @@
         variant="secondary"
         size="lg"
         type="button"
-        class="group w-full shadow-xs"
+        class="w-full shadow-xs"
+        icon="/icons/shared/internet.svg"
+        iconHover="/icons/shared/internet-brand.svg"
         [attr.lang]="content().language.lang"
         [attr.aria-label]="content().language.ariaLabel"
         (click)="toggleLanguage()"
       >
         {{ content().language.label }}
-        <img src="/icons/shared/internet.svg" alt="" class="size-4.5 group-hover:hidden" />
-        <img
-          src="/icons/shared/internet-brand.svg"
-          alt=""
-          class="hidden size-4.5 group-hover:block"
-        />
       </button>
       <a
         appButton
         size="lg"
         class="w-full shadow-xs"
+        icon="/icons/shared/arrow-right-02-white.svg"
+        directionalIcon
         [routerLink]="content().cta.href"
         (click)="closeAll()"
       >
         {{ content().cta.label }}
-        <img
-          src="/icons/shared/arrow-right-02-white.svg"
-          alt=""
-          class="size-4.5 rtl:-scale-x-100"
-        />
       </a>
     </div>
   </div>

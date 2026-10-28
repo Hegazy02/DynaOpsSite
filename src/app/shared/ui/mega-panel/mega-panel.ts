@@ -59,16 +59,13 @@ export interface MegaPanelLink {
               appButton
               variant="ghost"
               class="justify-self-end px-3"
+              icon="/icons/shared/arrow-right-02-brand.svg"
+              directionalIcon
               [class.col-start-3]="!compact()"
               [routerLink]="link.href"
               (click)="viewAllSelect.emit()"
             >
               {{ link.label }}
-              <img
-                src="/icons/shared/arrow-right-02.svg"
-                alt=""
-                class="size-4.5 rtl:-scale-x-100"
-              />
             </a>
           }
         </div>

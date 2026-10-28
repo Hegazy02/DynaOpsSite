@@ -49,9 +49,16 @@ export interface TabPanelContext {
             >
               <span>{{ tab.label }}</span>
               <img
-                src="/icons/shared/arrow-down-01-round.svg"
+                [src]="active() === tab.id ? chevronBrand : chevron"
                 alt=""
-                class="transition-transform"
+                class="transition-transform group-hover:hidden"
+                [class]="vertical() ? 'size-6' : 'size-4'"
+                [class.rotate-180]="active() === tab.id"
+              />
+              <img
+                [src]="chevronBrand"
+                alt=""
+                class="hidden transition-transform group-hover:block"
                 [class]="vertical() ? 'size-6' : 'size-4'"
                 [class.rotate-180]="active() === tab.id"
               />
@@ -87,14 +94,17 @@ export class Tabs {
   readonly active = model<string | null>(null);
   readonly navigate = output<TabItem>();
 
+  protected readonly chevron = '/icons/shared/arrow-down-01-round.svg';
+  protected readonly chevronBrand = '/icons/shared/arrow-down-01-round-brand.svg';
+
   protected readonly panel = contentChild<TemplateRef<TabPanelContext>>('panel');
 
   protected readonly vertical = computed(() => this.orientation() === 'vertical');
 
   protected readonly tabClass = computed(() =>
     this.vertical()
-      ? 'flex w-full cursor-pointer items-center justify-between gap-1 rounded-sm px-2 py-4 text-start text-body-lg transition-colors hover:text-fg-brand'
-      : 'inline-flex cursor-pointer items-center gap-1 rounded-sm p-2 text-label-md transition-colors hover:text-fg-brand',
+      ? 'group flex w-full cursor-pointer items-center justify-between gap-1 rounded-sm px-2 py-4 text-start text-body-lg transition-colors hover:text-fg-brand'
+      : 'group inline-flex cursor-pointer items-center gap-1 rounded-sm p-2 text-label-md transition-colors hover:text-fg-brand',
   );
 
   protected toggle(tab: TabItem): void {

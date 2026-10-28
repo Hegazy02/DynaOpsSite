@@ -28,26 +28,26 @@ function withRoutes(prefix: string, defs: ItemDef[]): ItemDef[] {
 
 // Rows marked "stand-in" use the closest existing file; the Figma icon has no export yet.
 const FEATURE_ITEMS = withRoutes('/features', [
-  { id: 'customer-management', icon: '/icons/features/user-ai.svg' },
+  { id: 'customer-management', icon: '/icons/features/ai-user.svg' },
   { id: 'workflow-approvals', icon: '/icons/features/workflow-square-05.svg' },
-  { id: 'gps-tracking', icon: '/icons/features/location-04.svg' }, // stand-in: shipment-tracking
+  { id: 'gps-tracking', icon: '/icons/features/shipment-tracking.svg' },
   { id: 'commission-management', icon: '/icons/features/save-money-dollar.svg' },
   { id: 'van-sales', icon: '/icons/features/truck-return.svg' }, // stand-in: delivery-truck-01
   { id: 'sales-order-management', icon: '/icons/shared/package-01.svg' },
   { id: 'dashboards-analytics', icon: '/icons/shared/analytics-03.svg' },
   { id: 'inventory-visibility', icon: '/icons/features/warehouse.svg' },
-  { id: 'sales-targets-kpis', icon: '/icons/features/target-02.svg' }, // stand-in: target-dollar
-  { id: 'collections-management', icon: '/icons/features/receipt-dollar.svg' }, // stand-in: payment-01
+  { id: 'sales-targets-kpis', icon: '/icons/features/target-dollar.svg' },
+  { id: 'collections-management', icon: '/icons/features/payment-01.svg' },
   { id: 'crm-activity-management', icon: '/icons/features/chart-relationship.svg' },
   { id: 'visit-planning', icon: '/icons/features/location-user-03.svg' },
   { id: 'route-optimization', icon: '/icons/shared/route-02.svg' },
-  { id: 'trade-promotions', icon: '/icons/features/discount-tag-02.svg' },
-  { id: 'offline-mode', icon: '/icons/shared/internet.svg' }, // stand-in: no-internet
+  { id: 'trade-promotions', icon: '/icons/features/trade.svg' },
+  { id: 'offline-mode', icon: '/icons/features/no-internet.svg' },
 ]);
 
 const FEATURED_ITEM: ItemDef = {
   id: 'dynaops365-ai',
-  image: '/icons/logo/dynaops365-mark.svg',
+  image: '/icons/shared/dyna-ai-logo.svg',
   comingSoon: true,
 };
 
@@ -59,7 +59,7 @@ const INDUSTRY_ITEMS = withRoutes('/industries', [
   { id: 'manufacturing', icon: '/icons/industries/factory.svg' },
   { id: 'pharmaceuticals', icon: '/icons/industries/hand-sanitizer.svg' },
   { id: 'consumer-goods', icon: '/icons/shared/safe-delivery-01.svg' },
-  { id: 'building-materials', icon: '/icons/landing-page/package.svg' }, // stand-in: Figma building-materials glyph
+  { id: 'building-materials', icon: '/icons/industries/building-materials.svg' },
   { id: 'industrial-supplies', icon: '/icons/industries/package-sent.svg' },
 ]);
 
