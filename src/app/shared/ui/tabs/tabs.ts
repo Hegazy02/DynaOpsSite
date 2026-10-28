@@ -5,7 +5,6 @@ import {
   computed,
   contentChild,
   input,
-  model,
   output,
   TemplateRef,
 } from '@angular/core';
@@ -63,13 +62,20 @@ export interface TabPanelContext {
                 [class.rotate-180]="active() === tab.id"
               />
             </button>
-            @if (vertical() && active() === tab.id) {
+            @if (vertical()) {
               @if (panel(); as tpl) {
-                <div [id]="'nav-panel-' + tab.id" class="pb-2">
-                  <ng-container
-                    [ngTemplateOutlet]="tpl"
-                    [ngTemplateOutletContext]="{ $implicit: tab }"
-                  />
+                <div
+                  [id]="'nav-panel-' + tab.id"
+                  class="reveal"
+                  [class.reveal-open]="active() === tab.id"
+                  [attr.inert]="active() === tab.id ? null : ''"
+                >
+                  <div>
+                    <ng-container
+                      [ngTemplateOutlet]="tpl"
+                      [ngTemplateOutletContext]="{ $implicit: tab }"
+                    />
+                  </div>
                 </div>
               }
             }
@@ -91,7 +97,9 @@ export interface TabPanelContext {
 export class Tabs {
   readonly tabs = input.required<TabItem[]>();
   readonly orientation = input<'horizontal' | 'vertical'>('horizontal');
-  readonly active = model<string | null>(null);
+  // Controlled by the parent so the change can be wrapped in a view transition.
+  readonly active = input<string | null>(null);
+  readonly activeChange = output<string | null>();
   readonly navigate = output<TabItem>();
 
   protected readonly chevron = '/icons/shared/arrow-down-01-round.svg';
@@ -108,6 +116,6 @@ export class Tabs {
   );
 
   protected toggle(tab: TabItem): void {
-    this.active.update((current) => (current === tab.id ? null : tab.id));
+    this.activeChange.emit(this.active() === tab.id ? null : tab.id);
   }
 }

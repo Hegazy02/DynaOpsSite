@@ -15,7 +15,12 @@
     </a>
 
     <nav class="hidden xl:block" [attr.aria-label]="content().menu.label">
-      <app-tabs [tabs]="content().tabs" [(active)]="openPanel" (navigate)="closeAll()" />
+      <app-tabs
+        [tabs]="content().tabs"
+        [active]="openPanel()"
+        (activeChange)="setPanel($event)"
+        (navigate)="closeAll()"
+      />
     </nav>
 
     <div class="hidden items-center gap-2 xl:flex">
@@ -71,6 +76,7 @@
   >
     <app-mega-panel
       class="pointer-events-auto"
+      [style.view-transition-name]="'mega-panel'"
       [class.w-full]="open.wide"
       [class.max-w-240]="open.wide"
       [items]="open.items"
@@ -123,7 +129,8 @@
       <app-tabs
         orientation="vertical"
         [tabs]="content().tabs"
-        [(active)]="expanded"
+        [active]="expanded()"
+        (activeChange)="setExpanded($event)"
         (navigate)="closeAll()"
       >
         <ng-template #panel let-tab>

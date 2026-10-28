@@ -57,3 +57,47 @@
     }
   }
 }
+
+/* View transitions (Figma "Smart animate", ease-out 300ms): only named elements animate;
+   the page itself swaps instantly so nothing else flashes. */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-group(*),
+::view-transition-old(*),
+::view-transition-new(*) {
+  animation-duration: 300ms;
+  animation-timing-function: ease-out;
+}
+
+::view-transition-new(mega-panel):only-child {
+  animation-name: vt-panel-in;
+}
+
+::view-transition-old(mega-panel):only-child {
+  animation-name: vt-panel-out;
+}
+
+@keyframes vt-panel-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes vt-panel-out {
+  to {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

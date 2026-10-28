@@ -9,7 +9,7 @@ Tailwind v4 (CSS-first) configuration generated from the Figma design system
 | `theme.css` | `@theme` block mapping tokens to Tailwind utilities and the `container-page` utility. |
 | `base.css` | Element defaults (font, canvas background, focus ring, selection). |
 | `typography.css` | Type-role utilities (`text-h1`, `text-body-md`, …). |
-| `components.css` | `.btn`, `.input`, `.badge`, `.card` recipes from the Components section. |
+| `components.css` | `.btn`, `.input`, `.badge`, `.card` recipes from the Components section, plus `.reveal` (collapsible block). |
 
 ## Modes
 

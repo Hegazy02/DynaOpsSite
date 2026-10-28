@@ -203,4 +203,19 @@
   .card-raised {
     box-shadow: var(--shadow-md);
   }
+
+  /* ---- Reveal (collapsible block) --------------------------------------
+     state: (collapsed) | .reveal-open. Wrap the content in one child element. */
+  .reveal {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 300ms ease-out;
+  }
+  .reveal-open {
+    grid-template-rows: 1fr;
+  }
+  .reveal > * {
+    min-height: 0;
+    overflow: hidden;
+  }
 }
