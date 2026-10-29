@@ -1,0 +1,37 @@
+<div class="container-page py-8 xl:py-16">
+  <div
+    class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 xl:flex-row xl:justify-between xl:gap-6"
+  >
+    <div
+      class="flex w-full max-w-160 flex-col items-center gap-8 text-center xl:max-w-142.5 xl:items-start xl:text-start"
+    >
+      <div class="flex flex-col gap-4">
+        <h1 class="text-h2 md:text-h1 xl:text-display-md">{{ content().title }}</h1>
+        <p class="text-body-md text-fg-secondary">
+          {{ content().description }}
+          @if (content().emphasis; as emphasis) {
+            <strong>{{ emphasis }}</strong>
+          }
+        </p>
+      </div>
+      <a
+        appButton
+        class="w-full md:w-auto md:min-w-50 xl:min-w-0"
+        icon="/icons/shared/arrow-right-02-white.svg"
+        directionalIcon
+        [routerLink]="content().cta.href"
+      >
+        {{ content().cta.label }}
+      </a>
+    </div>
+
+    <!-- Figma mirrors the artwork in Arabic so the van still faces the copy. -->
+    <img
+      [src]="content().image.src"
+      [alt]="content().image.alt"
+      [width]="content().image.width"
+      [height]="content().image.height"
+      class="order-first w-full max-w-110 shrink-0 xl:order-none rtl:-scale-x-100"
+    />
+  </div>
+</div>

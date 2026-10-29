@@ -1,0 +1,10 @@
+{
+  "locale": "ar",
+  "translations": {
+    "fmcg.title": "مبيعات FMCG الميدانية",
+    "fmcg.hero.title": "اربط فريق المبيعات الميداني مع Microsoft Dynamics 365 F&O",
+    "fmcg.hero.description": "يساعد DynaOps SFA شركات FMCG على إدارة الزيارات الميدانية، أوامر البيع، التحصيلات، البيع من السيارات، العروض الترويجية وخطوط السير مع التكامل مع",
+    "fmcg.hero.emphasis": "Microsoft Dynamics 365 Finance & Operations.",
+    "fmcg.hero.imageAlt": "مندوب مبيعات يراجع الطلبات بجانب سيارة توزيع محمّلة"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "locale": "ar",
+  "translations": {
+    "not-found.title": "الصفحة غير موجودة",
+    "not-found.description": "الصفحة التي تبحث عنها غير موجودة أو تم نقلها.",
+    "not-found.eyebrow": "خطأ 404",
+    "not-found.home": "الانتقال إلى الصفحة الرئيسية"
+  }
+}

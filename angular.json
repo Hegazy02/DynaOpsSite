@@ -105,7 +105,12 @@
         },
         "locales": {
           "ar": {
-            "translation": ["src/locale/ar/header.json", "src/locale/ar/footer.json"],
+            "translation": [
+              "src/locale/ar/header.json",
+              "src/locale/ar/footer.json",
+              "src/locale/ar/industries.json",
+              "src/locale/ar/not-found.json"
+            ],
             "subPath": "ar"
           }
         }

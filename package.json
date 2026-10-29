@@ -6,7 +6,7 @@
     "start": "ng serve",
     "start:ar": "ng serve --configuration ar --port 4201",
     "start:all": "concurrently -k -n build,serve -c cyan,green \"ng build --watch --configuration development\" \"node --watch-path=dist/DynaOpsSite dist/DynaOpsSite/server/server.mjs\"",
-    "build": "ng build",
+    "build": "ng build && node scripts/generate-sitemap.mjs",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "i18n:extract": "ng extract-i18n",

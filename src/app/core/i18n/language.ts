@@ -9,6 +9,11 @@ import type { Lang, Dir } from './language.model';
 export const LANGS: readonly Lang[] = ['en', 'ar'];
 export const DEFAULT_LANG: Lang = 'en';
 
+// Each build has one LOCALE_ID; anything Arabic ('ar', 'ar-SA') is the Arabic site.
+export function langFromLocale(localeId: string): Lang {
+  return localeId.startsWith('ar') ? 'ar' : 'en';
+}
+
 // Mirrors the i18n sub paths in angular.json: English at the root, Arabic under /ar.
 export function localeUrl(path: string, lang: Lang): string {
   if (lang === DEFAULT_LANG) {
@@ -23,7 +28,7 @@ export class LanguageService {
   private readonly document = inject(DOCUMENT);
   private readonly router = inject(Router);
 
-  readonly lang: Lang = inject(LOCALE_ID).startsWith('ar') ? 'ar' : 'en';
+  readonly lang: Lang = langFromLocale(inject(LOCALE_ID));
   readonly dir: Dir = this.lang === 'ar' ? 'rtl' : 'ltr';
   readonly other: Lang = this.lang === 'ar' ? 'en' : 'ar';
 
