@@ -1,22 +1,6 @@
-import type { MegaPanelItem, MegaPanelLink } from '../../shared/ui/mega-panel/mega-panel';
-import type { TabItem } from '../../shared/ui/tabs/tabs';
-
-export interface HeaderPanel {
-  items: MegaPanelItem[];
-  featured?: MegaPanelItem;
-  viewAll?: MegaPanelLink;
-  gap: 'sm' | 'md';
-  wide: boolean;
-}
-
-export interface HeaderContent {
-  logoAlt: string;
-  tabs: TabItem[];
-  panels: Record<string, HeaderPanel>;
-  language: { label: string; ariaLabel: string };
-  cta: MegaPanelLink;
-  menu: { open: string; close: string; label: string };
-}
+import type { MegaPanelItem, MegaPanelLink } from '../../shared/ui/mega-panel/mega-panel.model';
+import type { TabItem } from '../../shared/ui/tabs/tabs.model';
+import type { HeaderContent } from './header.model';
 
 function withRoutes(prefix: string, items: Omit<MegaPanelItem, 'href'>[]): MegaPanelItem[] {
   return items.map((item) => ({ ...item, href: `${prefix}/${item.id}` }));

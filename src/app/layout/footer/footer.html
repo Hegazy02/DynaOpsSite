@@ -1,0 +1,113 @@
+<footer class="relative overflow-hidden">
+  <!-- Backdrop: brand tint toward the bottom-start corner, teal toward bottom-end; inset and rounded on desktop. -->
+  <div
+    aria-hidden="true"
+    class="pointer-events-none absolute inset-0 overflow-hidden xl:inset-x-5 xl:mb-5 xl:rounded-xl"
+  >
+    <div
+      class="absolute inset-0 bg-linear-to-bl/srgb from-transparent to-brand-500/20 rtl:bg-linear-to-br/srgb"
+    ></div>
+    <div
+      class="absolute inset-0 bg-linear-to-br/srgb from-transparent to-accent/20 rtl:bg-linear-to-bl/srgb"
+    ></div>
+  </div>
+
+  <div
+    class="container-page relative flex flex-col items-center gap-12 py-4 md:py-8 xl:pt-16 xl:pb-5"
+  >
+    @if (cta(); as template) {
+      <div class="w-full max-w-300">
+        <ng-container [ngTemplateOutlet]="template" />
+      </div>
+    }
+
+    <div class="flex w-full max-w-300 flex-col gap-6">
+      <!-- Logo and columns hug their content and spread out, so the last column ends at the section edge. -->
+      <div class="flex items-start justify-between gap-6">
+        <a routerLink="/" class="hidden shrink-0 rounded-sm xl:block">
+          <img
+            src="/icons/logo/dynaops365Logo.svg"
+            [alt]="content.logoAlt"
+            width="253"
+            height="52"
+            class="h-[52px] w-[253px]"
+          />
+        </a>
+
+        <ng-container
+          [ngTemplateOutlet]="column"
+          [ngTemplateOutletContext]="{ $implicit: content.columns.features }"
+        />
+        <!-- Industries and Company share one column on mobile and split from md up. -->
+        <div class="flex flex-col gap-6 md:contents">
+          <ng-container
+            [ngTemplateOutlet]="column"
+            [ngTemplateOutletContext]="{ $implicit: content.columns.industries }"
+          />
+          <ng-container
+            [ngTemplateOutlet]="column"
+            [ngTemplateOutletContext]="{ $implicit: content.columns.company }"
+          />
+        </div>
+      </div>
+
+      <div class="flex flex-col items-center gap-4 lg:flex-row lg:flex-wrap lg:justify-between">
+        <div class="flex flex-col items-center gap-3 lg:flex-row">
+          <!-- Figma keeps the icon order and lays these mixed-script lines out LTR in Arabic too. -->
+          <ul role="list" dir="ltr" class="flex items-center gap-3">
+            @for (item of content.social; track item.id) {
+              <li>
+                <a
+                  [href]="item.href"
+                  [attr.aria-label]="item.label"
+                  [attr.target]="item.external ? '_blank' : null"
+                  [attr.rel]="item.external ? 'noopener' : null"
+                  class="flex rounded-sm p-4 transition-opacity hover:opacity-70 lg:p-0"
+                >
+                  <img [src]="item.icon" alt="" width="28" height="28" class="size-7" />
+                </a>
+              </li>
+            }
+          </ul>
+          <p dir="auto" class="flex items-center gap-2 text-label-sm text-fg-secondary">
+            <span aria-hidden="true" class="size-1.5 rounded-full bg-success"></span>
+            {{ content.tagline }}
+          </p>
+        </div>
+        <p dir="auto" class="text-label-sm text-fg-secondary">{{ copyright }}</p>
+      </div>
+    </div>
+
+    <!-- Desktop only: the wordmark runs off the bottom edge, so its descenders are clipped like Figma. -->
+    <img
+      src="/brand/wordmark-white.svg"
+      alt=""
+      aria-hidden="true"
+      width="1200"
+      height="168"
+      class="pointer-events-none hidden h-auto w-full max-w-300 select-none xl:block"
+    />
+  </div>
+</footer>
+
+<ng-template #column let-col>
+  <nav [attr.aria-label]="col.title" class="flex flex-col gap-2">
+    <h2 class="text-h4">{{ col.title }}</h2>
+    <div class="flex flex-col md:flex-row md:gap-6">
+      @for (list of col.lists; track $index) {
+        <ul role="list" class="flex flex-col">
+          @for (link of list; track link.href) {
+            <li>
+              <a
+                [routerLink]="link.href"
+                class="inline-flex rounded-sm py-3.5 text-label-sm text-fg-secondary transition-colors hover:text-fg-brand"
+              >
+                {{ link.label }}
+              </a>
+            </li>
+          }
+        </ul>
+      }
+    </div>
+  </nav>
+</ng-template>

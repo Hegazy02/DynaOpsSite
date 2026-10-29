@@ -1,0 +1,83 @@
+<section class="container-page py-24">
+  <div class="mx-auto flex max-w-content flex-col items-start gap-6">
+    <p class="text-eyebrow text-fg-brand">TEST PAGE</p>
+    <h1 class="text-display-md text-fg lg:text-display-lg">
+      Field sales, connected to Dynamics 365
+    </h1>
+    <p class="max-w-2xl text-body-lg text-fg-secondary">
+      Placeholder content so the header, the page body and the footer can be reviewed together.
+      Scroll down to see the page's own gradient container inside the footer.
+    </p>
+    <div class="flex flex-wrap gap-2">
+      <a appButton icon="/icons/shared/arrow-right-02-white.svg" directionalIcon routerLink="/demo">
+        Book a Demo
+      </a>
+      <a appButton variant="secondary" routerLink="/features">See all features</a>
+    </div>
+  </div>
+</section>
+
+<section class="container-page pb-24">
+  <div class="mx-auto grid max-w-content gap-6 md:grid-cols-3">
+    @for (card of cards; track card.title) {
+      <article class="card card-raised h-full">
+        <p class="text-eyebrow text-fg-tertiary">{{ card.eyebrow }}</p>
+        <h2 class="text-h4">{{ card.title }}</h2>
+        <p class="text-body-sm text-fg-secondary">{{ card.body }}</p>
+      </article>
+    }
+  </div>
+</section>
+
+<!-- Rendered by the footer; the page hands it the whole CTA. `/cover` previews the full-bleed variant. -->
+<ng-template appFooterCta>
+  @if (cover()) {
+    <app-cta-container
+      image="/images/industries/fmcg-footer-cta.png"
+      [imageWidth]="932"
+      [imageHeight]="830"
+      imageCover
+      imageBehindGradient
+    >
+      <div class="flex max-w-2xl flex-col gap-4">
+        <h2 class="text-h2 md:text-h1">Ready to improve your FMCG field sales?</h2>
+        <p class="text-body-md">
+          See how DynaOps can connect your sales representatives, managers, and Microsoft Dynamics
+          365 F&amp;O
+        </p>
+      </div>
+      <a
+        appButton
+        variant="secondary"
+        icon="/icons/shared/arrow-right-02.svg"
+        directionalIcon
+        routerLink="/demo"
+      >
+        Book a Demo
+      </a>
+    </app-cta-container>
+  } @else {
+    <app-cta-container
+      image="/images/home/footer-cta-phone.png"
+      [imageWidth]="880"
+      [imageHeight]="486"
+    >
+      <div class="flex max-w-md flex-col gap-4">
+        <h2 class="text-h2 md:text-h1">See DynaOps in action</h2>
+        <p class="text-body-md">
+          See how DynaOps connects your field sales operation with Microsoft Dynamics 365 Finance
+          &amp; Operations.
+        </p>
+      </div>
+      <a
+        appButton
+        variant="secondary"
+        icon="/icons/shared/arrow-right-02.svg"
+        directionalIcon
+        routerLink="/demo"
+      >
+        Book a Demo
+      </a>
+    </app-cta-container>
+  }
+</ng-template>

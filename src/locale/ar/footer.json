@@ -1,0 +1,13 @@
+{
+  "locale": "ar",
+  "translations": {
+    "footer.company": "الشركة",
+    "footer.contact": "تواصل معنا",
+    "footer.social.linkedin": "لينكدإن",
+    "footer.social.email": "البريد الإلكتروني",
+    "footer.social.whatsapp": "واتساب",
+    "footer.social.phone": "اتصل بنا",
+    "footer.tagline": "Dynamics 365 Ops، بين يديك",
+    "footer.copyright": "© {$year} DynaOps365. جميع الحقوق محفوظة."
+  }
+}

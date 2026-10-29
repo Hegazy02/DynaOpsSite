@@ -3,22 +3,7 @@ import { booleanAttribute, ChangeDetectionStrategy, Component, input, output } f
 import { RouterLink } from '@angular/router';
 
 import { Button } from '../button/button';
-
-export interface MegaPanelItem {
-  id: string;
-  title: string;
-  description?: string;
-  icon?: string;
-  image?: string;
-  href?: string;
-  badge?: string;
-  comingSoon?: boolean;
-}
-
-export interface MegaPanelLink {
-  label: string;
-  href: string;
-}
+import type { MegaPanelItem, MegaPanelLink } from './mega-panel.model';
 
 @Component({
   selector: 'app-mega-panel',

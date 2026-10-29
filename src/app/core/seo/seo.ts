@@ -1,6 +1,7 @@
 import { DOCUMENT, inject, Injectable } from '@angular/core';
 
-import { DEFAULT_LANG, LANGS, localeUrl, type Lang } from '../i18n/language';
+import { DEFAULT_LANG, LANGS, localeUrl } from '../i18n/language';
+import type { Lang } from '../i18n/language.model';
 import { SITE_ORIGIN } from './site-config';
 
 @Injectable({ providedIn: 'root' })

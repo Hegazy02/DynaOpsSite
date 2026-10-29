@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 
 import { LanguageService } from './core/i18n/language';
 import { SeoService } from './core/seo/seo';
+import { Footer } from './layout/footer/footer';
 import { Header } from './layout/header/header';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, Header],
+  imports: [RouterOutlet, Header, Footer],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })

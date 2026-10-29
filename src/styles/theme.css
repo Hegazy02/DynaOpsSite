@@ -41,6 +41,9 @@
   --color-neutral-900: var(--neutral-900);
   --color-neutral-950: var(--neutral-950);
 
+  /* Accent: bg-accent, to-accent/20 … (decorative only) */
+  --color-accent: var(--accent-teal);
+
   /* Semantic: backgrounds → bg-canvas, bg-surface, bg-subtle … */
   --color-canvas: var(--bg-canvas);
   --color-surface: var(--bg-surface);

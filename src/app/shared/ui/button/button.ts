@@ -1,7 +1,6 @@
 import { booleanAttribute, ChangeDetectionStrategy, Component, input } from '@angular/core';
 
-export type ButtonVariant = 'primary' | 'secondary' | 'ghost';
-export type ButtonSize = 'sm' | 'md' | 'lg';
+import type { ButtonVariant, ButtonSize } from './button.model';
 
 @Component({
   selector: 'button[appButton], a[appButton]',

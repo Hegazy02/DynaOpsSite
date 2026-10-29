@@ -34,6 +34,7 @@ Tailwind v4 (CSS-first) configuration generated from the Figma design system
 | `action/secondary`, `-hover` | `--action-secondary` … | `bg-action-secondary`, `hover:bg-action-secondary-hover` |
 | `status/success`, `status/success-subtle` (also warning, error) | `--status-success` … | `text-success`, `bg-success-subtle` |
 | `brand/50…900`, `neutral/0…950` | `--brand-500`, `--neutral-900` | `bg-brand-500`, `text-neutral-900` |
+| — (raw `#33c8cf` in the footer backdrop gradient) | `--accent-teal` | `bg-accent`, `to-accent/20` (decorative only) |
 | `font-size/2xs…4xl` (12 14 16 18 22 28 36 44 56) | `--font-size-md` | `text-2xs` … `text-4xl` |
 | `space/2…96` | `--space-16` | default spacing scale (`p-4` = 16px, `gap-6` = 24px, `py-24` = 96px) |
 | `radius/sm md lg xl full` (6 10 16 24 pill) | `--radius-md` | `rounded-sm` `rounded-md` `rounded-lg` `rounded-xl` `rounded-full` |
@@ -70,5 +71,7 @@ width/height attributes are only Figma's default export size.
 - Input height is fixed at 44 px (Figma: 43.6 px EN, 46 px AR).
 - Secondary button hover adds the `action/secondary-hover` fill and brand text alongside the
   brand border Figma shows, since the tokens exist for exactly that state.
+- `--accent-teal` (#33c8cf) is a code-side primitive for the footer backdrop gradient; Figma uses
+  the raw colour there with no variable. Add it to the design-system file if it spreads.
 - The typography frames are labelled "Inter" and "Cairo", but every text style in the file
   uses Montserrat and IBM Plex Sans Arabic. The code follows the styles.

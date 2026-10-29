@@ -4,8 +4,7 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { NavigationEnd, Router } from '@angular/router';
 import { filter, map } from 'rxjs';
 
-export type Lang = 'en' | 'ar';
-export type Dir = 'ltr' | 'rtl';
+import type { Lang, Dir } from './language.model';
 
 export const LANGS: readonly Lang[] = ['en', 'ar'];
 export const DEFAULT_LANG: Lang = 'en';
