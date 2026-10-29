@@ -1,0 +1,18 @@
+<div class="container-page py-16">
+  <div class="mx-auto flex w-full max-w-300 flex-col items-center gap-12 xl:gap-16">
+    <div class="flex max-w-160 flex-col items-center gap-4 text-center xl:max-w-none">
+      <p class="flex items-center gap-2 text-label-md text-fg-brand">
+        <img src="/icons/industries/shopping-cart-check-02-brand.svg" alt="" class="size-6" />
+        {{ content().eyebrow }}
+      </p>
+      <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ content().title }}</h2>
+      <p class="max-w-123 text-body-md text-fg-secondary">{{ content().description }}</p>
+    </div>
+
+    <div class="grid w-full max-w-160 gap-6 xl:max-w-none xl:grid-cols-3">
+      @for (item of content().items; track item.title) {
+        <app-fmcg-feature-card [content]="item" />
+      }
+    </div>
+  </div>
+</div>

@@ -1,3 +1,4 @@
+import type { FmcgFeaturesContent } from './components/fmcg-features/fmcg-features.model';
 import type { FmcgHeroContent } from './components/fmcg-hero/fmcg-hero.model';
 
 export interface FmcgContent {
@@ -6,4 +7,5 @@ export interface FmcgContent {
   // Meta description.
   description: string;
   hero: FmcgHeroContent;
+  features: FmcgFeaturesContent;
 }

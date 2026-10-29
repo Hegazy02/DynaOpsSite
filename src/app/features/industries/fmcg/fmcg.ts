@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+import { FmcgFeatures } from './components/fmcg-features/fmcg-features';
 import { FmcgHero } from './components/fmcg-hero/fmcg-hero';
 import { FMCG_CONTENT } from './fmcg-content';
 
 @Component({
   selector: 'app-fmcg',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FmcgHero],
+  imports: [FmcgHero, FmcgFeatures],
   templateUrl: './fmcg.html',
   host: { class: 'block' },
 })

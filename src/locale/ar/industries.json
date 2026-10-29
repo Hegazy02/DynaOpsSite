@@ -5,6 +5,28 @@
     "fmcg.hero.title": "اربط فريق المبيعات الميداني مع Microsoft Dynamics 365 F&O",
     "fmcg.hero.description": "يساعد DynaOps SFA شركات FMCG على إدارة الزيارات الميدانية، أوامر البيع، التحصيلات، البيع من السيارات، العروض الترويجية وخطوط السير مع التكامل مع",
     "fmcg.hero.emphasis": "Microsoft Dynamics 365 Finance & Operations.",
-    "fmcg.hero.imageAlt": "مندوب مبيعات يراجع الطلبات بجانب سيارة توزيع محمّلة"
+    "fmcg.hero.imageAlt": "مندوب مبيعات يراجع الطلبات بجانب سيارة توزيع محمّلة",
+
+    "fmcg.features.eyebrow": "أتمتة قوة المبيعات للسلع الاستهلاكية سريعة التداول",
+    "fmcg.features.title": "مصمم لطبيعة مبيعات FMCG",
+    "fmcg.features.description": "يحتاج مندوب المبيعات إلى التحرك بسرعة بين العملاء والوصول إلى المعلومات الصحيحة أثناء الزيارة.",
+    "fmcg.features.visit-planning.title": "تخطيط الزيارات",
+    "fmcg.features.visit-planning.description": "خطط زيارات العملاء وقم بتحسين مسارات المبيعات باستخدام تحسين المسارات الآلي والديناميكي والمدعوم بالذكاء الاصطناعي.",
+    "fmcg.features.visit-planning.image": "/images/industries/fmcg/features/visit-planning-ar.png",
+    "fmcg.features.route-optimization.title": "تحسين المسارات",
+    "fmcg.features.route-optimization.description": "ربط زيارات العملاء بمعلومات الموقع والأنشطة الميدانية لتحسين رؤية تنفيذ المبيعات.",
+    "fmcg.features.route-optimization.image": "/images/industries/fmcg/features/route-optimization-ar.png",
+    "fmcg.features.van-sales.title": "البيع من السيارات ومخزونها",
+    "fmcg.features.van-sales.description": "نفّذ عمليات البيع مباشرة من المخزون المتاح أثناء زيارة العميل مع تحديث حركة مخزون السيارة.",
+    "fmcg.features.van-sales.image": "/images/industries/fmcg/features/van-sales-ar.png",
+    "fmcg.features.trade-promotions.title": "عروض التجارة الترويجية",
+    "fmcg.features.trade-promotions.description": "تقييم سياق عملية البيع ويحدد العروض المعتمدة التي تنطبق على العميل والمعاملة الحالية.",
+    "fmcg.features.trade-promotions.image": "/images/industries/fmcg/features/trade-promotions-ar.png",
+    "fmcg.features.sales-order-management.title": "إدارة أوامر البيع",
+    "fmcg.features.sales-order-management.description": "إنشاء أوامر المبيعات مباشرة أثناء زيارات العملاء باستخدام معلومات العميل والمنتج والتسعير والمخزون ذات الصلة.",
+    "fmcg.features.sales-order-management.image": "/images/industries/fmcg/features/sales-order-management-ar.png",
+    "fmcg.features.collections-management.title": "إدارة التحصيلات",
+    "fmcg.features.collections-management.description": "تمكين مندوبي المبيعات من تسجيل مدفوعات العملاء والتحصيلات مباشرة من الميدان.",
+    "fmcg.features.collections-management.image": "/images/industries/fmcg/features/collections-management-ar.png"
   }
 }

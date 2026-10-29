@@ -203,6 +203,23 @@
   .card-raised {
     box-shadow: var(--shadow-md);
   }
+  /* Illustration slot of feature cards: brand tint fading down over a faint 48px grid, artwork
+     centred 16px from the top, the bottom fifth dissolving into the surface. */
+  .card-media {
+    --card-media-line: color-mix(in srgb, var(--text-primary) 4%, transparent);
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    height: 15rem;
+    padding-top: 1rem;
+    overflow: hidden;
+    border-radius: var(--radius-md);
+    background-image:
+      linear-gradient(to bottom, transparent 80%, var(--bg-surface)),
+      repeating-linear-gradient(to right, var(--card-media-line) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(to bottom, var(--card-media-line) 0 1px, transparent 1px 48px),
+      linear-gradient(to bottom, color-mix(in srgb, var(--brand-500) 20%, transparent), transparent);
+  }
 
   /* ---- Reveal (collapsible block) --------------------------------------
      state: (collapsed) | .reveal-open. Wrap the content in one child element. */
