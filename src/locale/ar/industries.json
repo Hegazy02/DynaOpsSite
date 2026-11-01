@@ -1,12 +1,12 @@
 {
   "locale": "ar",
   "translations": {
+    "industries.hero.cta": "احجز عرضًا تجريبيًا",
+    "fmcg.hero.imageAlt": "مندوب مبيعات يراجع الطلبات بجانب سيارة توزيع محمّلة",
     "fmcg.title": "مبيعات FMCG الميدانية",
     "fmcg.hero.title": "اربط فريق المبيعات الميداني مع Microsoft Dynamics 365 F&O",
-    "fmcg.hero.description": "يساعد DynaOps SFA شركات FMCG على إدارة الزيارات الميدانية، أوامر البيع، التحصيلات، البيع من السيارات، العروض الترويجية وخطوط السير مع التكامل مع",
+    "fmcg.hero.subtitle": "يساعد DynaOps SFA شركات FMCG على إدارة الزيارات الميدانية، أوامر البيع، التحصيلات، البيع من السيارات، العروض الترويجية وخطوط السير مع التكامل مع",
     "fmcg.hero.emphasis": "Microsoft Dynamics 365 Finance & Operations.",
-    "fmcg.hero.imageAlt": "مندوب مبيعات يراجع الطلبات بجانب سيارة توزيع محمّلة",
-
     "fmcg.features.eyebrow": "أتمتة قوة المبيعات للسلع الاستهلاكية سريعة التداول",
     "fmcg.features.title": "مصمم لطبيعة مبيعات FMCG",
     "fmcg.features.description": "يحتاج مندوب المبيعات إلى التحرك بسرعة بين العملاء والوصول إلى المعلومات الصحيحة أثناء الزيارة.",
@@ -27,6 +27,17 @@
     "fmcg.features.sales-order-management.image": "/images/industries/fmcg/features/sales-order-management-ar.png",
     "fmcg.features.collections-management.title": "إدارة التحصيلات",
     "fmcg.features.collections-management.description": "تمكين مندوبي المبيعات من تسجيل مدفوعات العملاء والتحصيلات مباشرة من الميدان.",
-    "fmcg.features.collections-management.image": "/images/industries/fmcg/features/collections-management-ar.png"
+    "fmcg.features.collections-management.image": "/images/industries/fmcg/features/collections-management-ar.png",
+    "industries.integration.imageDir": "/images/industries/erp-integration-ar",
+    "industries.integration.imageAlt": "لوحات عمليات المبيعات الميدانية مرتبطة بـ Microsoft Dynamics 365 وDynaOps",
+    "fmcg.integration.title": "متكامل مع Microsoft Dynamics 365 Finance & Operations",
+    "fmcg.integration.paragraph-1": "يربط DynaOps عمليات المبيعات الميدانية مع Microsoft Dynamics 365 F&O، بحيث يعمل فريق المبيعات باستخدام بيانات وعمليات الـERP دون الحاجة إلى نظام منفصل عن بيئة الشركة.",
+    "fmcg.integration.paragraph-2": "يتم مزامنة العملاء والعناصر والأسعار والمخزون في الوقت الفعلي، ويتم تسجيل الطلبات والمدفوعات مباشرة في F&O بدون وسيط، بدون إدخال مزدوج.",
+    "industries.visibility.imageDir": "/images/industries/visibility-ar",
+    "industries.visibility.imageAlt": "لوحة معلومات DynaOps للتنفيذ الميداني تعرض الزيارات المخططة مقابل المنفذة والزيارات حسب المندوب",
+    "fmcg.visibility.title": "رؤية أوضح لمديري المبيعات",
+    "fmcg.visibility.paragraph-1": "تابع أداء المندوبين، وتغطية العملاء، والزيارات، والمسارات، وأوامر البيع، والتحصيلات من خلال لوحات معلومات DynaOps.",
+    "fmcg.visibility.paragraph-2": "اعرف ما يحدث في السوق بدلًا من الاعتماد فقط على أرقام المبيعات النهائية.",
+    "fmcg.visibility.paragraph-3": "تابع مواقع المندوبين لحظيًا، والزيارات المخططة مقابل المنفذة لكل خط سير، والطلبات والتحصيلات اليومية في شاشة واحدة، لتتدخل في الوقت المناسب قبل نهاية اليوم."
   }
 }

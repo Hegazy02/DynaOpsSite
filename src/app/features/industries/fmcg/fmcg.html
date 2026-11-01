@@ -1,2 +1,15 @@
-<app-fmcg-hero [content]="content.hero" />
-<app-fmcg-features [content]="content.features" />
+<app-industries-hero
+  [title]="content.hero.title"
+  [subtitle]="content.hero.subtitle"
+  [emphasis]="content.hero.emphasis"
+  [image]="content.hero.image"
+/>
+<app-industry-features [content]="content.features" />
+<app-industries-integration
+  [title]="content.integration.title"
+  [paragraphs]="content.integration.paragraphs"
+/>
+<app-industries-visibility
+  [title]="content.visibility.title"
+  [paragraphs]="content.visibility.paragraphs"
+/>

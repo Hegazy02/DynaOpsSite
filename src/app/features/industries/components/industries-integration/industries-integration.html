@@ -1,0 +1,49 @@
+<div aria-hidden="true" class="iso-grid pointer-events-none absolute inset-0"></div>
+
+<div class="container-page relative py-8 xl:py-16">
+  <div
+    class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 xl:flex-row xl:justify-between xl:gap-6"
+  >
+    <!-- Figma hover variant: the stacked tiles lift (middle 9px, top 18px, its face and logo 25px), smart-animated 600ms ease-out. -->
+    <!-- The Arabic files are already mirrored by the designer, so no RTL flip here. -->
+    <div class="relative w-full max-w-125 shrink-0">
+      <img
+        [src]="image().base"
+        [alt]="image().alt"
+        [width]="image().width"
+        [height]="image().height"
+        class="w-full"
+      />
+      <img
+        [src]="image().tileMiddle"
+        alt=""
+        [width]="image().width"
+        [height]="image().height"
+        class="absolute start-0 top-0 w-full transition-transform duration-600 ease-out group-hover:-translate-y-2.25 motion-reduce:transition-none"
+      />
+      <img
+        [src]="image().tileTop"
+        alt=""
+        [width]="image().width"
+        [height]="image().height"
+        class="absolute start-0 top-0 w-full transition-transform duration-600 ease-out group-hover:-translate-y-4.5 motion-reduce:transition-none"
+      />
+      <img
+        [src]="image().tileTopFace"
+        alt=""
+        [width]="image().width"
+        [height]="image().height"
+        class="absolute start-0 top-0 w-full transition-transform duration-600 ease-out group-hover:-translate-y-6.25 motion-reduce:transition-none"
+      />
+    </div>
+
+    <div class="flex w-full flex-col gap-4 xl:max-w-124.25">
+      <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ title() }}</h2>
+      <div class="flex flex-col text-body-md text-fg-secondary">
+        @for (paragraph of paragraphs(); track $index) {
+          <p class="hidden first:block xl:block">{{ paragraph }}</p>
+        }
+      </div>
+    </div>
+  </div>
+</div>

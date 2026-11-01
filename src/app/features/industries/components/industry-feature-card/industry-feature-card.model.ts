@@ -1,4 +1,4 @@
-export interface FmcgFeatureCardContent {
+export interface IndustryFeatureCardContent {
   title: string;
   description: string;
   // 2x export of the Figma artwork on the shared 712x560 frame; each language has its own file.

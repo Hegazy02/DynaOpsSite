@@ -4,7 +4,7 @@
 @layer base {
   html {
     font-family: var(--font-family-base);
-    background-color: var(--bg-canvas);
+    background-color: #ffffff;
     color: var(--text-primary);
     accent-color: var(--action-primary);
     -webkit-font-smoothing: antialiased;

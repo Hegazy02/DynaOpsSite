@@ -3,13 +3,13 @@
 Tailwind v4 (CSS-first) configuration generated from the Figma design system
 ([DynaOps365 Website → Design System](https://www.figma.com/design/PMrpOG7kirRGVTrhdQ55ju/DynaOps365-Website?node-id=8021-2)).
 
-| File             | Purpose                                                                                                                                                                                                    |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `tokens.css`     | Figma variables as CSS custom properties: primitives, semantic colours (Figma Light mode), EN/AR type metrics. Names match Figma 1:1, so Dev Mode code such as `var(--text-primary, #14171a)` works as-is. |
-| `theme.css`      | `@theme` block mapping tokens to Tailwind utilities and the `container-page` utility.                                                                                                                      |
-| `base.css`       | Element defaults (font, canvas background, focus ring, selection).                                                                                                                                         |
-| `typography.css` | Type-role utilities (`text-h1`, `text-body-md`, …).                                                                                                                                                        |
-| `components.css` | `.btn`, `.input`, `.badge`, `.card` recipes from the Components section, `.card-media` (feature-card illustration slot), plus `.reveal` (collapsible block).                                               |
+| File             | Purpose                                                                                                                                                                                                                                                                                    |
+| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `tokens.css`     | Figma variables as CSS custom properties: primitives, semantic colours (Figma Light mode), EN/AR type metrics. Names match Figma 1:1, so Dev Mode code such as `var(--text-primary, #14171a)` works as-is.                                                                                 |
+| `theme.css`      | `@theme` block mapping tokens to Tailwind utilities and the `container-page` utility.                                                                                                                                                                                                      |
+| `base.css`       | Element defaults (font, canvas background, focus ring, selection).                                                                                                                                                                                                                         |
+| `typography.css` | Type-role utilities (`text-h1`, `text-body-md`, …).                                                                                                                                                                                                                                        |
+| `components.css` | `.btn`, `.input`, `.badge`, `.card` recipes from the Components section, `.card-media` (feature-card illustration slot), `.iso-grid` (isometric grid backdrop), `.visibility-media`/`.visibility-stage` (dashboard artwork box and its layered stage), plus `.reveal` (collapsible block). |
 
 ## Modes
 

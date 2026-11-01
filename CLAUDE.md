@@ -12,3 +12,4 @@
 
 - Interfaces, type aliases and enums live in a sibling `<name>.model.ts` file (`footer.model.ts`, `button.model.ts`), never inside component, directive, service or content files. Import them with `import type`.
 - A feature page lives in `src/app/features/<area>/<feature>/` with its page component, content and model at the root. Every component that belongs to that page goes under its `components/` folder (`industries/fmcg/components/fmcg-hero/`), one folder per component, named with the feature prefix.
+- Components shared by the pages of one area live in `src/app/features/<area>/components/` (`industries/components/industry-features/`), named with the area prefix. Components used across areas live in `src/app/shared/ui/`.

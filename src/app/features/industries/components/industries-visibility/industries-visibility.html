@@ -1,0 +1,39 @@
+<div class="container-page py-8 xl:py-16">
+  <div
+    class="mx-auto flex w-full max-w-300 flex-col gap-8 xl:flex-row xl:items-center xl:justify-between xl:gap-6"
+  >
+    <div class="flex w-full flex-col gap-4 xl:max-w-130">
+      <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ title() }}</h2>
+      @for (paragraph of paragraphs(); track $index) {
+        <p class="text-body-md text-fg-secondary">{{ paragraph }}</p>
+      }
+    </div>
+
+    <!-- Full width up to xl, the 500x400 Figma box from xl; the stage inside keeps the artwork's 5:4 geometry. -->
+    <!-- Figma hover variant: the cursors glide (left +30/-12px, right -33/-55px), smart-animated 600ms ease-out. -->
+    <!-- The Arabic artwork is not mirrored, so the layers use physical offsets. -->
+    <div
+      class="visibility-media order-first flex aspect-5/4 w-full items-center justify-center overflow-hidden rounded-md md:aspect-auto md:h-100 xl:order-none xl:w-125 xl:shrink-0"
+    >
+      <div class="visibility-stage relative aspect-5/4 w-full max-w-125">
+        <img
+          [src]="image().dashboard"
+          [alt]="image().alt"
+          [width]="image().width"
+          [height]="image().height"
+          class="visibility-dashboard"
+        />
+        <img
+          [src]="image().cursorLeft"
+          alt=""
+          class="visibility-cursor-left transition-transform duration-600 ease-out group-hover:translate-x-7.5 group-hover:-translate-y-3 motion-reduce:transition-none"
+        />
+        <img
+          [src]="image().cursorRight"
+          alt=""
+          class="visibility-cursor-right transition-transform duration-600 ease-out group-hover:-translate-x-8.25 group-hover:-translate-y-13.75 motion-reduce:transition-none"
+        />
+      </div>
+    </div>
+  </div>
+</div>

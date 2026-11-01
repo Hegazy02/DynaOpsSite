@@ -1,11 +1,15 @@
-import type { FmcgFeaturesContent } from './components/fmcg-features/fmcg-features.model';
-import type { FmcgHeroContent } from './components/fmcg-hero/fmcg-hero.model';
+import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
+import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
+import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
+import type { IndustryFeaturesContent } from '../components/industry-features/industry-features.model';
 
 export interface FmcgContent {
   // Document title; the site name is appended by the title strategy.
   title: string;
   // Meta description.
   description: string;
-  hero: FmcgHeroContent;
-  features: FmcgFeaturesContent;
+  hero: IndustriesHeroCopy;
+  features: IndustryFeaturesContent;
+  integration: IndustriesIntegrationCopy;
+  visibility: IndustriesVisibilityCopy;
 }

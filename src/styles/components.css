@@ -220,6 +220,49 @@
       repeating-linear-gradient(to bottom, var(--card-media-line) 0 1px, transparent 1px 48px),
       linear-gradient(to bottom, color-mix(in srgb, var(--brand-500) 20%, transparent), transparent);
   }
+  /* Isometric grid backdrop (Figma "网格"): faint surface-coloured lines at ±41° every 42px, layered over a tint. */
+  .iso-grid {
+    --iso-grid-line: color-mix(in srgb, var(--bg-surface) 60%, transparent);
+    background-image:
+      repeating-linear-gradient(41deg, var(--iso-grid-line) 0 1px, transparent 1px 42px),
+      repeating-linear-gradient(139deg, var(--iso-grid-line) 0 1px, transparent 1px 42px);
+  }
+  /* Visibility section box (Figma "Gradient/Section/Warm glow"): warning tint fading down over a faint 48px grid. */
+  .visibility-media {
+    --visibility-media-line: color-mix(in srgb, var(--text-primary) 4%, transparent);
+    background-image:
+      repeating-linear-gradient(to right, var(--visibility-media-line) 0 1px, transparent 1px 48px),
+      repeating-linear-gradient(
+        to bottom,
+        var(--visibility-media-line) 0 1px,
+        transparent 1px 48px
+      ),
+      linear-gradient(
+        to bottom,
+        color-mix(in srgb, var(--status-warning) 15%, transparent),
+        transparent
+      );
+  }
+  /* Its 500x400 stage: the dashboard (export bounds include the shadow) and the two cursors keep their Figma
+     geometry as percentages so the composition scales with the stage. Physical offsets: the Arabic artwork is not mirrored. */
+  .visibility-stage > img {
+    position: absolute;
+  }
+  .visibility-dashboard {
+    left: 8.83%;
+    top: 7.43%;
+    width: 82.77%;
+  }
+  .visibility-cursor-left {
+    left: 8.4%;
+    top: 25.25%;
+    height: 10.21%;
+  }
+  .visibility-cursor-right {
+    left: 79.8%;
+    top: 55%;
+    height: 10.21%;
+  }
 
   /* ---- Reveal (collapsible block) --------------------------------------
      state: (collapsed) | .reveal-open. Wrap the content in one child element. */

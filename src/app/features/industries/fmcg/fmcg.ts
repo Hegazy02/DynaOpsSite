@@ -1,13 +1,15 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
-import { FmcgFeatures } from './components/fmcg-features/fmcg-features';
-import { FmcgHero } from './components/fmcg-hero/fmcg-hero';
+import { IndustriesHero } from '../components/industries-hero/industries-hero';
+import { IndustriesIntegration } from '../components/industries-integration/industries-integration';
+import { IndustriesVisibility } from '../components/industries-visibility/industries-visibility';
+import { IndustryFeatures } from '../components/industry-features/industry-features';
 import { FMCG_CONTENT } from './fmcg-content';
 
 @Component({
   selector: 'app-fmcg',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [FmcgHero, FmcgFeatures],
+  imports: [IndustriesHero, IndustryFeatures, IndustriesIntegration, IndustriesVisibility],
   templateUrl: './fmcg.html',
   host: { class: 'block' },
 })
