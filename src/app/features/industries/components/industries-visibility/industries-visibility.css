@@ -1,0 +1,36 @@
+/* Artwork box (Figma "Gradient/Section/Warm glow"): warning tint fading down over a faint 48px grid. */
+.visibility-media {
+  --visibility-media-line: color-mix(in srgb, var(--text-primary) 4%, transparent);
+  background-image:
+    repeating-linear-gradient(to right, var(--visibility-media-line) 0 1px, transparent 1px 48px),
+    repeating-linear-gradient(to bottom, var(--visibility-media-line) 0 1px, transparent 1px 48px),
+    linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--status-warning) 15%, transparent),
+      transparent
+    );
+}
+
+/* The 500x400 stage keeps the Figma geometry in percentages so the composition scales with it.
+   Physical offsets: the Arabic artwork is not mirrored. The dashboard export bounds include its shadow. */
+.visibility-stage > img {
+  position: absolute;
+}
+
+.visibility-dashboard {
+  left: 8.83%;
+  top: 7.43%;
+  width: 82.77%;
+}
+
+.visibility-cursor-left {
+  left: 8.4%;
+  top: 25.25%;
+  height: 10.21%;
+}
+
+.visibility-cursor-right {
+  left: 79.8%;
+  top: 55%;
+  height: 10.21%;
+}

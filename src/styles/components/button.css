@@ -1,0 +1,98 @@
+@layer components {
+  /* ---- Button ----------------------------------------------------------
+     style: .btn-primary | .btn-secondary | .btn-ghost
+     size:  .btn-sm (32) | .btn-md (48) | .btn-lg (56)
+     shape: .btn-icon (square, icon only; pair with aria-label)
+     Heights are fixed so EN and AR labels produce the same control size. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-4);
+    border: var(--border-hairline) solid transparent;
+    font-weight: 500;
+    white-space: nowrap;
+    text-decoration: none;
+    cursor: pointer;
+    user-select: none;
+    transition:
+      background-color 150ms ease,
+      border-color 150ms ease,
+      color 150ms ease;
+  }
+
+  .btn > svg,
+  .btn > img {
+    width: 1.125rem; /* 18 */
+    height: 1.125rem;
+    flex-shrink: 0;
+  }
+
+  .btn:disabled,
+  .btn[aria-disabled='true'] {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  .btn-sm {
+    height: 2rem;
+    padding-inline: var(--space-12);
+    border-radius: var(--radius-sm);
+    font-size: var(--font-size-2xs);
+    line-height: var(--line-height-label-sm);
+  }
+
+  .btn-md {
+    height: 3rem;
+    padding-inline: var(--space-16);
+    border-radius: var(--radius-md);
+    font-size: var(--font-size-xs);
+    line-height: var(--line-height-label-md);
+  }
+
+  .btn-lg {
+    height: 3.5rem;
+    padding-inline: var(--space-24);
+    border-radius: var(--radius-lg);
+    font-size: var(--font-size-md);
+    line-height: 1.2;
+  }
+
+  /* Icon-only square; the caller sizes the icon (size-7 for the 28px nav glyphs). */
+  .btn-icon {
+    aspect-ratio: 1;
+    padding-inline: 0;
+  }
+
+  .btn-primary {
+    background-color: var(--action-primary);
+    color: var(--text-on-brand);
+  }
+  .btn-primary:hover {
+    background-color: var(--action-primary-hover);
+  }
+  .btn-primary:active {
+    background-color: var(--action-primary-pressed);
+  }
+
+  .btn-secondary {
+    background-color: var(--action-secondary);
+    border-color: var(--border-strong);
+    color: var(--text-primary);
+  }
+  .btn-secondary:hover {
+    background-color: var(--action-secondary-hover);
+    border-color: var(--border-brand);
+    color: var(--text-brand);
+  }
+
+  .btn-ghost {
+    padding-inline: 0;
+    background-color: transparent;
+    color: var(--text-brand);
+  }
+  .btn-ghost:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.2em;
+  }
+}

@@ -9,6 +9,7 @@ import type { IndustriesVisibilityImage } from './industries-visibility.model';
   selector: 'app-industries-visibility',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './industries-visibility.html',
+  styleUrl: './industries-visibility.css',
   host: { class: 'group block' },
 })
 export class IndustriesVisibility {

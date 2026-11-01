@@ -27,7 +27,8 @@ flow, SSR). This skill only covers how things look.
 | `src/styles/tokens.css` | Figma variables as CSS custom properties. Names match Figma 1:1. EN/AR line heights and families switch on `:lang()`. |
 | `src/styles/theme.css` | `@theme` mapping tokens to utilities, plus `container-page`. |
 | `src/styles/typography.css` | Type-role utilities (`text-h1`, `text-body-md`, ...). |
-| `src/styles/components.css` | `.btn`, `.input`, `.badge`, `.card` recipes. |
+| `src/styles/components.css` | Imports the shared recipes in `src/styles/components/`, one file each: `.btn`, `.input`, `.badge`, `.card`, `.reveal`. |
+| `<component>.css` | Styles for one section, next to its component via `styleUrl`. |
 | `src/styles/README.md` | Full Figma → variable → utility table and known deviations. |
 
 Read `README.md` when you need the complete token list; the rules below cover day-to-day
@@ -193,5 +194,14 @@ When a design needs something new, extend the layers in order and keep the READM
 current: a new colour goes in `tokens.css` (semantic name, light value) and `theme.css`
 (`--color-*` mapping); a new text style becomes an `@utility text-<role>` in
 `typography.css` with EN and AR line heights in `tokens.css`; a new repeated pattern
-becomes a recipe in `components.css` under `@layer components`. If the token is also
-missing in Figma, say so, since the design file is the source of truth.
+becomes a recipe file in `src/styles/components/` under `@layer components`, imported from
+`components.css`. If the token is also missing in Figma, say so, since the design file is the
+source of truth.
+
+**Global or component stylesheet.** CSS that only one section needs, such as a gradient
+backdrop or an artwork stage, goes in that component's own stylesheet (`styleUrl`), not in
+`src/styles/`. Use plain `var(--token)` values there; they need no import. Angular scopes the
+rules and ships them with the page that uses them, so the global CSS stays the design system
+only. Promote a pattern to a global recipe or `@utility` once a second area of the site needs
+it. Component rules sit outside Tailwind's layers and win over utilities on the same element,
+so keep their properties distinct from the template's utilities.

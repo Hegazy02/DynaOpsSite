@@ -1,0 +1,17 @@
+@layer components {
+  /* ---- Card ------------------------------------------------------------
+     elevation: (flat) | .card-raised */
+  .card {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-12);
+    padding: var(--space-24);
+    border: var(--border-hairline) solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    background-color: var(--bg-surface);
+    color: var(--text-primary);
+  }
+  .card-raised {
+    box-shadow: var(--shadow-md);
+  }
+}

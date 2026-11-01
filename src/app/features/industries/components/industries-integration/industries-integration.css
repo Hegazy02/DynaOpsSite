@@ -1,0 +1,7 @@
+/* Isometric grid backdrop (Figma "网格"): faint surface-coloured lines at ±41° every 42px, over the host tint. */
+.iso-grid {
+  --iso-grid-line: color-mix(in srgb, var(--bg-surface) 60%, transparent);
+  background-image:
+    repeating-linear-gradient(41deg, var(--iso-grid-line) 0 1px, transparent 1px 42px),
+    repeating-linear-gradient(139deg, var(--iso-grid-line) 0 1px, transparent 1px 42px);
+}

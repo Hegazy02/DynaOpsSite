@@ -3,13 +3,21 @@
 Tailwind v4 (CSS-first) configuration generated from the Figma design system
 ([DynaOps365 Website → Design System](https://www.figma.com/design/PMrpOG7kirRGVTrhdQ55ju/DynaOps365-Website?node-id=8021-2)).
 
-| File             | Purpose                                                                                                                                                                                                                                                                                    |
-| ---------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| `tokens.css`     | Figma variables as CSS custom properties: primitives, semantic colours (Figma Light mode), EN/AR type metrics. Names match Figma 1:1, so Dev Mode code such as `var(--text-primary, #14171a)` works as-is.                                                                                 |
-| `theme.css`      | `@theme` block mapping tokens to Tailwind utilities and the `container-page` utility.                                                                                                                                                                                                      |
-| `base.css`       | Element defaults (font, canvas background, focus ring, selection).                                                                                                                                                                                                                         |
-| `typography.css` | Type-role utilities (`text-h1`, `text-body-md`, …).                                                                                                                                                                                                                                        |
-| `components.css` | `.btn`, `.input`, `.badge`, `.card` recipes from the Components section, `.card-media` (feature-card illustration slot), `.iso-grid` (isometric grid backdrop), `.visibility-media`/`.visibility-stage` (dashboard artwork box and its layered stage), plus `.reveal` (collapsible block). |
+| File             | Purpose                                                                                                                                                                                                    |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `tokens.css`     | Figma variables as CSS custom properties: primitives, semantic colours (Figma Light mode), EN/AR type metrics. Names match Figma 1:1, so Dev Mode code such as `var(--text-primary, #14171a)` works as-is. |
+| `theme.css`      | `@theme` block mapping tokens to Tailwind utilities and the `container-page` utility.                                                                                                                      |
+| `base.css`       | Element defaults (font, canvas background, focus ring, selection).                                                                                                                                         |
+| `typography.css` | Type-role utilities (`text-h1`, `text-body-md`, …).                                                                                                                                                        |
+| `components.css` | Import list for the shared recipes in `components/`: `button.css`, `input.css`, `badge.css`, `card.css` and `reveal.css`, one file per recipe.                                                             |
+
+## Global or component stylesheet
+
+The global layer holds the design system only: tokens, theme, base, type roles and recipes used across areas.
+CSS for a single section lives next to that component in its own stylesheet (`styleUrl`), for example the feature-card illustration slot in `industry-feature-card.css`.
+Component stylesheets use plain `var(--token)` values, which need no import, and Angular scopes them and ships them with the page that uses them.
+Promote a pattern to a global recipe or `@utility` only once a second area of the site needs it.
+Component styles sit outside Tailwind's layers, so they win over utilities on the same element: keep their properties distinct from the template's utilities.
 
 ## Modes
 

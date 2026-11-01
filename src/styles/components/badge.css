@@ -1,0 +1,34 @@
+@layer components {
+  /* ---- Badge -----------------------------------------------------------
+     tone: (neutral) | .badge-brand | .badge-success | .badge-warning | .badge-error */
+  .badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-4);
+    height: 1.5rem; /* 24 */
+    padding-inline: var(--space-8);
+    border-radius: 9999px;
+    background-color: var(--bg-subtle);
+    color: var(--text-secondary);
+    font-size: var(--font-size-2xs);
+    line-height: var(--line-height-label-sm);
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .badge-brand {
+    background-color: var(--bg-brand-subtle);
+    color: var(--text-brand);
+  }
+  .badge-success {
+    background-color: var(--status-success-subtle);
+    color: var(--status-success);
+  }
+  .badge-warning {
+    background-color: var(--status-warning-subtle);
+    color: var(--status-warning);
+  }
+  .badge-error {
+    background-color: var(--status-error-subtle);
+    color: var(--status-error);
+  }
+}
