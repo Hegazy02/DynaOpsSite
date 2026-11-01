@@ -5,7 +5,7 @@ const dir = $localize`:@@industries.visibility.imageDir:/images/industries/visib
 
 export const INDUSTRIES_VISIBILITY_DEFAULTS: IndustriesVisibilityDefaults = {
   image: {
-    dashboard: `${dir}/dashboard.png`,
+    dashboard: `${dir}/dashboard.webp`,
     cursorLeft: `${dir}/cursor-left.svg`,
     cursorRight: `${dir}/cursor-right.svg`,
     alt: $localize`:@@industries.visibility.imageAlt:DynaOps field execution dashboard with planned versus visited customers and visits by representative`,

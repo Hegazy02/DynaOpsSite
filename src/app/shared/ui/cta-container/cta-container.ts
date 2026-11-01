@@ -23,7 +23,11 @@ const IMAGE_POSITIONS: Record<CtaImagePosition, { layer: string; content: string
 @Component({
   selector: 'app-cta-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  host: { class: 'relative isolate flex flex-col overflow-hidden rounded-xl' },
+  // At least 370 tall on phones with the content centred; from md the frame hugs its content.
+  host: {
+    class:
+      'relative isolate flex min-h-92.5 flex-col justify-center overflow-hidden rounded-xl md:min-h-0',
+  },
   template: `
     <div
       aria-hidden="true"
@@ -37,7 +41,8 @@ const IMAGE_POSITIONS: Record<CtaImagePosition, { layer: string; content: string
           alt=""
           [attr.width]="imageWidth()"
           [attr.height]="imageHeight()"
-          [class]="imageCover() ? 'size-full object-cover opacity-80' : 'block w-full max-w-110'"
+          [class]="imageCover() ? coverImageClass : 'block w-full max-w-110'"
+          [style.--cta-cover-offset]="imageCover() ? '-' + imageCoverOffset() + '%' : null"
         />
       </div>
     }
@@ -59,6 +64,12 @@ export class CtaContainer {
   // Paint the gradient over the image rather than under it.
   readonly imageBehindGradient = input(false, { transform: booleanAttribute });
   readonly imagePosition = input<CtaImagePosition>('top-end');
+  // From xl a cover image fits the frame width; this percent of its height is cropped off the top.
+  readonly imageCoverOffset = input(0);
+
+  // Centred cover up to lg; from xl the image keeps its ratio and slides up by the offset, as Figma crops it.
+  protected readonly coverImageClass =
+    'size-full object-cover opacity-80 xl:h-auto xl:translate-y-(--cta-cover-offset)';
 
   private readonly positioned = computed(() => !!this.image() && !this.imageCover());
 

@@ -1,0 +1,48 @@
+<app-industries-hero
+  [title]="content().hero.title"
+  [subtitle]="content().hero.subtitle"
+  [emphasis]="content().hero.emphasis"
+  [image]="content().hero.image"
+/>
+<ng-content select="[industryAfterHero]" />
+
+<app-industry-features [content]="content().features" />
+<ng-content select="[industryAfterFeatures]" />
+
+<app-industries-integration
+  [title]="content().integration.title"
+  [paragraphs]="content().integration.paragraphs"
+/>
+<ng-content select="[industryAfterIntegration]" />
+
+<app-industries-visibility
+  [title]="content().visibility.title"
+  [paragraphs]="content().visibility.paragraphs"
+/>
+<ng-content />
+
+<ng-template appFooterCta>
+  <app-cta-container
+    [image]="content().footerCta.image.src"
+    [imageWidth]="content().footerCta.image.width"
+    [imageHeight]="content().footerCta.image.height"
+    [imageCoverOffset]="content().footerCta.image.coverOffset ?? 0"
+    imageCover
+    imageBehindGradient
+  >
+    <div class="flex max-w-3xl flex-col gap-4">
+      <h2 class="text-h2 md:text-h1">{{ content().footerCta.title }}</h2>
+      <p class="mx-auto max-w-116.5 text-body-md">{{ content().footerCta.description }}</p>
+    </div>
+    <a
+      appButton
+      variant="secondary"
+      icon="/icons/shared/arrow-right-02.svg"
+      iconHover="/icons/shared/arrow-right-02-brand.svg"
+      directionalIcon
+      [routerLink]="content().footerCta.button.href"
+    >
+      {{ content().footerCta.button.label }}
+    </a>
+  </app-cta-container>
+</ng-template>

@@ -1,8 +1,10 @@
+import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industries-hero-content';
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
 import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
 import type { IndustryFeaturesContent } from '../components/industry-features/industry-features.model';
-import type { FmcgContent } from './fmcg.model';
+import type { IndustryPageContent } from '../components/industry-page/industry-page.model';
+import type { CtaContent } from '../../../shared/ui/cta-container/cta-container.model';
 
 // Copy is English here; src/locale/ar/industries.json carries the Arabic under the same ids.
 // The hero call to action comes from the shared hero defaults.
@@ -30,32 +32,32 @@ const FEATURES: IndustryFeaturesContent = {
     {
       title: $localize`:@@fmcg.features.visit-planning.title:Visit Planning`,
       description: $localize`:@@fmcg.features.visit-planning.description:Plan customer visits and optimize sales routes using automated, dynamic, and AI-powered route optimization.`,
-      image: $localize`:@@fmcg.features.visit-planning.image:/images/industries/fmcg/features/visit-planning.png`,
+      image: $localize`:@@fmcg.features.visit-planning.image:/images/industries/fmcg/features/visit-planning.webp`,
     },
     {
       title: $localize`:@@fmcg.features.route-optimization.title:Route Optimization`,
       description: $localize`:@@fmcg.features.route-optimization.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
-      image: $localize`:@@fmcg.features.route-optimization.image:/images/industries/fmcg/features/route-optimization.png`,
+      image: $localize`:@@fmcg.features.route-optimization.image:/images/industries/fmcg/features/route-optimization.webp`,
     },
     {
       title: $localize`:@@fmcg.features.van-sales.title:Van Sales & Van Stock`,
       description: $localize`:@@fmcg.features.van-sales.description:Sell directly from available van inventory during customer visits and keep transactions connected with the stock.`,
-      image: $localize`:@@fmcg.features.van-sales.image:/images/industries/fmcg/features/van-sales.png`,
+      image: $localize`:@@fmcg.features.van-sales.image:/images/industries/fmcg/features/van-sales.webp`,
     },
     {
       title: $localize`:@@fmcg.features.trade-promotions.title:Trade Promotions`,
       description: $localize`:@@fmcg.features.trade-promotions.description:Evaluate the sales context and identify which approved promotions apply to the customer and current transaction.`,
-      image: $localize`:@@fmcg.features.trade-promotions.image:/images/industries/fmcg/features/trade-promotions.png`,
+      image: $localize`:@@fmcg.features.trade-promotions.image:/images/industries/fmcg/features/trade-promotions.webp`,
     },
     {
       title: $localize`:@@fmcg.features.sales-order-management.title:Sales Order Management`,
       description: $localize`:@@fmcg.features.sales-order-management.description:Create sales orders directly during customer visits using relevant customer, product, pricing, and inventory information.`,
-      image: $localize`:@@fmcg.features.sales-order-management.image:/images/industries/fmcg/features/sales-order-management.png`,
+      image: $localize`:@@fmcg.features.sales-order-management.image:/images/industries/fmcg/features/sales-order-management.webp`,
     },
     {
       title: $localize`:@@fmcg.features.collections-management.title:Collections Management`,
       description: $localize`:@@fmcg.features.collections-management.description:Allow sales representatives to record customer payments and collections directly from the field.`,
-      image: $localize`:@@fmcg.features.collections-management.image:/images/industries/fmcg/features/collections-management.png`,
+      image: $localize`:@@fmcg.features.collections-management.image:/images/industries/fmcg/features/collections-management.webp`,
     },
   ],
 };
@@ -79,7 +81,21 @@ const VISIBILITY: IndustriesVisibilityCopy = {
   ],
 };
 
-export const FMCG_CONTENT: FmcgContent = {
+// The demo button is the one shared by the industry pages.
+const FOOTER_CTA: CtaContent = {
+  title: $localize`:@@fmcg.cta.title:Ready to improve your FMCG field sales?`,
+  description: $localize`:@@fmcg.cta.description:See how DynaOps can connect your sales representatives, managers, and Microsoft Dynamics 365 F&O.`,
+  button: INDUSTRIES_HERO_DEFAULTS.cta,
+  // Figma shows the band from the van roof down, 29.3% into the photo.
+  image: {
+    src: '/images/industries/fmcg/footer-cta.webp',
+    width: 932,
+    height: 830,
+    coverOffset: 29.3,
+  },
+};
+
+export const FMCG_CONTENT: IndustryPageContent = {
   title: $localize`:@@fmcg.title:FMCG Field Sales`,
   // Reuses the hero paragraph until the page gets dedicated search copy.
   description: `${HERO.subtitle} ${HERO.emphasis}`,
@@ -87,4 +103,5 @@ export const FMCG_CONTENT: FmcgContent = {
   features: FEATURES,
   integration: INTEGRATION,
   visibility: VISIBILITY,
+  footerCta: FOOTER_CTA,
 };

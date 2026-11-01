@@ -6,7 +6,7 @@ import type { IndustryFeatureCardContent } from './industry-feature-card.model';
   selector: 'app-industry-feature-card',
   changeDetection: ChangeDetectionStrategy.OnPush,
   templateUrl: './industry-feature-card.html',
-  host: { class: 'block' },
+  host: { class: 'block min-w-0' },
 })
 export class IndustryFeatureCard {
   readonly content = input.required<IndustryFeatureCardContent>();
