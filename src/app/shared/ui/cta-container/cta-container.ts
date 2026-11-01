@@ -8,7 +8,6 @@ import {
 
 import type { CtaImagePosition } from './cta-container.model';
 
-// From xl: where a positioned image sits in the frame, plus the content padding that keeps the copy clear of it.
 const IMAGE_POSITIONS: Record<CtaImagePosition, { layer: string; content: string }> = {
   'top-start': { layer: 'xl:items-start xl:justify-start xl:pt-16', content: 'xl:ps-116' },
   'center-start': { layer: 'xl:items-center xl:justify-start', content: 'xl:ps-116' },
@@ -18,12 +17,9 @@ const IMAGE_POSITIONS: Record<CtaImagePosition, { layer: string; content: string
   'bottom-end': { layer: 'xl:items-end xl:justify-end', content: 'xl:pe-116' },
 };
 
-// Rounded gradient frame for a call to action, built from three stacked layers: gradient, image,
-// content. The image either covers the frame or sits at `imagePosition`, in front of or behind the gradient.
 @Component({
   selector: 'app-cta-container',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  // At least 370 tall on phones with the content centred; from md the frame hugs its content.
   host: {
     class:
       'relative isolate flex min-h-92.5 flex-col justify-center overflow-hidden rounded-xl md:min-h-0',
