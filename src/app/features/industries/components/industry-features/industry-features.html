@@ -5,7 +5,7 @@
         <img [src]="content().eyebrow.icon" alt="" class="size-6" />
         {{ content().eyebrow.label }}
       </p>
-      <!-- Figma, English: natural wrapping full width on phones and in 500px/430px boxes on tablet, balanced from xl. -->
+      <!-- Figma, English: title wraps naturally (500px box on tablet, balanced from xl); description wraps naturally in each page's box. -->
       <!-- Figma, Arabic: one-line title; description wraps naturally at 556px, one line from xl. -->
       <h2
         class="text-h3 md:max-w-125 md:text-h2 md:rtl:max-w-none xl:max-w-205 xl:text-balance xl:text-display-md"
@@ -13,8 +13,8 @@
         {{ content().title }}
       </h2>
       <p
-        class="max-w-192 text-body-md text-fg-secondary rtl:max-w-139 md:rtl:max-w-139 xl:max-w-192 xl:text-balance xl:rtl:max-w-none"
-        [class]="tabletDescriptionWidth()"
+        class="max-w-192 text-body-md text-fg-secondary rtl:max-w-139 md:rtl:max-w-139 xl:rtl:max-w-none"
+        [class]="descriptionWidthClass()"
       >
         {{ content().description }}
       </p>

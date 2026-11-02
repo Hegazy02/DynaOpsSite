@@ -10,9 +10,14 @@ export interface IndustryFeaturesContent {
   eyebrow: IndustryFeaturesEyebrow;
   title: string;
   description: string;
-  // Tablet description box: 430px by default, 492px when the page's Figma frame uses the wider box.
-  wideTabletDescription?: boolean;
+  // English description box from the page's Figma frames; defaults to 430px on tablet, 768px on desktop.
+  descriptionWidth?: IndustryFeaturesDescriptionWidth;
   items: IndustryFeatureCardContent[];
+}
+
+export interface IndustryFeaturesDescriptionWidth {
+  tablet?: 430 | 492;
+  desktop?: 492 | 586 | 768;
 }
 
 // Cards in the shared catalog; each industry page picks its own set.
@@ -26,4 +31,5 @@ export type IndustryFeatureId =
   | 'collections-management'
   | 'customer-management'
   | 'workflow-approvals'
-  | 'crm-activity-management';
+  | 'crm-activity-management'
+  | 'gps-tracking';

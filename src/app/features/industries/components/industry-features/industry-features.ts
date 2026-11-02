@@ -14,8 +14,12 @@ import type { IndustryFeaturesContent } from './industry-features.model';
 export class IndustryFeatures {
   readonly content = input.required<IndustryFeaturesContent>();
 
-  // English tablet description box from the page's Figma frame: 430px, or 492px when wide.
-  protected readonly tabletDescriptionWidth = computed(() =>
-    this.content().wideTabletDescription ? 'md:max-w-123' : 'md:max-w-107.5',
-  );
+  // Full class names so Tailwind's scanner sees them.
+  protected readonly descriptionWidthClass = computed(() => {
+    const { tablet = 430, desktop = 768 } = this.content().descriptionWidth ?? {};
+    return `${TABLET_WIDTH[tablet]} ${DESKTOP_WIDTH[desktop]}`;
+  });
 }
+
+const TABLET_WIDTH = { 430: 'md:max-w-107.5', 492: 'md:max-w-123' } as const;
+const DESKTOP_WIDTH = { 492: 'xl:max-w-123', 586: 'xl:max-w-146.5', 768: 'xl:max-w-192' } as const;

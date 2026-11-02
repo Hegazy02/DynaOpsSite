@@ -55,6 +55,12 @@ export const INDUSTRY_FEATURE_CARDS: Record<IndustryFeatureId, IndustryFeatureCa
     description: $localize`:@@industries.features.crm-activity-management.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
     image: $localize`:@@industries.features.crm-activity-management.image:/images/industries/features/crm-activity-management.webp`,
   },
+  // Figma repeats the Route Optimization copy here, in both languages; kept as designed.
+  'gps-tracking': {
+    title: $localize`:@@industries.features.gps-tracking.title:GPS Tracking`,
+    description: $localize`:@@industries.features.gps-tracking.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
+    image: $localize`:@@industries.features.gps-tracking.image:/images/industries/features/gps-tracking.webp`,
+  },
 };
 
 export function pickFeatureCards(ids: IndustryFeatureId[]): IndustryFeatureCardContent[] {

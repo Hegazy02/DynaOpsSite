@@ -28,6 +28,7 @@ const FEATURES: IndustryFeaturesContent = {
   },
   title: $localize`:@@wholesale-distribution.features.title:Built for Wholesale Sales Operations`,
   description: $localize`:@@wholesale-distribution.features.description:Wholesale sales teams manage multiple business accounts, recurring orders, negotiated pricing, and outstanding customer payments.`,
+  descriptionWidth: { desktop: 586 },
   items: pickFeatureCards([
     'customer-management',
     'sales-order-management',

@@ -31,7 +31,8 @@
     imageCover
     imageBehindGradient
   >
-    <div class="flex max-w-3xl flex-col gap-4">
+    <!-- 800px: one-line CTA titles up to Retail's, longer ones balance onto two lines as in Figma. -->
+    <div class="flex max-w-200 flex-col gap-4">
       <h2 class="text-balance text-h2 md:text-h1">{{ content().footerCta.title }}</h2>
       <p class="mx-auto max-w-165 text-balance text-body-md">
         {{ content().footerCta.description }}
