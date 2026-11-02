@@ -1,0 +1,48 @@
+name: Deploy Angular to FTP
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One deploy at a time; a newer push cancels an upload still in progress.
+concurrency:
+  group: deploy-ftp
+  cancel-in-progress: true
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Angular 21 needs Node ^20.19, ^22.12 or >=24.
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      # Production build of both languages, prerendering, then sitemap.xml.
+      - name: Build
+        run: npm run build
+
+      # Uploads the static output: prerendered pages, assets and the ar/ language folder.
+      - name: Upload via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOST }}
+          username: ${{ secrets.USER }}
+          password: ${{ secrets.PASSWORD }}
+          local-dir: dist/DynaOpsSite/browser/
+          protocol: ftp
+          port: 21

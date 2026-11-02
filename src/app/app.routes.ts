@@ -32,6 +32,15 @@ export const routes: Routes = [
     title: WHOLESALE_DISTRIBUTION_CONTENT.title,
     data: { seo: { description: WHOLESALE_DISTRIBUTION_CONTENT.description } satisfies RouteSeo },
   },
+  // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
+  {
+    path: '404',
+    loadComponent: () => import('./features/not-found/not-found').then((m) => m.NotFound),
+    title: NOT_FOUND_CONTENT.title,
+    data: {
+      seo: { description: NOT_FOUND_CONTENT.description, robots: 'noindex' } satisfies RouteSeo,
+    },
+  },
   {
     path: '**',
     loadComponent: () => import('./features/not-found/not-found').then((m) => m.NotFound),

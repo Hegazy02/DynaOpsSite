@@ -1,5 +1,6 @@
 // Writes browser/sitemap.xml from the prerender manifest after `ng build`, listing every
 // language version of each page with its hreflang alternates. Usage: node scripts/generate-sitemap.mjs [distDir]
+import { existsSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
@@ -13,8 +14,11 @@ const manifest = JSON.parse(await readFile(join(dist, 'prerendered-routes.json')
 const entries = Array.isArray(manifest.routes)
   ? manifest.routes.map((route) => [route, {}])
   : Object.entries(manifest.routes);
-// Redirect sources are not pages.
-const routes = entries.filter(([, meta]) => !meta.redirectTo).map(([route]) => route);
+// Only routes with a prerendered page; redirects have none. The static 404 page is not indexed.
+const routes = entries
+  .filter(([route]) => existsSync(join(dist, 'browser', route, 'index.html')))
+  .filter(([route]) => !/(^|\/)404$/.test(route))
+  .map(([route]) => route);
 
 function split(route) {
   for (const lang of LANGS) {
