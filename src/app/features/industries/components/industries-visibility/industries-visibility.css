@@ -12,15 +12,9 @@
 }
 
 /* The 500x400 stage keeps the Figma geometry in percentages so the composition scales with it.
-   Physical offsets: the Arabic artwork is not mirrored. The dashboard export bounds include its shadow. */
+   Physical offsets: the Arabic artwork is not mirrored. Each page sets its dashboard placement. */
 .visibility-stage > img {
   position: absolute;
-}
-
-.visibility-dashboard {
-  left: 8.83%;
-  top: 7.43%;
-  width: 82.77%;
 }
 
 .visibility-cursor-left {

@@ -17,19 +17,21 @@
     >
       <div class="visibility-stage relative aspect-5/4 w-full max-w-125">
         <img
-          [src]="image().dashboard"
-          [alt]="image().alt"
-          [width]="image().width"
-          [height]="image().height"
-          class="visibility-dashboard"
+          [src]="art().dashboard"
+          [alt]="art().alt"
+          [width]="art().width"
+          [height]="art().height"
+          [style.left.%]="art().placement.left"
+          [style.top.%]="art().placement.top"
+          [style.width.%]="art().placement.width"
         />
         <img
-          [src]="image().cursorLeft"
+          [src]="art().cursorLeft"
           alt=""
           class="visibility-cursor-left transition-transform duration-600 ease-out group-hover:translate-x-7.5 group-hover:-translate-y-3 motion-reduce:transition-none"
         />
         <img
-          [src]="image().cursorRight"
+          [src]="art().cursorRight"
           alt=""
           class="visibility-cursor-right transition-transform duration-600 ease-out group-hover:-translate-x-8.25 group-hover:-translate-y-13.75 motion-reduce:transition-none"
         />

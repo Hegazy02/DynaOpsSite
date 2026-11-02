@@ -2,6 +2,7 @@ import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industri
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
 import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
+import { pickFeatureCards } from '../components/industry-features/industry-features-content';
 import type { IndustryFeaturesContent } from '../components/industry-features/industry-features.model';
 import type { IndustryPageContent } from '../components/industry-page/industry-page.model';
 import type { CtaContent } from '../../../shared/ui/cta-container/cta-container.model';
@@ -20,7 +21,6 @@ const HERO: IndustriesHeroCopy = {
   },
 };
 
-// The card artwork contains UI text, so the image path is localized like the copy.
 const FEATURES: IndustryFeaturesContent = {
   eyebrow: {
     icon: '/icons/industries/shopping-cart-check-02-brand.svg',
@@ -28,38 +28,14 @@ const FEATURES: IndustryFeaturesContent = {
   },
   title: $localize`:@@fmcg.features.title:Built for fast-moving field sales`,
   description: $localize`:@@fmcg.features.description:FMCG sales teams need to move quickly between customers while always having access to accurate information.`,
-  items: [
-    {
-      title: $localize`:@@fmcg.features.visit-planning.title:Visit Planning`,
-      description: $localize`:@@fmcg.features.visit-planning.description:Plan customer visits and optimize sales routes using automated, dynamic, and AI-powered route optimization.`,
-      image: $localize`:@@fmcg.features.visit-planning.image:/images/industries/fmcg/features/visit-planning.webp`,
-    },
-    {
-      title: $localize`:@@fmcg.features.route-optimization.title:Route Optimization`,
-      description: $localize`:@@fmcg.features.route-optimization.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
-      image: $localize`:@@fmcg.features.route-optimization.image:/images/industries/fmcg/features/route-optimization.webp`,
-    },
-    {
-      title: $localize`:@@fmcg.features.van-sales.title:Van Sales & Van Stock`,
-      description: $localize`:@@fmcg.features.van-sales.description:Sell directly from available van inventory during customer visits and keep transactions connected with the stock.`,
-      image: $localize`:@@fmcg.features.van-sales.image:/images/industries/fmcg/features/van-sales.webp`,
-    },
-    {
-      title: $localize`:@@fmcg.features.trade-promotions.title:Trade Promotions`,
-      description: $localize`:@@fmcg.features.trade-promotions.description:Evaluate the sales context and identify which approved promotions apply to the customer and current transaction.`,
-      image: $localize`:@@fmcg.features.trade-promotions.image:/images/industries/fmcg/features/trade-promotions.webp`,
-    },
-    {
-      title: $localize`:@@fmcg.features.sales-order-management.title:Sales Order Management`,
-      description: $localize`:@@fmcg.features.sales-order-management.description:Create sales orders directly during customer visits using relevant customer, product, pricing, and inventory information.`,
-      image: $localize`:@@fmcg.features.sales-order-management.image:/images/industries/fmcg/features/sales-order-management.webp`,
-    },
-    {
-      title: $localize`:@@fmcg.features.collections-management.title:Collections Management`,
-      description: $localize`:@@fmcg.features.collections-management.description:Allow sales representatives to record customer payments and collections directly from the field.`,
-      image: $localize`:@@fmcg.features.collections-management.image:/images/industries/fmcg/features/collections-management.webp`,
-    },
-  ],
+  items: pickFeatureCards([
+    'visit-planning',
+    'route-optimization',
+    'van-sales',
+    'trade-promotions',
+    'sales-order-management',
+    'collections-management',
+  ]),
 };
 
 // The artwork comes from the section defaults.

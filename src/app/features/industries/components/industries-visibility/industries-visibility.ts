@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
 import { INDUSTRIES_VISIBILITY_DEFAULTS } from './industries-visibility-content';
 import type { IndustriesVisibilityImage } from './industries-visibility.model';
@@ -15,5 +15,7 @@ import type { IndustriesVisibilityImage } from './industries-visibility.model';
 export class IndustriesVisibility {
   readonly title = input.required<string>();
   readonly paragraphs = input.required<string[]>();
-  readonly image = input<IndustriesVisibilityImage>(INDUSTRIES_VISIBILITY_DEFAULTS.image);
+  readonly image = input<IndustriesVisibilityImage>();
+
+  protected readonly art = computed(() => this.image() ?? INDUSTRIES_VISIBILITY_DEFAULTS.image);
 }

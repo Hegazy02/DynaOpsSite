@@ -18,6 +18,7 @@
 <app-industries-visibility
   [title]="content().visibility.title"
   [paragraphs]="content().visibility.paragraphs"
+  [image]="content().visibility.image"
 />
 <ng-content />
 
@@ -31,8 +32,10 @@
     imageBehindGradient
   >
     <div class="flex max-w-3xl flex-col gap-4">
-      <h2 class="text-h2 md:text-h1">{{ content().footerCta.title }}</h2>
-      <p class="mx-auto max-w-116.5 text-body-md">{{ content().footerCta.description }}</p>
+      <h2 class="text-balance text-h2 md:text-h1">{{ content().footerCta.title }}</h2>
+      <p class="mx-auto max-w-165 text-balance text-body-md">
+        {{ content().footerCta.description }}
+      </p>
     </div>
     <a
       appButton
