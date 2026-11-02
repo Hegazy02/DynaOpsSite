@@ -10,6 +10,8 @@ export interface IndustryFeaturesContent {
   eyebrow: IndustryFeaturesEyebrow;
   title: string;
   description: string;
+  // Tablet description box: 430px by default, 492px when the page's Figma frame uses the wider box.
+  wideTabletDescription?: boolean;
   items: IndustryFeatureCardContent[];
 }
 
@@ -21,4 +23,7 @@ export type IndustryFeatureId =
   | 'inventory-visibility'
   | 'trade-promotions'
   | 'sales-order-management'
-  | 'collections-management';
+  | 'collections-management'
+  | 'customer-management'
+  | 'workflow-approvals'
+  | 'crm-activity-management';

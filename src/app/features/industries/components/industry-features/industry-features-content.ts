@@ -39,6 +39,22 @@ export const INDUSTRY_FEATURE_CARDS: Record<IndustryFeatureId, IndustryFeatureCa
     description: $localize`:@@industries.features.collections-management.description:Allow sales representatives to record customer payments and collections directly from the field.`,
     image: $localize`:@@industries.features.collections-management.image:/images/industries/features/collections-management.webp`,
   },
+  // The next three descriptions repeat other cards' copy in Figma (both languages); kept as designed.
+  'customer-management': {
+    title: $localize`:@@industries.features.customer-management.title:Customer Management`,
+    description: $localize`:@@industries.features.customer-management.description:Allow sales representatives to record customer payments and collections directly from the field.`,
+    image: $localize`:@@industries.features.customer-management.image:/images/industries/features/customer-management.webp`,
+  },
+  'workflow-approvals': {
+    title: $localize`:@@industries.features.workflow-approvals.title:Workflow & Approvals`,
+    description: $localize`:@@industries.features.workflow-approvals.description:Execute approved trade promotions as part of the sales process and help representatives identify relevant offers during visits.`,
+    image: $localize`:@@industries.features.workflow-approvals.image:/images/industries/features/workflow-approvals.webp`,
+  },
+  'crm-activity-management': {
+    title: $localize`:@@industries.features.crm-activity-management.title:CRM & Activity Management`,
+    description: $localize`:@@industries.features.crm-activity-management.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
+    image: $localize`:@@industries.features.crm-activity-management.image:/images/industries/features/crm-activity-management.webp`,
+  },
 };
 
 export function pickFeatureCards(ids: IndustryFeatureId[]): IndustryFeatureCardContent[] {

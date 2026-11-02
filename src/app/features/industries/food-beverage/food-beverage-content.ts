@@ -26,7 +26,7 @@ const FEATURES: IndustryFeaturesContent = {
     icon: '/icons/industries/vegetarian-food-brand.svg',
     label: $localize`:@@food-beverage.features.eyebrow:Sales force automation for food and beverage`,
   },
-  title: $localize`:@@food-beverage.features.title:Built for the Demands of Food & Beverage Distribution`,
+  title: $localize`:@@food-beverage.features.title:Built for the Demands of Food & Beverage Distribution`,
   description: $localize`:@@food-beverage.features.description:From grocery stores and supermarkets to restaurants and wholesalers, food and beverage sales teams manage frequent customer visits, repeat orders, and changing inventory requirements.`,
   items: pickFeatureCards([
     'van-sales',

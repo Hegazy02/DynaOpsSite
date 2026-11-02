@@ -28,6 +28,7 @@ const FEATURES: IndustryFeaturesContent = {
   },
   title: $localize`:@@fmcg.features.title:Built for fast-moving field sales`,
   description: $localize`:@@fmcg.features.description:FMCG sales teams need to move quickly between customers while always having access to accurate information.`,
+  wideTabletDescription: true,
   items: pickFeatureCards([
     'visit-planning',
     'route-optimization',
