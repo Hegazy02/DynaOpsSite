@@ -15,6 +15,7 @@ const HERO: IndustriesHeroCopy = {
   emphasis: $localize`:@@food-beverage.hero.emphasis:Microsoft Dynamics 365 Finance & Operations.`,
   image: {
     src: '/images/industries/food-beverage/hero.webp',
+    src3x: '/images/industries/food-beverage/hero-3x.webp',
     alt: $localize`:@@food-beverage.hero.imageAlt:A sales representative using a tablet beside food shelves and beverage fridges`,
     width: 440,
     height: 350,

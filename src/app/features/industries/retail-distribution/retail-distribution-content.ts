@@ -15,6 +15,7 @@ const HERO: IndustriesHeroCopy = {
   emphasis: $localize`:@@retail-distribution.hero.emphasis:Microsoft Dynamics 365 Finance & Operations.`,
   image: {
     src: '/images/industries/retail-distribution/hero.webp',
+    src3x: '/images/industries/retail-distribution/hero-3x.webp',
     alt: $localize`:@@retail-distribution.hero.imageAlt:A sales representative with a tablet at the entrance of a retail store`,
     width: 440,
     height: 350,

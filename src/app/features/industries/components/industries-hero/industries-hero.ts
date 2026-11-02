@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Button } from '../../../../shared/ui/button/button';
@@ -24,4 +24,10 @@ export class IndustriesHero {
   readonly emphasis = input<string>();
   readonly image = input.required<IndustriesHeroImage>();
   readonly cta = input<IndustriesHeroCta>(INDUSTRIES_HERO_DEFAULTS.cta);
+
+  // 3x screens pick the larger file; everything else keeps the 2x src.
+  protected readonly srcset = computed(() => {
+    const { src, src3x } = this.image();
+    return src3x ? `${src} 2x, ${src3x} 3x` : null;
+  });
 }

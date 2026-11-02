@@ -11,7 +11,7 @@ export const INDUSTRY_FEATURE_CARDS: Record<IndustryFeatureId, IndustryFeatureCa
   },
   'route-optimization': {
     title: $localize`:@@industries.features.route-optimization.title:Route Optimization`,
-    description: $localize`:@@industries.features.route-optimization.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
+    description: $localize`:@@industries.features.route-optimization.description:Build optimized routes from planned customer visits without relying entirely on manual route preparation.`,
     image: $localize`:@@industries.features.route-optimization.image:/images/industries/features/route-optimization.webp`,
   },
   'van-sales': {
@@ -55,7 +55,6 @@ export const INDUSTRY_FEATURE_CARDS: Record<IndustryFeatureId, IndustryFeatureCa
     description: $localize`:@@industries.features.crm-activity-management.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
     image: $localize`:@@industries.features.crm-activity-management.image:/images/industries/features/crm-activity-management.webp`,
   },
-  // Figma repeats the Route Optimization copy here, in both languages; kept as designed.
   'gps-tracking': {
     title: $localize`:@@industries.features.gps-tracking.title:GPS Tracking`,
     description: $localize`:@@industries.features.gps-tracking.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,

@@ -1,5 +1,8 @@
 export interface IndustriesHeroImage {
+  // 2x raster export, or an SVG.
   src: string;
+  // 3x export for 3x screens (iPhones), where the 2x file is upscaled and looks soft.
+  src3x?: string;
   alt: string;
   width: number;
   height: number;

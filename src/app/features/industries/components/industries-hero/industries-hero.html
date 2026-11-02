@@ -28,6 +28,7 @@
     <!-- Figma mirrors the artwork in Arabic so it keeps facing the copy. -->
     <img
       [src]="image().src"
+      [attr.srcset]="srcset()"
       [alt]="image().alt"
       [width]="image().width"
       [height]="image().height"

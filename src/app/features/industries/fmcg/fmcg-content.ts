@@ -14,7 +14,8 @@ const HERO: IndustriesHeroCopy = {
   subtitle: $localize`:@@fmcg.hero.subtitle:DynaOps SFA helps FMCG companies manage field sales, customer visits, orders, collections, van sales, promotions, and routes while staying connected with`,
   emphasis: $localize`:@@fmcg.hero.emphasis:Microsoft Dynamics 365 Finance & Operations.`,
   image: {
-    src: '/images/industries/hero-field-sales.svg',
+    src: '/images/industries/fmcg/hero.webp',
+    src3x: '/images/industries/fmcg/hero-3x.webp',
     alt: $localize`:@@fmcg.hero.imageAlt:A sales representative checking orders beside a loaded delivery van`,
     width: 440,
     height: 350,
