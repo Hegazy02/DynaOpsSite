@@ -14,8 +14,10 @@ export interface IndustriesIntegrationImage {
 // What a page supplies; the artwork falls back to the section defaults.
 export interface IndustriesIntegrationCopy {
   title: string;
-  // Only the first paragraph shows below xl, as in the tablet and phone frames.
+  // Only the first paragraph shows below xl unless allParagraphsOnTablet, as in the tablet and phone frames.
   paragraphs: string[];
+  // Shows every paragraph from md when the page's tablet frame keeps them all.
+  allParagraphsOnTablet?: boolean;
 }
 
 export interface IndustriesIntegrationDefaults {

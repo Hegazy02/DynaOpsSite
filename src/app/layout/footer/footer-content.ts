@@ -22,7 +22,14 @@ function tab(id: string): FooterLink {
   return { label: item?.label ?? id, href: item?.href ?? `/${id}` };
 }
 
-const FEATURES = HEADER_CONTENT.panels['features'].items;
+const FEATURES_PANEL = HEADER_CONTENT.panels['features'];
+// The header shows DynaOps365 AI as an unlinked coming-soon card; the footer lists it with the other features.
+const FEATURES = [
+  ...FEATURES_PANEL.items,
+  ...(FEATURES_PANEL.featured
+    ? [{ ...FEATURES_PANEL.featured, href: '/features/dynaops365-ai' }]
+    : []),
+];
 const INDUSTRIES = HEADER_CONTENT.panels['industries'].items;
 
 // Labels and routes come from the header so the two menus cannot drift apart.
@@ -37,17 +44,20 @@ export const FOOTER_CONTENT: FooterContent = {
           'workflow-approvals',
           'gps-tracking',
           'commission-management',
+          'van-sales',
           'sales-order-management',
-          'route-optimization',
+          'dashboards-analytics',
           'inventory-visibility',
         ]),
         pick(FEATURES, [
           'sales-targets-kpis',
           'collections-management',
           'crm-activity-management',
-          'offline-mode',
           'visit-planning',
-          'dashboards-analytics',
+          'route-optimization',
+          'trade-promotions',
+          'offline-mode',
+          'dynaops365-ai',
         ]),
       ],
     },

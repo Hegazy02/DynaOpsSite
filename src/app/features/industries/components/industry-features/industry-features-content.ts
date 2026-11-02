@@ -60,6 +60,16 @@ export const INDUSTRY_FEATURE_CARDS: Record<IndustryFeatureId, IndustryFeatureCa
     description: $localize`:@@industries.features.gps-tracking.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
     image: $localize`:@@industries.features.gps-tracking.image:/images/industries/features/gps-tracking.webp`,
   },
+  'sales-targets-kpis': {
+    title: $localize`:@@industries.features.sales-targets-kpis.title:Sales Targets & KPIs`,
+    description: $localize`:@@industries.features.sales-targets-kpis.description:Set targets by rep, team and region, and track achievement against KPIs in real time from the field activity synced with Dynamics 365.`,
+    image: $localize`:@@industries.features.sales-targets-kpis.image:/images/industries/features/sales-targets-kpis.webp`,
+  },
+  'commission-management': {
+    title: $localize`:@@industries.features.commission-management.title:Commission Management`,
+    description: $localize`:@@industries.features.commission-management.description:Calculate commissions automatically from targets, achievements and company policies, with full transparency for reps and managers.`,
+    image: $localize`:@@industries.features.commission-management.image:/images/industries/features/commission-management.webp`,
+  },
 };
 
 export function pickFeatureCards(ids: IndustryFeatureId[]): IndustryFeatureCardContent[] {

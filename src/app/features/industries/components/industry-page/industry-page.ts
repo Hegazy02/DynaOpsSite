@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { FooterCta } from '../../../../layout/footer/footer-cta.directive';
@@ -30,4 +30,20 @@ import type { IndustryPageContent } from './industry-page.model';
 })
 export class IndustryPage {
   readonly content = input.required<IndustryPageContent>();
+
+  // Full class names so Tailwind's scanner sees them.
+  protected readonly ctaTextClass = computed(() =>
+    this.content().footerCtaFormat?.englishTitleOneLine ? 'xl:ltr:max-w-none' : '',
+  );
+  protected readonly ctaTitleClass = computed(() =>
+    this.content().footerCtaFormat?.arabicNaturalWrapBelowXl ? 'max-xl:rtl:text-wrap' : '',
+  );
+  protected readonly ctaDescriptionClass = computed(() => {
+    const format = this.content().footerCtaFormat;
+    return [
+      format?.englishDescriptionWidth === 588 ? 'xl:ltr:max-w-147 xl:ltr:text-wrap' : '',
+      format?.arabicDescriptionOneLine ? 'xl:rtl:max-w-none' : '',
+      format?.arabicNaturalWrapBelowXl ? 'max-xl:rtl:text-wrap' : '',
+    ].join(' ');
+  });
 }

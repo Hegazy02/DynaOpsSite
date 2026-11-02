@@ -21,7 +21,11 @@ export interface IndustriesHeroCopy {
   emphasis?: string;
   // Industry artwork on the shared 440x350 frame; Figma mirrors it in Arabic.
   image: IndustriesHeroImage;
+  // English text column on tablet when the page's Figma frame narrows it from the default 640px.
+  tabletWidth?: IndustriesHeroTabletWidth;
 }
+
+export type IndustriesHeroTabletWidth = 580;
 
 export interface IndustriesHeroDefaults {
   cta: IndustriesHeroCta;

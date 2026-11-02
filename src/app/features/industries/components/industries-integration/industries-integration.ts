@@ -18,5 +18,6 @@ import type { IndustriesIntegrationImage } from './industries-integration.model'
 export class IndustriesIntegration {
   readonly title = input.required<string>();
   readonly paragraphs = input.required<string[]>();
+  readonly allParagraphsOnTablet = input(false);
   readonly image = input<IndustriesIntegrationImage>(INDUSTRIES_INTEGRATION_DEFAULTS.image);
 }

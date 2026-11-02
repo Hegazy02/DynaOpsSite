@@ -3,6 +3,7 @@
   [subtitle]="content().hero.subtitle"
   [emphasis]="content().hero.emphasis"
   [image]="content().hero.image"
+  [tabletWidth]="content().hero.tabletWidth"
 />
 <ng-content select="[industryAfterHero]" />
 
@@ -12,6 +13,7 @@
 <app-industries-integration
   [title]="content().integration.title"
   [paragraphs]="content().integration.paragraphs"
+  [allParagraphsOnTablet]="content().integration.allParagraphsOnTablet ?? false"
 />
 <ng-content select="[industryAfterIntegration]" />
 
@@ -32,9 +34,11 @@
     imageBehindGradient
   >
     <!-- 800px: one-line CTA titles up to Retail's, longer ones balance onto two lines as in Figma. -->
-    <div class="flex max-w-200 flex-col gap-4">
-      <h2 class="text-balance text-h2 md:text-h1">{{ content().footerCta.title }}</h2>
-      <p class="mx-auto max-w-165 text-balance text-body-md">
+    <div class="flex max-w-200 flex-col gap-4" [class]="ctaTextClass()">
+      <h2 class="text-balance text-h2 md:text-h1" [class]="ctaTitleClass()">
+        {{ content().footerCta.title }}
+      </h2>
+      <p class="mx-auto max-w-165 text-balance text-body-md" [class]="ctaDescriptionClass()">
         {{ content().footerCta.description }}
       </p>
     </div>
