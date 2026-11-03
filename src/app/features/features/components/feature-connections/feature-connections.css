@@ -1,0 +1,46 @@
+/* Faint resting connector (Figma: black at 12%, 1.5px). */
+.connector-base {
+  stroke: color-mix(in srgb, var(--text-primary) 12%, transparent);
+  stroke-width: 1.546;
+}
+
+/* Brand pulse travelling down each connector: Figma path trim, 2s linear loop, all five in step. */
+.connector-pulse {
+  stroke: var(--bg-brand);
+  stroke-width: 2.577;
+  stroke-linecap: round;
+  stroke-dasharray: 0 1;
+  animation: connector-pulse 2s linear infinite;
+}
+
+@keyframes connector-pulse {
+  0% {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: 0;
+    visibility: hidden;
+  }
+  17.5% {
+    stroke-dasharray: 0.2188 1;
+    stroke-dashoffset: 0;
+    visibility: visible;
+  }
+  80% {
+    stroke-dasharray: 0.2188 1;
+    stroke-dashoffset: -0.7812;
+    visibility: visible;
+  }
+  97.5%,
+  100% {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: -1;
+    visibility: hidden;
+  }
+}
+
+/* Without motion the connectors rest fully drawn, as the static Figma frame shows them. */
+@media (prefers-reduced-motion: reduce) {
+  .connector-pulse {
+    animation: none;
+    stroke-dasharray: none;
+  }
+}

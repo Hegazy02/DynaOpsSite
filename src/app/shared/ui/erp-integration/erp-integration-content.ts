@@ -1,9 +1,9 @@
-import type { IndustriesIntegrationDefaults } from './industries-integration.model';
+import type { ErpIntegrationDefaults } from './erp-integration.model';
 
 // The label inside the artwork is translated and the composition mirrored, so each language has its own folder.
 const dir = $localize`:@@industries.integration.imageDir:/images/industries/erp-integration`;
 
-export const INDUSTRIES_INTEGRATION_DEFAULTS: IndustriesIntegrationDefaults = {
+export const ERP_INTEGRATION_DEFAULTS: ErpIntegrationDefaults = {
   image: {
     base: `${dir}/base.svg`,
     tileMiddle: `${dir}/tile-middle.svg`,

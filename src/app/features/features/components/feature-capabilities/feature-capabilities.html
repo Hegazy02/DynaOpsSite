@@ -1,0 +1,76 @@
+<div class="container-page">
+  <div class="mx-auto flex w-full max-w-300 flex-col gap-8 xl:gap-16">
+    <div class="flex flex-col gap-4 max-md:px-4 xl:max-w-189.5">
+      <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ content().title }}</h2>
+      <div class="flex flex-col gap-4 text-body-md text-fg-secondary">
+        @for (paragraph of content().paragraphs; track $index) {
+          <p>{{ paragraph }}</p>
+        }
+      </div>
+    </div>
+
+    <div class="rounded-xl border border-line-subtle bg-canvas p-2 md:px-5 md:py-6 xl:p-6">
+      <!-- Tablet and phone: every capability open, each above its own panel, separated by rules. -->
+      <ul class="flex flex-col gap-6 md:gap-5 xl:hidden">
+        @for (item of content().items; track item.title; let index = $index) {
+          <li class="flex flex-col gap-2 border-b border-line pb-6 last:border-0 last:pb-0 md:pb-5">
+            <div class="flex gap-3 p-3">
+              <span class="flex h-6.5 items-center text-label-md font-bold text-fg-brand">
+                {{ number(index) }}
+              </span>
+              <div class="flex flex-col gap-2">
+                <h3 class="text-h4 md:text-h3">{{ item.title }}</h3>
+                <p class="text-body-sm text-fg-secondary md:text-body-md">{{ item.description }}</p>
+              </div>
+            </div>
+            <app-feature-capability-panel class="h-82.5" [images]="[item.image]" />
+          </li>
+        }
+      </ul>
+
+      <!-- Desktop: choosing a capability opens its description and swaps the panel artwork. -->
+      <div class="hidden gap-6 xl:flex">
+        <ul class="flex w-141 shrink-0 flex-col gap-2">
+          @for (item of content().items; track item.title; let index = $index) {
+            <li class="flex flex-col gap-2 border-b border-line pb-2 last:border-0 last:pb-0">
+              <button
+                type="button"
+                class="flex w-full gap-3 rounded-md p-3 text-start"
+                [class.cursor-pointer]="active() != index"
+                [attr.aria-expanded]="active() === index"
+                (click)="select(index)"
+              >
+                <span
+                  class="flex h-6.5 items-center text-label-md font-bold transition-colors duration-300"
+                  [class]="active() === index ? 'text-fg-brand' : 'text-fg-brand/50'"
+                >
+                  {{ number(index) }}
+                </span>
+                <span class="flex flex-1 flex-col">
+                  <span
+                    class="text-h4 transition-colors duration-300"
+                    [class]="active() === index ? 'text-fg' : 'text-fg-tertiary'"
+                  >
+                    {{ item.title }}
+                  </span>
+                  <span class="capability-detail" [class.is-open]="active() === index">
+                    <span class="overflow-hidden">
+                      <span class="block pt-2 text-body-sm text-fg-secondary">{{
+                        item.description
+                      }}</span>
+                    </span>
+                  </span>
+                </span>
+              </button>
+            </li>
+          }
+        </ul>
+        <app-feature-capability-panel
+          class="min-h-91.5 flex-1"
+          [images]="images()"
+          [active]="active()"
+        />
+      </div>
+    </div>
+  </div>
+</div>

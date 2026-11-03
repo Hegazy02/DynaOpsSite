@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import type { RouteSeo } from './core/seo/seo.model';
+import { CUSTOMER_MANAGEMENT_CONTENT } from './features/features/customer-management/customer-management-content';
 import { BUILDING_MATERIALS_CONTENT } from './features/industries/building-materials/building-materials-content';
 import { CONSUMER_GOODS_CONTENT } from './features/industries/consumer-goods/consumer-goods-content';
 import { INDUSTRIAL_SUPPLIES_CONTENT } from './features/industries/industrial-supplies/industrial-supplies-content';
@@ -87,6 +88,15 @@ export const routes: Routes = [
       ),
     title: INDUSTRIAL_SUPPLIES_CONTENT.title,
     data: { seo: { description: INDUSTRIAL_SUPPLIES_CONTENT.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features/customer-management',
+    loadComponent: () =>
+      import('./features/features/customer-management/customer-management').then(
+        (m) => m.CustomerManagement,
+      ),
+    title: CUSTOMER_MANAGEMENT_CONTENT.title,
+    data: { seo: { description: CUSTOMER_MANAGEMENT_CONTENT.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {

@@ -1,6 +1,6 @@
 import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industries-hero-content';
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
-import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
+import type { ErpIntegrationCopy } from '../../../shared/ui/erp-integration/erp-integration.model';
 import { INDUSTRIES_VISIBILITY_DEFAULTS } from '../components/industries-visibility/industries-visibility-content';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
 import { pickFeatureCards } from '../components/industry-features/industry-features-content';
@@ -47,7 +47,7 @@ const FEATURES: IndustryFeaturesContent = {
 
 // Figma sets the sentences as one text with line breaks, kept on every width.
 // The Arabic copy has two paragraphs, so its third id is empty and dropped here.
-const INTEGRATION: IndustriesIntegrationCopy = {
+const INTEGRATION: ErpIntegrationCopy = {
   title: $localize`:@@industrial-supplies.integration.title:Connect Industrial Sales with Microsoft Dynamics 365 F&O`,
   paragraphs: [
     $localize`:@@industrial-supplies.integration.paragraph-1:DynaOps extends Microsoft Dynamics 365 Finance & Operations into your field sales operations.`,

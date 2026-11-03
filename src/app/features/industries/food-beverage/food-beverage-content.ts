@@ -1,6 +1,6 @@
 import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industries-hero-content';
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
-import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
+import type { ErpIntegrationCopy } from '../../../shared/ui/erp-integration/erp-integration.model';
 import { INDUSTRIES_VISIBILITY_DEFAULTS } from '../components/industries-visibility/industries-visibility-content';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
 import { pickFeatureCards } from '../components/industry-features/industry-features-content';
@@ -39,7 +39,7 @@ const FEATURES: IndustryFeaturesContent = {
   ]),
 };
 
-const INTEGRATION: IndustriesIntegrationCopy = {
+const INTEGRATION: ErpIntegrationCopy = {
   title: $localize`:@@food-beverage.integration.title:Your Field Sales, Connected to Microsoft Dynamics 365 F&O`,
   paragraphs: [
     $localize`:@@food-beverage.integration.paragraph-1:DynaOps connects field sales transactions with Microsoft Dynamics 365 Finance & Operations, keeping customer, product, pricing, and inventory information aligned with your ERP processes.`,

@@ -1,6 +1,6 @@
 import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industries-hero-content';
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
-import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
+import type { ErpIntegrationCopy } from '../../../shared/ui/erp-integration/erp-integration.model';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
 import { pickFeatureCards } from '../components/industry-features/industry-features-content';
 import type { IndustryFeaturesContent } from '../components/industry-features/industry-features.model';
@@ -41,7 +41,7 @@ const FEATURES: IndustryFeaturesContent = {
 };
 
 // The artwork comes from the section defaults.
-const INTEGRATION: IndustriesIntegrationCopy = {
+const INTEGRATION: ErpIntegrationCopy = {
   title: $localize`:@@fmcg.integration.title:Built for Microsoft Dynamics 365 Finance & Operations`,
   paragraphs: [
     $localize`:@@fmcg.integration.paragraph-1:DynaOps connects your field sales operation with Microsoft Dynamics 365 F&O, helping your team work with ERP data and processes without creating a disconnected sales system.`,
