@@ -33,9 +33,14 @@ export class IndustryPage {
   readonly content = input.required<IndustryPageContent>();
 
   // Full class names so Tailwind's scanner sees them.
-  protected readonly ctaTextClass = computed(() =>
-    this.content().footerCtaFormat?.englishTitleOneLine ? 'xl:ltr:max-w-none' : '',
-  );
+  protected readonly ctaTextClass = computed(() => {
+    const format = this.content().footerCtaFormat;
+    return [
+      format?.englishTitleOneLine ? 'xl:ltr:max-w-none' : '',
+      // Wider than the padded 608px box; the centred column spills into the padding as in Figma.
+      format?.englishTabletTextWidth === 660 ? 'md:max-xl:ltr:w-165' : '',
+    ].join(' ');
+  });
   protected readonly ctaTitleClass = computed(() => {
     const format = this.content().footerCtaFormat;
     return [
@@ -60,4 +65,6 @@ export class IndustryPage {
 const ENGLISH_DESCRIPTION_WIDTH = {
   588: 'xl:ltr:max-w-147 xl:ltr:text-wrap',
   604: 'xl:ltr:max-w-151 xl:ltr:text-wrap',
+  // The shared 660px box, wrapped naturally at every width.
+  660: 'ltr:text-wrap',
 } as const;

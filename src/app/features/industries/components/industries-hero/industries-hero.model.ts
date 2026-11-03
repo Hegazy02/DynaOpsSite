@@ -25,6 +25,8 @@ export interface IndustriesHeroCopy {
   tabletWidth?: IndustriesHeroTabletWidth;
   // Arabic title and subtitle boxes on tablet when the page's Figma frame narrows them from 640px.
   arabicTabletWidth?: IndustriesHeroArabicTabletWidth;
+  // English title boxes narrower than the column, where the page's Figma frames break the title earlier.
+  englishTitleWidth?: IndustriesHeroEnglishTitleWidth;
   // Type role of the subtitle; `subtitle` when the page's Figma frames set it in Medium -4%.
   subtitleRole?: IndustriesHeroSubtitleRole;
 }
@@ -34,6 +36,11 @@ export type IndustriesHeroTabletWidth = 554 | 580;
 export interface IndustriesHeroArabicTabletWidth {
   title: 554;
   subtitle: 486 | 504;
+}
+
+export interface IndustriesHeroEnglishTitleWidth {
+  tablet?: 516;
+  phone?: 320;
 }
 
 export type IndustriesHeroSubtitleRole = 'body' | 'subtitle';

@@ -180,6 +180,25 @@
     "consumer-goods.visibility.paragraph-2": "قارن النتائج بين المناطق البيعية، وحدد الحسابات التي تحتاج إلى متابعة، لدعم قرارات إدارة المبيعات.",
     "consumer-goods.visibility.paragraph-3": "اعرف نسبة تحقيق المستهدف حسب المنطقة والمدينة، والأصناف الأسرع والأبطأ حركة في كل منطقة.",
     "consumer-goods.cta.title": "اربط فرق المبيعات والتجار في منظومة واحدة",
-    "consumer-goods.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبيك وعملائك وعمليات البيع الميدانية بنظام الشركة الأساسي."
+    "consumer-goods.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبيك وعملائك وعمليات البيع الميدانية بنظام الشركة الأساسي.",
+    "building-materials.title": "المبيعات الميدانية لقطاع مواد البناء",
+    "building-materials.hero.title": "إدارة مبيعات التجار والمقاولين مع Microsoft Dynamics 365 F&O",
+    "building-materials.hero.subtitle": "يساعد DynaOps SFA شركات مواد البناء على إدارة علاقات التجار، وطلبات المقاولين، والأسعار الخاصة بكل عميل، والموافقات، والتحصيلات من خلال نظام مبيعات ميدانية متكامل مع Microsoft Dynamics 365 Finance & Operations.",
+    "building-materials.hero.imageAlt": "مندوب مبيعات يحمل جهازًا لوحيًا بجانب أكياس أسمنت وطوب ومنصات مواد بناء",
+    "building-materials.features.eyebrow": "أتمتة قوة المبيعات عمليات بيع مواد البناء",
+    "building-materials.features.title": "مصمم لطبيعة مبيعات مواد البناء",
+    "building-materials.features.description": "تتطلب مبيعات الأسمنت والحديد ومواد التشطيب التعامل مع تجار ومقاولين في مناطق مختلفة، وأسعار تختلف حسب العميل، وطلبات تحتاج إلى التأكد من توفر المخزون قبل تسجيلها.",
+    "building-materials.integration.title": "اربط مبيعات مواد البناء بنظام Microsoft Dynamics 365",
+    "building-materials.integration.paragraph-1": "يمد DynaOps فرق المبيعات الميدانية ببيانات الأصناف والأسعار الخاصة بالعملاء والمخزون من نظام Microsoft Dynamics 365 Finance & Operations.",
+    "building-materials.integration.paragraph-2": "وتظل أوامر البيع والتحصيلات مرتبطة بعمليات النظام الأساسي للشركة، بدلًا من إدارة المعاملات بمعزل عن بيئة العمل.",
+    "building-materials.visibility.imageDir": "/images/industries/building-materials/visibility-ar",
+    "building-materials.visibility.cursorRight": "/images/industries/building-materials/visibility-ar/cursor-right.svg",
+    "building-materials.visibility.imageAlt": "لوحة المبيعات حسب المنطقة في DynaOps تعرض قيم الطلبات مقابل الهدف وعرض سعر لمقاول يحتاج إلى متابعة",
+    "building-materials.visibility.title": "رؤية أوضح لأداء المناطق البيعية",
+    "building-materials.visibility.paragraph-1": "مراقبة أهداف المبيعات، أداء الممثلين، أنشطة العملاء، وقيم الطلبات من خلال لوحات معلومات DynaOps.",
+    "building-materials.visibility.paragraph-2": "قارن النتائج بين المناطق وحدد حسابات العملاء التي تحتاج إلى متابعة، لدعم قرارات إدارة المبيعات.",
+    "building-materials.visibility.paragraph-3": "تابع الزيارات المنتجة، ومتوسط قيمة الطلب، والالتزام بخطوط السير لكل مندوب، وحدد نقاط البيع التي تتراجع طلباتها.",
+    "building-materials.cta.title": "اجمع عمليات مبيعات مواد البناء في نظام متصل",
+    "building-materials.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبي المبيعات وحسابات العملاء وإجراءات الموافقة بنظام Microsoft Dynamics 365 F&O"
   }
 }

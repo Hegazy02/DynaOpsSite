@@ -24,8 +24,10 @@ export interface IndustryFooterCtaFormat {
   englishTitleOneLine?: boolean;
   // English title wraps naturally at every width, in this box from xl.
   englishTitleWidth?: 660;
+  // English title and description box on tablet, where the page's Figma frame lets it overrun the 48px padding.
+  englishTabletTextWidth?: 660;
   // English description wraps naturally in this box instead.
-  englishDescriptionWidth?: 588 | 604;
+  englishDescriptionWidth?: 588 | 604 | 660;
   arabicDescriptionOneLine?: boolean;
   // Arabic title and description wrap naturally below xl instead of balancing.
   arabicNaturalWrapBelowXl?: boolean;

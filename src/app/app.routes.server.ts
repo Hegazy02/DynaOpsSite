@@ -11,5 +11,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'industries/manufacturing', renderMode: RenderMode.Prerender },
   { path: 'industries/pharmaceuticals', renderMode: RenderMode.Prerender },
   { path: 'industries/consumer-goods', renderMode: RenderMode.Prerender },
+  { path: 'industries/building-materials', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];
