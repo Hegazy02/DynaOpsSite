@@ -37,14 +37,17 @@ export class IndustryPage {
     const format = this.content().footerCtaFormat;
     return [
       format?.englishTitleOneLine ? 'xl:ltr:max-w-none' : '',
+      format?.arabicTitleOneLine ? 'xl:rtl:max-w-none' : '',
       // Wider than the padded 608px box; the centred column spills into the padding as in Figma.
-      format?.englishTabletTextWidth === 660 ? 'md:max-xl:ltr:w-165' : '',
+      format?.englishTabletTextWidth
+        ? ENGLISH_TABLET_TEXT_WIDTH[format.englishTabletTextWidth]
+        : '',
     ].join(' ');
   });
   protected readonly ctaTitleClass = computed(() => {
     const format = this.content().footerCtaFormat;
     return [
-      format?.englishTitleWidth === 660 ? 'ltr:text-wrap xl:ltr:mx-auto xl:ltr:max-w-165' : '',
+      format?.englishTitleWidth ? ENGLISH_TITLE_WIDTH[format.englishTitleWidth] : '',
       format?.arabicNaturalWrapBelowXl ? 'max-xl:rtl:text-wrap' : '',
       format?.arabicTabletTitleWidth === 560 ? 'md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-140' : '',
     ].join(' ');
@@ -62,7 +65,19 @@ export class IndustryPage {
   });
 }
 
+const ENGLISH_TABLET_TEXT_WIDTH = {
+  640: 'md:max-xl:ltr:w-160',
+  660: 'md:max-xl:ltr:w-165',
+} as const;
+
+const ENGLISH_TITLE_WIDTH = {
+  640: 'ltr:text-wrap xl:ltr:mx-auto xl:ltr:max-w-160',
+  660: 'ltr:text-wrap xl:ltr:mx-auto xl:ltr:max-w-165',
+} as const;
+
 const ENGLISH_DESCRIPTION_WIDTH = {
+  // Wrapped naturally at every width, in this box from md.
+  551: 'ltr:text-wrap md:ltr:max-w-137.75',
   588: 'xl:ltr:max-w-147 xl:ltr:text-wrap',
   604: 'xl:ltr:max-w-151 xl:ltr:text-wrap',
   // The shared 660px box, wrapped naturally at every width.

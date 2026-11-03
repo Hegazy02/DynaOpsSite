@@ -34,6 +34,7 @@ export class IndustriesHero {
   readonly tabletWidth = input<IndustriesHeroTabletWidth>();
   readonly arabicTabletWidth = input<IndustriesHeroArabicTabletWidth>();
   readonly englishTitleWidth = input<IndustriesHeroEnglishTitleWidth>();
+  readonly englishDesktopSubtitleWidth = input<558>();
   readonly subtitleRole = input<IndustriesHeroSubtitleRole>('body');
 
   // Full class names so Tailwind's scanner sees them; English column and Arabic boxes are set apart.
@@ -52,7 +53,11 @@ export class IndustriesHero {
   protected readonly subtitleClass = computed(() => {
     const role = this.subtitleRole() === 'subtitle' ? 'text-subtitle' : 'text-body-md';
     const arabic = this.arabicTabletWidth();
-    return arabic ? `${role} ${ARABIC_SUBTITLE_WIDTH[arabic.subtitle]}` : role;
+    return [
+      role,
+      arabic ? ARABIC_SUBTITLE_WIDTH[arabic.subtitle] : '',
+      this.englishDesktopSubtitleWidth() === 558 ? 'xl:ltr:max-w-139.5' : '',
+    ].join(' ');
   });
 
   // 3x screens pick the larger file; everything else keeps the 2x src.

@@ -23,11 +23,13 @@ export interface IndustryPageContent {
 export interface IndustryFooterCtaFormat {
   englishTitleOneLine?: boolean;
   // English title wraps naturally at every width, in this box from xl.
-  englishTitleWidth?: 660;
+  englishTitleWidth?: 640 | 660;
   // English title and description box on tablet, where the page's Figma frame lets it overrun the 48px padding.
-  englishTabletTextWidth?: 660;
+  englishTabletTextWidth?: 640 | 660;
   // English description wraps naturally in this box instead.
-  englishDescriptionWidth?: 588 | 604 | 660;
+  englishDescriptionWidth?: 551 | 588 | 604 | 660;
+  // Arabic title and description share one line each from xl, past the shared 800px column.
+  arabicTitleOneLine?: boolean;
   arabicDescriptionOneLine?: boolean;
   // Arabic title and description wrap naturally below xl instead of balancing.
   arabicNaturalWrapBelowXl?: boolean;

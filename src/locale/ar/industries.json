@@ -199,6 +199,27 @@
     "building-materials.visibility.paragraph-2": "قارن النتائج بين المناطق وحدد حسابات العملاء التي تحتاج إلى متابعة، لدعم قرارات إدارة المبيعات.",
     "building-materials.visibility.paragraph-3": "تابع الزيارات المنتجة، ومتوسط قيمة الطلب، والالتزام بخطوط السير لكل مندوب، وحدد نقاط البيع التي تتراجع طلباتها.",
     "building-materials.cta.title": "اجمع عمليات مبيعات مواد البناء في نظام متصل",
-    "building-materials.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبي المبيعات وحسابات العملاء وإجراءات الموافقة بنظام Microsoft Dynamics 365 F&O"
+    "building-materials.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبي المبيعات وحسابات العملاء وإجراءات الموافقة بنظام Microsoft Dynamics 365 F&O",
+    "industrial-supplies.title": "المبيعات الميدانية لقطاع المستلزمات الصناعية",
+    "industrial-supplies.hero.title": "اربط مبيعات المصانع والعملاء الصناعيين بنظام Microsoft Dynamics 365 F&O",
+    "industrial-supplies.hero.subtitle": "يساعد DynaOps SFA شركات توزيع المستلزمات الصناعية على إدارة حسابات العملاء، وتوفر الأصناف، وأوامر البيع، والأسعار، والتحصيلات من خلال نظام متكامل مع",
+    "industrial-supplies.hero.emphasis": "Microsoft Dynamics 365 Finance & Operations.",
+    "industrial-supplies.hero.imageAlt": "مندوب مبيعات يحمل جهازًا لوحيًا بجانب صناديق محركات كهربائية وبراميل وصندوق عدة على رافعة منصات",
+    "industrial-supplies.features.eyebrow": "أتمتة قوة المبيعات عمليات مبيعات المستلزمات الصناعية",
+    "industrial-supplies.features.title": "مصمم لطبيعة مبيعات المستلزمات الصناعية",
+    "industrial-supplies.features.description": "تتطلب خدمة المصانع وشركات الصيانة والمنشآت الصناعية الوصول إلى معلومات دقيقة عن الأصناف والمخزون والأسعار، إلى جانب المتابعة المستمرة لحسابات العملاء وطلباتهم.",
+    "industrial-supplies.integration.title": "مبيعات صناعية متصلة بنظام Microsoft Dynamics 365",
+    "industrial-supplies.integration.paragraph-1": "يربط DynaOps عمليات المبيعات الميدانية بنظام Microsoft Dynamics 365 Finance & Operations.",
+    "industrial-supplies.integration.paragraph-2": "يستطيع مندوب المبيعات الوصول إلى بيانات العملاء والأصناف والأسعار والمخزون، مع استمرار ارتباط أوامر البيع والتحصيلات بعمليات النظام الأساسي للشركة.",
+    "industrial-supplies.integration.paragraph-3": "",
+    "industrial-supplies.visibility.imageDir": "/images/industries/industrial-supplies/visibility-ar",
+    "industrial-supplies.visibility.cursorRight": "/images/industries/industrial-supplies/visibility-ar/cursor-right.svg",
+    "industrial-supplies.visibility.imageAlt": "لوحة نشاط الحسابات في DynaOps تعرض قيمة الطلبات مقابل الهدف وآخر الأنشطة وحسابًا يحتاج إلى متابعة",
+    "industrial-supplies.visibility.title": "رؤية أوضح لأداء الحسابات والمناطق الصناعية",
+    "industrial-supplies.visibility.paragraph-1": "تابع المستهدفات البيعية، وأداء المندوبين، وأنشطة العملاء، وقيم أوامر البيع من خلال لوحات معلومات DynaOps.",
+    "industrial-supplies.visibility.paragraph-2": "قارن الأداء بين المناطق البيعية، وحدد الحسابات الصناعية التي تحتاج إلى متابعة إضافية، لدعم قرارات إدارة المبيعات.",
+    "industrial-supplies.visibility.paragraph-3": "تابع عملاء المشاريع والعقود من عرض السعر حتى الطلب المتكرر، وراجع حدود الائتمان والأرصدة المستحقة قبل اعتماد الطلبات الجديدة.",
+    "industrial-supplies.cta.title": "اجمع عمليات مبيعات المستلزمات الصناعية في نظام متصل",
+    "industrial-supplies.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبي المبيعات وحسابات العملاء الصناعيين وأوامر البيع بنظام Microsoft Dynamics 365 F&O"
   }
 }

@@ -27,6 +27,8 @@ export interface IndustriesHeroCopy {
   arabicTabletWidth?: IndustriesHeroArabicTabletWidth;
   // English title boxes narrower than the column, where the page's Figma frames break the title earlier.
   englishTitleWidth?: IndustriesHeroEnglishTitleWidth;
+  // English subtitle box from xl when Figma's wider glyph metrics wrap a word earlier than the 570px column does.
+  englishDesktopSubtitleWidth?: 558;
   // Type role of the subtitle; `subtitle` when the page's Figma frames set it in Medium -4%.
   subtitleRole?: IndustriesHeroSubtitleRole;
 }
