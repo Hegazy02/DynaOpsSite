@@ -33,7 +33,7 @@ export type IndustriesHeroTabletWidth = 554 | 580;
 
 export interface IndustriesHeroArabicTabletWidth {
   title: 554;
-  subtitle: 486;
+  subtitle: 486 | 504;
 }
 
 export type IndustriesHeroSubtitleRole = 'body' | 'subtitle';

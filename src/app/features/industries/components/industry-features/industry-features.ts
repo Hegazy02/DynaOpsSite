@@ -38,5 +38,6 @@ const DESKTOP_WIDTH = {
   586: 'xl:max-w-146.5',
   768: 'xl:max-w-192',
   780: 'xl:max-w-195',
+  840: 'xl:max-w-210',
 } as const;
 const ARABIC_DESKTOP_WIDTH = { 506: 'xl:rtl:max-w-126.5', 640: 'xl:rtl:max-w-160' } as const;

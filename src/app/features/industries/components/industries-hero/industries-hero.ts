@@ -44,9 +44,8 @@ export class IndustriesHero {
   );
   protected readonly subtitleClass = computed(() => {
     const role = this.subtitleRole() === 'subtitle' ? 'text-subtitle' : 'text-body-md';
-    return this.arabicTabletWidth()
-      ? `${role} md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-121.5`
-      : role;
+    const arabic = this.arabicTabletWidth();
+    return arabic ? `${role} ${ARABIC_SUBTITLE_WIDTH[arabic.subtitle]}` : role;
   });
 
   // 3x screens pick the larger file; everything else keeps the 2x src.
@@ -59,4 +58,8 @@ export class IndustriesHero {
 const TABLET_WIDTH = {
   554: 'md:max-xl:ltr:max-w-138.5',
   580: 'md:max-xl:ltr:max-w-145',
+} as const;
+const ARABIC_SUBTITLE_WIDTH = {
+  486: 'md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-121.5',
+  504: 'md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-126',
 } as const;

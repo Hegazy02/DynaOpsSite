@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import type { RouteSeo } from './core/seo/seo.model';
+import { CONSUMER_GOODS_CONTENT } from './features/industries/consumer-goods/consumer-goods-content';
 import { FMCG_CONTENT } from './features/industries/fmcg/fmcg-content';
 import { FOOD_BEVERAGE_CONTENT } from './features/industries/food-beverage/food-beverage-content';
 import { MANUFACTURING_CONTENT } from './features/industries/manufacturing/manufacturing-content';
@@ -59,6 +60,13 @@ export const routes: Routes = [
       ),
     title: PHARMACEUTICALS_CONTENT.title,
     data: { seo: { description: PHARMACEUTICALS_CONTENT.description } satisfies RouteSeo },
+  },
+  {
+    path: 'industries/consumer-goods',
+    loadComponent: () =>
+      import('./features/industries/consumer-goods/consumer-goods').then((m) => m.ConsumerGoods),
+    title: CONSUMER_GOODS_CONTENT.title,
+    data: { seo: { description: CONSUMER_GOODS_CONTENT.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {

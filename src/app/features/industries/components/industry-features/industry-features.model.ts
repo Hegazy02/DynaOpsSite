@@ -21,7 +21,7 @@ export interface IndustryFeaturesContent {
 
 export interface IndustryFeaturesDescriptionWidth {
   tablet?: 430 | 492 | 640;
-  desktop?: 492 | 586 | 768 | 780;
+  desktop?: 492 | 586 | 768 | 780 | 840;
   // Arabic copy runs on one line from xl unless the page's Figma frame wraps it in a box.
   arabicDesktop?: 506 | 640;
 }

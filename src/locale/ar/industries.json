@@ -160,6 +160,26 @@
     "pharmaceuticals.visibility.paragraph-2": "قارن الأنشطة بين المناطق البيعية، وحدد حسابات العملاء التي تحتاج إلى متابعة.",
     "pharmaceuticals.visibility.paragraph-3": "قِس معدل الزيارات مقابل خطة زيارات كل صيدلية ومستشفى، وتابع طلبات الأصناف عبر سلاسل الصيدليات لكل مندوب، لتعرف أي الحسابات تحتاج إلى زيارات إضافية خلال الشهر.",
     "pharmaceuticals.cta.title": "اربط شبكة مبيعات الأدوية في منظومة واحدة",
-    "pharmaceuticals.cta.description": "اكتشف كيف يساعد DynaOps فريقك على إدارة علاقات الصيدليات وطلبات الأدوية والأنشطة البيعية من خلال نظام متكامل."
+    "pharmaceuticals.cta.description": "اكتشف كيف يساعد DynaOps فريقك على إدارة علاقات الصيدليات وطلبات الأدوية والأنشطة البيعية من خلال نظام متكامل.",
+    "consumer-goods.title": "المبيعات الميدانية لقطاع السلع الاستهلاكية",
+    "consumer-goods.hero.title": "اربط مبيعات التجار والموزعين مع Microsoft Dynamics 365 F&O",
+    "consumer-goods.hero.subtitle": "يساعد DynaOps SFA شركات السلع الاستهلاكية على إدارة علاقات تجار التجزئة، وطلبات البيع الميدانية، والأسعار، والعروض الترويجية، وتغطية المناطق من خلال نظام أتمتة مبيعات متكامل مع",
+    "consumer-goods.hero.emphasis": "Microsoft Dynamics 365 Finance & Operations.",
+    "consumer-goods.hero.imageAlt": "مندوب مبيعات يحمل جهازًا لوحيًا أمام متجر تجزئة بجانب عربة عليها منتجات منزلية معبأة",
+    "consumer-goods.features.eyebrow": "أتمتة قوة المبيعات عمليات بيع وتوزيع السلع الاستهلاكية",
+    "consumer-goods.features.title": "مصمم لعمليات بيع وتوزيع السلع الاستهلاكية",
+    "consumer-goods.features.description": "تتطلب إدارة المبيعات عبر متاجر التجزئة والموزعين وتجار الجملة الوصول إلى معلومات دقيقة عن المنتجات، وتغطية العملاء بانتظام، والتحكم في الأسعار والخصومات.",
+    "consumer-goods.integration.title": "متكامل مع Microsoft Dynamics 365 Finance & Operations",
+    "consumer-goods.integration.paragraph-1": "يمد DynaOps عمليات المبيعات الميدانية ببيانات العملاء والمنتجات والأسعار والمخزون من نظام Dynamics 365، مع ربط معاملات البيع بعمليات النظام الأساسي.",
+    "consumer-goods.integration.paragraph-2": "يعمل فريق المبيعات من خلال واجهة مخصصة للعمليات الميدانية، بينما يظل Dynamics 365 هو نظام إدارة موارد الشركة الأساسي.",
+    "consumer-goods.visibility.imageDir": "/images/industries/consumer-goods/visibility-ar",
+    "consumer-goods.visibility.cursorRight": "/images/industries/consumer-goods/visibility-ar/cursor-right.svg",
+    "consumer-goods.visibility.imageAlt": "لوحة الأداء الإقليمي في DynaOps تعرض التغطية حسب المنطقة والمدينة وثلاثة حسابات تحتاج إلى اهتمام",
+    "consumer-goods.visibility.title": "تابع أداء المبيعات في مختلف المناطق",
+    "consumer-goods.visibility.paragraph-1": "تتبع أهداف المبيعات، أداء الممثلين، تغطية العملاء، وأنشطة الطلبات من خلال لوحات معلومات DynaOps.",
+    "consumer-goods.visibility.paragraph-2": "قارن النتائج بين المناطق البيعية، وحدد الحسابات التي تحتاج إلى متابعة، لدعم قرارات إدارة المبيعات.",
+    "consumer-goods.visibility.paragraph-3": "اعرف نسبة تحقيق المستهدف حسب المنطقة والمدينة، والأصناف الأسرع والأبطأ حركة في كل منطقة.",
+    "consumer-goods.cta.title": "اربط فرق المبيعات والتجار في منظومة واحدة",
+    "consumer-goods.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبيك وعملائك وعمليات البيع الميدانية بنظام الشركة الأساسي."
   }
 }

@@ -22,9 +22,14 @@ export interface IndustryPageContent {
 // Footer CTA wrapping from xl where a page's Figma frame differs from the shared 800px title / 660px balanced description.
 export interface IndustryFooterCtaFormat {
   englishTitleOneLine?: boolean;
+  // English title wraps naturally at every width, in this box from xl.
+  englishTitleWidth?: 660;
   // English description wraps naturally in this box instead.
   englishDescriptionWidth?: 588 | 604;
   arabicDescriptionOneLine?: boolean;
   // Arabic title and description wrap naturally below xl instead of balancing.
   arabicNaturalWrapBelowXl?: boolean;
+  // Narrower Arabic boxes that reproduce Figma's breaks, whose Arabic glyphs set wider than the web font.
+  arabicTabletTitleWidth?: 560;
+  arabicPhoneDescriptionWidth?: 308;
 }

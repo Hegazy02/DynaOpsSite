@@ -36,9 +36,14 @@ export class IndustryPage {
   protected readonly ctaTextClass = computed(() =>
     this.content().footerCtaFormat?.englishTitleOneLine ? 'xl:ltr:max-w-none' : '',
   );
-  protected readonly ctaTitleClass = computed(() =>
-    this.content().footerCtaFormat?.arabicNaturalWrapBelowXl ? 'max-xl:rtl:text-wrap' : '',
-  );
+  protected readonly ctaTitleClass = computed(() => {
+    const format = this.content().footerCtaFormat;
+    return [
+      format?.englishTitleWidth === 660 ? 'ltr:text-wrap xl:ltr:mx-auto xl:ltr:max-w-165' : '',
+      format?.arabicNaturalWrapBelowXl ? 'max-xl:rtl:text-wrap' : '',
+      format?.arabicTabletTitleWidth === 560 ? 'md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-140' : '',
+    ].join(' ');
+  });
   protected readonly ctaDescriptionClass = computed(() => {
     const format = this.content().footerCtaFormat;
     return [
@@ -47,6 +52,7 @@ export class IndustryPage {
         : '',
       format?.arabicDescriptionOneLine ? 'xl:rtl:max-w-none' : '',
       format?.arabicNaturalWrapBelowXl ? 'max-xl:rtl:text-wrap' : '',
+      format?.arabicPhoneDescriptionWidth === 308 ? 'max-md:rtl:max-w-77' : '',
     ].join(' ');
   });
 }
