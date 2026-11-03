@@ -18,6 +18,8 @@ export interface IndustriesIntegrationCopy {
   paragraphs: string[];
   // Shows every paragraph from md when the page's tablet frame keeps them all.
   allParagraphsOnTablet?: boolean;
+  // Shows every paragraph at every width when the phone frame keeps them too.
+  allParagraphsOnPhone?: boolean;
 }
 
 export interface IndustriesIntegrationDefaults {

@@ -15,6 +15,7 @@ import type { IndustriesVisibilityImage } from './industries-visibility.model';
 export class IndustriesVisibility {
   readonly title = input.required<string>();
   readonly paragraphs = input.required<string[]>();
+  readonly lastParagraphDesktopOnly = input(false);
   readonly image = input<IndustriesVisibilityImage>();
 
   protected readonly art = computed(() => this.image() ?? INDUSTRIES_VISIBILITY_DEFAULTS.image);

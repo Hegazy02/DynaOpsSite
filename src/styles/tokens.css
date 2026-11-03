@@ -85,8 +85,7 @@
   /* Font stacks */
   --font-family-latin:
     'Montserrat', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif;
-  --font-family-arabic:
-    'IBM Plex Sans Arabic', 'Montserrat', 'Segoe UI', Tahoma, Arial, sans-serif;
+  --font-family-arabic: 'IBM Plex Sans Arabic', 'Montserrat', 'Segoe UI', Tahoma, Arial, sans-serif;
 }
 
 /* --------------------------------------------------------------------------
@@ -152,9 +151,12 @@
   --line-height-label-sm: 1rem; /* 16 */
   --line-height-caption: 1.125rem; /* 18 */
   --line-height-eyebrow: 1rem; /* 16 */
+  --line-height-subtitle: 1.5rem; /* 24 */
 
   --letter-spacing-display: -1.5px;
   --letter-spacing-heading: -1px;
+  --letter-spacing-subtitle: -0.04em;
+  --font-weight-subtitle: 500;
 }
 
 :lang(ar) {
@@ -173,7 +175,10 @@
   --line-height-label-sm: 1.25rem; /* 20 */
   --line-height-caption: 1.25rem; /* 20 */
   --line-height-eyebrow: 1.125rem; /* 18 */
+  --line-height-subtitle: 1.75rem; /* 28 */
 
   --letter-spacing-display: 0;
   --letter-spacing-heading: 0;
+  --letter-spacing-subtitle: 0;
+  --font-weight-subtitle: 400;
 }

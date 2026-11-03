@@ -23,9 +23,20 @@ export interface IndustriesHeroCopy {
   image: IndustriesHeroImage;
   // English text column on tablet when the page's Figma frame narrows it from the default 640px.
   tabletWidth?: IndustriesHeroTabletWidth;
+  // Arabic title and subtitle boxes on tablet when the page's Figma frame narrows them from 640px.
+  arabicTabletWidth?: IndustriesHeroArabicTabletWidth;
+  // Type role of the subtitle; `subtitle` when the page's Figma frames set it in Medium -4%.
+  subtitleRole?: IndustriesHeroSubtitleRole;
 }
 
-export type IndustriesHeroTabletWidth = 580;
+export type IndustriesHeroTabletWidth = 554 | 580;
+
+export interface IndustriesHeroArabicTabletWidth {
+  title: 554;
+  subtitle: 486;
+}
+
+export type IndustriesHeroSubtitleRole = 'body' | 'subtitle';
 
 export interface IndustriesHeroDefaults {
   cta: IndustriesHeroCta;

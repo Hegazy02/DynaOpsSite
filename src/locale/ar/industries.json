@@ -140,6 +140,26 @@
     "manufacturing.visibility.paragraph-1": "تابع المستهدفات البيعية، وحركة الطلبات، وأداء المندوبين من خلال لوحات معلومات DynaOps.",
     "manufacturing.visibility.paragraph-2": "قارن النتائج بين المناطق البيعية، وتابع أنشطة حسابات الموزعين، وحدد العملاء الذين يحتاجون إلى متابعة.",
     "manufacturing.cta.title": "اجمع شبكة مبيعات المصنع في منظومة متصلة",
-    "manufacturing.cta.description": "اكتشف كيف يساعد DynaOps على ربط الموزعين وأوامر البيع وإجراءات الموافقة بنظام Microsoft Dynamics 365 F&O"
+    "manufacturing.cta.description": "اكتشف كيف يساعد DynaOps على ربط الموزعين وأوامر البيع وإجراءات الموافقة بنظام Microsoft Dynamics 365 F&O",
+    "pharmaceuticals.title": "المبيعات الميدانية لقطاع الأدوية",
+    "pharmaceuticals.hero.title": "اربط مبيعات الصيدليات بنظام Microsoft Dynamics 365 F&O",
+    "pharmaceuticals.hero.subtitle": "يساعد DynaOps SFA شركات توزيع الأدوية على إدارة زيارات الصيدليات، وطلبات الأدوية، ومعلومات المخزون، والتحصيلات من خلال نظام مبيعات ميدانية متكامل مع",
+    "pharmaceuticals.hero.emphasis": "Microsoft Dynamics 365 Finance & Operations.",
+    "pharmaceuticals.hero.imageAlt": "مندوب مبيعات يتفقد هاتفه أمام صيدلية تحمل علامة الصليب الأخضر",
+    "pharmaceuticals.features.eyebrow": "أتمتة قوة المبيعات عمليات مبيعات وتوزيع الأدوية",
+    "pharmaceuticals.features.title": "مصمم لطبيعة مبيعات وتوزيع الأدوية",
+    "pharmaceuticals.features.description": "تحتاج شركات توزيع الأدوية إلى تغطية الصيدليات بانتظام، وتسجيل طلباتها بدقة، والوصول إلى معلومات موثوقة عن الأصناف والمخزون.",
+    "pharmaceuticals.integration.title": "متكامل مع Microsoft Dynamics 365 Finance & Operations",
+    "pharmaceuticals.integration.paragraph-1": "يربط DynaOps عمليات المبيعات الميدانية ببيانات العملاء والأصناف والأسعار والمخزون في نظام الشركة.",
+    "pharmaceuticals.integration.paragraph-2": "وتظل إدارة أرقام التشغيلات وتواريخ صلاحية الأدوية ضمن Dynamics 365، الذي يدعم إدارة العمر التخزيني للأصناف وفقًا للإعدادات المطبقة.",
+    "pharmaceuticals.visibility.imageDir": "/images/industries/pharmaceuticals/visibility-ar",
+    "pharmaceuticals.visibility.cursorRight": "/images/industries/pharmaceuticals/visibility-ar/cursor-right.svg",
+    "pharmaceuticals.visibility.imageAlt": "لوحة مبيعات الأدوية في DynaOps تعرض الزيارات والطلبات والتغطية حسب المنطقة وصيدلية تحتاج إلى متابعة",
+    "pharmaceuticals.visibility.title": "رؤية أوضح لأداء مبيعات الأدوية",
+    "pharmaceuticals.visibility.paragraph-1": "تتبع تغطية الصيدليات، الزيارات المكتملة، أهداف المبيعات، الطلبات، وأداء الممثلين من خلال لوحات معلومات DynaOps.",
+    "pharmaceuticals.visibility.paragraph-2": "قارن الأنشطة بين المناطق البيعية، وحدد حسابات العملاء التي تحتاج إلى متابعة.",
+    "pharmaceuticals.visibility.paragraph-3": "قِس معدل الزيارات مقابل خطة زيارات كل صيدلية ومستشفى، وتابع طلبات الأصناف عبر سلاسل الصيدليات لكل مندوب، لتعرف أي الحسابات تحتاج إلى زيارات إضافية خلال الشهر.",
+    "pharmaceuticals.cta.title": "اربط شبكة مبيعات الأدوية في منظومة واحدة",
+    "pharmaceuticals.cta.description": "اكتشف كيف يساعد DynaOps فريقك على إدارة علاقات الصيدليات وطلبات الأدوية والأنشطة البيعية من خلال نظام متكامل."
   }
 }

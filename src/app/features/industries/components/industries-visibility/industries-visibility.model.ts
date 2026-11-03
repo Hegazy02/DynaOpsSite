@@ -21,6 +21,8 @@ export interface IndustriesVisibilityImage {
 export interface IndustriesVisibilityCopy {
   title: string;
   paragraphs: string[];
+  // Hides the last paragraph below xl when the tablet and phone frames drop it.
+  lastParagraphDesktopOnly?: boolean;
   image?: IndustriesVisibilityImage;
 }
 

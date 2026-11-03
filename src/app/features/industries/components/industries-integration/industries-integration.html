@@ -41,7 +41,7 @@
       <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ title() }}</h2>
       <div class="flex flex-col text-body-md text-fg-secondary">
         @for (paragraph of paragraphs(); track $index) {
-          <p class="hidden first:block xl:block" [class]="allParagraphsOnTablet() ? 'md:block' : ''">
+          <p [class]="paragraphClass()">
             {{ paragraph }}
           </p>
         }

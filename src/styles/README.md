@@ -48,7 +48,7 @@ Component styles sit outside Tailwind's layers, so they win over utilities on th
 | `radius/sm md lg xl full` (6 10 16 24 pill)                        | `--radius-md`                         | `rounded-sm` `rounded-md` `rounded-lg` `rounded-xl` `rounded-full`                                                              |
 | `Shadow/xs sm md lg`                                               | `--shadow-md`                         | `shadow-xs` `shadow-sm` `shadow-md` `shadow-lg`                                                                                 |
 | `border/hairline`, `border/thick`                                  | `--border-hairline`, `--border-thick` | `border`, `border-2`                                                                                                            |
-| Text styles `EN/*` and `AR/*`                                      | —                                     | `text-display-lg` `text-display-md` `text-h1` … `text-h4` `text-body-lg/md/sm` `text-label-md/sm` `text-caption` `text-eyebrow` |
+| Text styles `EN/*` and `AR/*`                                      | —                                     | `text-display-lg` `text-display-md` `text-h1` … `text-h4` `text-body-lg/md/sm` `text-label-md/sm` `text-caption` `text-eyebrow` `text-subtitle` |
 
 The default Tailwind colour palette is intentionally removed (`bg-blue-500` will not compile),
 and the `text-*` size scale is replaced with the Figma one, so `text-sm` is 16px here.
@@ -81,5 +81,8 @@ width/height attributes are only Figma's default export size.
   brand border Figma shows, since the tokens exist for exactly that state.
 - `--accent-teal` (#33c8cf) is a code-side primitive for the footer backdrop gradient; Figma uses
   the raw colour there with no variable. Add it to the design-system file if it spreads.
+- `text-subtitle` (16px Medium, -4%, 24px leading in English; Body/Medium metrics in Arabic) has no
+  Figma text style: the Retail, Manufacturing and Pharmaceuticals hero subtitles override
+  Body/Medium by hand. Add the style to the design-system file if it spreads.
 - The typography frames are labelled "Inter" and "Cairo", but every text style in the file
   uses Montserrat and IBM Plex Sans Arabic. The code follows the styles.

@@ -72,6 +72,14 @@
   letter-spacing: 0;
 }
 
+/* Subtitle — 16px · 500 · -4% · industry hero copy; Arabic keeps the Body/Medium weight and metrics */
+@utility text-subtitle {
+  font-size: var(--font-size-sm);
+  line-height: var(--line-height-subtitle);
+  font-weight: var(--font-weight-subtitle);
+  letter-spacing: var(--letter-spacing-subtitle);
+}
+
 /* Body/Small — 14px · 400 */
 @utility text-body-sm {
   font-size: var(--font-size-xs);

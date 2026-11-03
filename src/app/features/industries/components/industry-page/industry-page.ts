@@ -26,7 +26,8 @@ import type { IndustryPageContent } from './industry-page.model';
     Button,
   ],
   templateUrl: './industry-page.html',
-  host: { class: 'block' },
+  // Figma stacks the sections 24 / 48 / 64px apart (phone / tablet / desktop), and as far again above the footer.
+  host: { class: 'flex flex-col gap-6 pb-6 md:gap-12 md:pb-12 xl:gap-16 xl:pb-16' },
 })
 export class IndustryPage {
   readonly content = input.required<IndustryPageContent>();
@@ -41,9 +42,16 @@ export class IndustryPage {
   protected readonly ctaDescriptionClass = computed(() => {
     const format = this.content().footerCtaFormat;
     return [
-      format?.englishDescriptionWidth === 588 ? 'xl:ltr:max-w-147 xl:ltr:text-wrap' : '',
+      format?.englishDescriptionWidth
+        ? ENGLISH_DESCRIPTION_WIDTH[format.englishDescriptionWidth]
+        : '',
       format?.arabicDescriptionOneLine ? 'xl:rtl:max-w-none' : '',
       format?.arabicNaturalWrapBelowXl ? 'max-xl:rtl:text-wrap' : '',
     ].join(' ');
   });
 }
+
+const ENGLISH_DESCRIPTION_WIDTH = {
+  588: 'xl:ltr:max-w-147 xl:ltr:text-wrap',
+  604: 'xl:ltr:max-w-151 xl:ltr:text-wrap',
+} as const;

@@ -1,11 +1,16 @@
-<div class="container-page py-8 xl:py-16">
+<div class="container-page py-8 xl:py-0">
   <div
     class="mx-auto flex w-full max-w-300 flex-col gap-8 xl:flex-row xl:items-center xl:justify-between xl:gap-6"
   >
     <div class="flex w-full flex-col gap-4 xl:max-w-130">
       <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ title() }}</h2>
       @for (paragraph of paragraphs(); track $index) {
-        <p class="text-body-md text-fg-secondary">{{ paragraph }}</p>
+        <p
+          class="text-body-md text-fg-secondary"
+          [class]="$last && lastParagraphDesktopOnly() ? 'max-xl:hidden' : ''"
+        >
+          {{ paragraph }}
+        </p>
       }
     </div>
 

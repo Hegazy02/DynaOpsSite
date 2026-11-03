@@ -23,7 +23,7 @@ export interface IndustryPageContent {
 export interface IndustryFooterCtaFormat {
   englishTitleOneLine?: boolean;
   // English description wraps naturally in this box instead.
-  englishDescriptionWidth?: 588;
+  englishDescriptionWidth?: 588 | 604;
   arabicDescriptionOneLine?: boolean;
   // Arabic title and description wrap naturally below xl instead of balancing.
   arabicNaturalWrapBelowXl?: boolean;

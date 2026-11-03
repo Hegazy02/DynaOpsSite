@@ -15,9 +15,12 @@ export class IndustryFeatures {
   readonly content = input.required<IndustryFeaturesContent>();
 
   // Full class names so Tailwind's scanner sees them.
-  protected readonly titleWidthClass = computed(() =>
-    this.content().titleTabletWidth === 640 ? 'md:max-w-160' : 'md:max-w-125',
-  );
+  protected readonly titleWidthClass = computed(() => {
+    const { titleTabletWidth, titleOneLineFromXl } = this.content();
+    const tablet = titleTabletWidth === 640 ? 'md:max-w-160' : 'md:max-w-125';
+    const desktop = titleOneLineFromXl ? 'xl:max-w-none' : 'xl:max-w-205 xl:text-balance';
+    return `${tablet} ${desktop}`;
+  });
   protected readonly descriptionWidthClass = computed(() => {
     const { tablet = 430, desktop = 768, arabicDesktop } = this.content().descriptionWidth ?? {};
     const arabic = arabicDesktop ? ARABIC_DESKTOP_WIDTH[arabicDesktop] : 'xl:rtl:max-w-none';
@@ -36,4 +39,4 @@ const DESKTOP_WIDTH = {
   768: 'xl:max-w-192',
   780: 'xl:max-w-195',
 } as const;
-const ARABIC_DESKTOP_WIDTH = { 640: 'xl:rtl:max-w-160' } as const;
+const ARABIC_DESKTOP_WIDTH = { 506: 'xl:rtl:max-w-126.5', 640: 'xl:rtl:max-w-160' } as const;

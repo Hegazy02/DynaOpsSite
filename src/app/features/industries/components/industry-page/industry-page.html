@@ -4,6 +4,8 @@
   [emphasis]="content().hero.emphasis"
   [image]="content().hero.image"
   [tabletWidth]="content().hero.tabletWidth"
+  [arabicTabletWidth]="content().hero.arabicTabletWidth"
+  [subtitleRole]="content().hero.subtitleRole ?? 'body'"
 />
 <ng-content select="[industryAfterHero]" />
 
@@ -14,12 +16,14 @@
   [title]="content().integration.title"
   [paragraphs]="content().integration.paragraphs"
   [allParagraphsOnTablet]="content().integration.allParagraphsOnTablet ?? false"
+  [allParagraphsOnPhone]="content().integration.allParagraphsOnPhone ?? false"
 />
 <ng-content select="[industryAfterIntegration]" />
 
 <app-industries-visibility
   [title]="content().visibility.title"
   [paragraphs]="content().visibility.paragraphs"
+  [lastParagraphDesktopOnly]="content().visibility.lastParagraphDesktopOnly ?? false"
   [image]="content().visibility.image"
 />
 <ng-content />

@@ -4,8 +4,10 @@ import { RouterLink } from '@angular/router';
 import { Button } from '../../../../shared/ui/button/button';
 import { INDUSTRIES_HERO_DEFAULTS } from './industries-hero-content';
 import type {
+  IndustriesHeroArabicTabletWidth,
   IndustriesHeroCta,
   IndustriesHeroImage,
+  IndustriesHeroSubtitleRole,
   IndustriesHeroTabletWidth,
 } from './industries-hero.model';
 
@@ -29,11 +31,23 @@ export class IndustriesHero {
   readonly image = input.required<IndustriesHeroImage>();
   readonly cta = input<IndustriesHeroCta>(INDUSTRIES_HERO_DEFAULTS.cta);
   readonly tabletWidth = input<IndustriesHeroTabletWidth>();
+  readonly arabicTabletWidth = input<IndustriesHeroArabicTabletWidth>();
+  readonly subtitleRole = input<IndustriesHeroSubtitleRole>('body');
 
-  // Full class name so Tailwind's scanner sees it; English only, the Arabic copy keeps 640px.
-  protected readonly textWidthClass = computed(() =>
-    this.tabletWidth() === 580 ? 'md:max-xl:ltr:max-w-145' : '',
+  // Full class names so Tailwind's scanner sees them; English column and Arabic boxes are set apart.
+  protected readonly textWidthClass = computed(() => {
+    const width = this.tabletWidth();
+    return width ? TABLET_WIDTH[width] : '';
+  });
+  protected readonly titleClass = computed(() =>
+    this.arabicTabletWidth() ? 'md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-138.5' : '',
   );
+  protected readonly subtitleClass = computed(() => {
+    const role = this.subtitleRole() === 'subtitle' ? 'text-subtitle' : 'text-body-md';
+    return this.arabicTabletWidth()
+      ? `${role} md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-121.5`
+      : role;
+  });
 
   // 3x screens pick the larger file; everything else keeps the 2x src.
   protected readonly srcset = computed(() => {
@@ -41,3 +55,8 @@ export class IndustriesHero {
     return src3x ? `${src} 2x, ${src3x} 3x` : null;
   });
 }
+
+const TABLET_WIDTH = {
+  554: 'md:max-xl:ltr:max-w-138.5',
+  580: 'md:max-xl:ltr:max-w-145',
+} as const;

@@ -7,8 +7,8 @@
       [class]="textWidthClass()"
     >
       <div class="flex flex-col gap-4">
-        <h1 class="text-h2 md:text-h1 xl:text-display-md">{{ title() }}</h1>
-        <p class="text-body-md text-fg-secondary">
+        <h1 class="text-h2 md:text-h1 xl:text-display-md" [class]="titleClass()">{{ title() }}</h1>
+        <p class="text-fg-secondary" [class]="subtitleClass()">
           {{ subtitle() }}
           @if (emphasis(); as emphasis) {
             <strong>{{ emphasis }}</strong>
