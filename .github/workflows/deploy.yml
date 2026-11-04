@@ -36,6 +36,11 @@ jobs:
       - name: Build
         run: npm run build
 
+      # Temporary host only: delete the SITE_NOINDEX variable before deploying to production.
+      - name: Block search engines
+        if: vars.SITE_NOINDEX == 'true'
+        run: node scripts/add-noindex-header.mjs
+
       # Uploads the static output: prerendered pages, assets and the ar/ language folder.
       - name: Upload via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
