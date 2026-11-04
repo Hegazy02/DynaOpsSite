@@ -1,0 +1,82 @@
+<div class="container-page py-8 xl:py-16">
+  <div class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 md:gap-16">
+    <!-- Figma boxes: 674px English; the Arabic desktop frame widens it to 772px and narrows the last paragraph to 556px. -->
+    <div class="flex max-w-168.5 flex-col gap-4 text-center xl:rtl:max-w-193">
+      <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ content().title }}</h2>
+      @for (paragraph of content().paragraphs; track $index) {
+        <p class="mx-auto text-body-md text-fg-secondary last:xl:rtl:max-w-139">{{ paragraph }}</p>
+      }
+    </div>
+
+    <!-- Tablet and desktop: hub, five connectors, five activities. -->
+    <div class="hidden flex-col items-center gap-0.5 md:flex">
+      <div class="flex w-172 flex-col items-center">
+        <!-- Figma fixes the hub at 270x54 with its content centred, so short labels keep the same pill. -->
+        <div
+          class="flex min-w-67.5 items-center justify-center gap-2.5 rounded-md border border-brand bg-brand p-2.5"
+        >
+          <img [src]="content().hub.icon" alt="" class="size-8" />
+          <span class="text-h4 text-fg-inverse">{{ content().hub.label }}</span>
+        </div>
+        <svg
+          aria-hidden="true"
+          class="block h-auto w-full"
+          width="688"
+          height="110"
+          viewBox="0 0 688 110"
+          fill="none"
+        >
+          @for (path of connectorPaths; track $index) {
+            <path class="connector-base" [attr.d]="path" />
+            <path class="connector-pulse" [attr.d]="path" pathLength="1" />
+          }
+        </svg>
+      </div>
+      <ul class="flex w-175.5 gap-2">
+        @for (item of content().items; track item.label) {
+          <li class="flex flex-1 flex-col items-center gap-2">
+            <span
+              class="flex size-13.5 items-center justify-center rounded-md border border-surface bg-brand-200"
+            >
+              <img [src]="item.icon" alt="" class="size-8" />
+            </span>
+            <span class="text-h4 text-fg-secondary">{{ item.label }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+
+    <!-- Phone: the hub on top, a trunk down its icon and a branch to each activity; the trunk curves into the last one. -->
+    <div class="relative w-68 md:hidden">
+      <div
+        class="flex items-center justify-center gap-2.5 rounded-md border border-brand bg-brand p-2.5"
+      >
+        <img [src]="content().hub.icon" alt="" class="size-8" />
+        <span class="text-h4 whitespace-nowrap text-fg-inverse">{{ content().hub.label }}</span>
+      </div>
+      <span
+        aria-hidden="true"
+        class="absolute start-6.5 top-13.5 bottom-6.75 w-9.5 rounded-es-lg border-s-2 border-b-2 border-brand"
+      ></span>
+      <ul class="mt-7 flex flex-col gap-3.5 ps-16">
+        @for (item of content().items; track item.label; let last = $last) {
+          <li class="relative flex items-center gap-3.5">
+            @if (!last) {
+              <span
+                aria-hidden="true"
+                class="absolute -start-9.5 top-1/2 w-9.5 border-t-2 border-brand"
+              ></span>
+            }
+            <span
+              class="flex size-13.5 shrink-0 items-center justify-center rounded-md border border-surface bg-brand-200"
+            >
+              <img [src]="item.icon" alt="" class="size-8" />
+            </span>
+            <!-- The phone frame sets these labels at 16px semibold; no type role carries that weight. -->
+            <span class="text-body-md font-semibold text-fg-secondary">{{ item.label }}</span>
+          </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

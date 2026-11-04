@@ -6,7 +6,13 @@ import {
   input,
 } from '@angular/core';
 
-import type { CtaImagePosition } from './cta-container.model';
+import type { CtaImagePosition, CtaImageSize } from './cta-container.model';
+
+// Width of a positioned image: 440px by default; the device photo of the feature pages is 400 / 500 / full width.
+const IMAGE_SIZES: Record<CtaImageSize, string> = {
+  default: 'block w-full max-w-110',
+  device: 'block w-full md:max-w-125 xl:max-w-100',
+};
 
 const IMAGE_POSITIONS: Record<CtaImagePosition, { layer: string; content: string }> = {
   'top-start': { layer: 'xl:items-start xl:justify-start xl:pt-16', content: 'xl:ps-116' },
@@ -37,7 +43,7 @@ const IMAGE_POSITIONS: Record<CtaImagePosition, { layer: string; content: string
           alt=""
           [attr.width]="imageWidth()"
           [attr.height]="imageHeight()"
-          [class]="imageCover() ? coverImageClass : 'block w-full max-w-110'"
+          [class]="imageCover() ? coverImageClass : IMAGE_SIZES[imageSize()]"
           [style.--cta-cover-offset]="imageCover() ? '-' + imageCoverOffset() + '%' : null"
         />
       </div>
@@ -62,6 +68,9 @@ export class CtaContainer {
   readonly imagePosition = input<CtaImagePosition>('top-end');
   // From xl a cover image fits the frame width; this percent of its height is cropped off the top.
   readonly imageCoverOffset = input(0);
+  readonly imageSize = input<CtaImageSize>('default');
+
+  protected readonly IMAGE_SIZES = IMAGE_SIZES;
 
   // Centred cover up to lg; from xl the image keeps its ratio and slides up by the offset, as Figma crops it.
   protected readonly coverImageClass =

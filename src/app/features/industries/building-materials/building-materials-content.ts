@@ -1,6 +1,6 @@
 import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industries-hero-content';
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
-import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
+import type { ErpIntegrationCopy } from '../../../shared/ui/erp-integration/erp-integration.model';
 import { INDUSTRIES_VISIBILITY_DEFAULTS } from '../components/industries-visibility/industries-visibility-content';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
 import { pickFeatureCards } from '../components/industry-features/industry-features-content';
@@ -46,7 +46,7 @@ const FEATURES: IndustryFeaturesContent = {
 };
 
 // Figma sets the two sentences as one text with a line break, kept on every width.
-const INTEGRATION: IndustriesIntegrationCopy = {
+const INTEGRATION: ErpIntegrationCopy = {
   title: $localize`:@@building-materials.integration.title:Connect Field Sales with Microsoft Dynamics 365 F&O`,
   paragraphs: [
     $localize`:@@building-materials.integration.paragraph-1:DynaOps extends Microsoft Dynamics 365 Finance & Operations to your building materials sales teams.`,

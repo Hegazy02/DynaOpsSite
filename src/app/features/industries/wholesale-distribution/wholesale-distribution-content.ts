@@ -1,6 +1,6 @@
 import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industries-hero-content';
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
-import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
+import type { ErpIntegrationCopy } from '../../../shared/ui/erp-integration/erp-integration.model';
 import { INDUSTRIES_VISIBILITY_DEFAULTS } from '../components/industries-visibility/industries-visibility-content';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
 import { pickFeatureCards } from '../components/industry-features/industry-features-content';
@@ -40,7 +40,7 @@ const FEATURES: IndustryFeaturesContent = {
   ]),
 };
 
-const INTEGRATION: IndustriesIntegrationCopy = {
+const INTEGRATION: ErpIntegrationCopy = {
   title: $localize`:@@wholesale-distribution.integration.title:Extend Microsoft Dynamics 365 F&O into Wholesale Sales`,
   paragraphs: [
     $localize`:@@wholesale-distribution.integration.paragraph-1:DynaOps connects wholesale field operations with Microsoft Dynamics 365 Finance & Operations.`,

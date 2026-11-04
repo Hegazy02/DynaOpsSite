@@ -1,6 +1,6 @@
 import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industries-hero-content';
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
-import type { IndustriesIntegrationCopy } from '../components/industries-integration/industries-integration.model';
+import type { ErpIntegrationCopy } from '../../../shared/ui/erp-integration/erp-integration.model';
 import { INDUSTRIES_VISIBILITY_DEFAULTS } from '../components/industries-visibility/industries-visibility-content';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
 import { pickFeatureCards } from '../components/industry-features/industry-features-content';
@@ -42,7 +42,7 @@ const FEATURES: IndustryFeaturesContent = {
   ]),
 };
 
-const INTEGRATION: IndustriesIntegrationCopy = {
+const INTEGRATION: ErpIntegrationCopy = {
   title: $localize`:@@manufacturing.integration.title:Extend Microsoft Dynamics 365 F&O into Field Sales`,
   paragraphs: [
     $localize`:@@manufacturing.integration.paragraph-1:DynaOps connects your manufacturing sales teams with Microsoft Dynamics 365 Finance & Operations.`,
@@ -58,7 +58,8 @@ const VISIBILITY: IndustriesVisibilityCopy = {
   title: $localize`:@@manufacturing.visibility.title:Visibility Across Your Sales Channels`,
   paragraphs: [
     $localize`:@@manufacturing.visibility.paragraph-1:Monitor sales targets, order activity, and representative performance through DynaOps dashboards.`,
-    $localize`:@@manufacturing.visibility.paragraph-2:Compare results across territories and regions, track distributor account activities, and identify customers requiring follow-up.`,  ],
+    $localize`:@@manufacturing.visibility.paragraph-2:Compare results across territories and regions, track distributor account activities, and identify customers requiring follow-up.`,
+  ],
   image: {
     dashboard: `${visibilityDir}/dashboard.webp`,
     cursorLeft: INDUSTRIES_VISIBILITY_DEFAULTS.image.cursorLeft,

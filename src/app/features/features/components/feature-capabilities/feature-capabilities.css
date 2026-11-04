@@ -1,0 +1,16 @@
+/* Description of the chosen capability opens to its height (Figma smart-animate, 300ms). */
+.capability-detail {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms ease-out;
+}
+
+.capability-detail.is-open {
+  grid-template-rows: 1fr;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .capability-detail {
+    transition: none;
+  }
+}

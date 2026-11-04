@@ -1,6 +1,6 @@
 import type { CtaContent } from '../../../../shared/ui/cta-container/cta-container.model';
 import type { IndustriesHeroCopy } from '../industries-hero/industries-hero.model';
-import type { IndustriesIntegrationCopy } from '../industries-integration/industries-integration.model';
+import type { ErpIntegrationCopy } from '../../../../shared/ui/erp-integration/erp-integration.model';
 import type { IndustriesVisibilityCopy } from '../industries-visibility/industries-visibility.model';
 import type { IndustryFeaturesContent } from '../industry-features/industry-features.model';
 
@@ -12,7 +12,7 @@ export interface IndustryPageContent {
   description: string;
   hero: IndustriesHeroCopy;
   features: IndustryFeaturesContent;
-  integration: IndustriesIntegrationCopy;
+  integration: ErpIntegrationCopy;
   visibility: IndustriesVisibilityCopy;
   // Rendered at the top of the footer.
   footerCta: CtaContent;

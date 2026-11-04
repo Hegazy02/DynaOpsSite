@@ -5,7 +5,7 @@ import { FooterCta } from '../../../../layout/footer/footer-cta.directive';
 import { Button } from '../../../../shared/ui/button/button';
 import { CtaContainer } from '../../../../shared/ui/cta-container/cta-container';
 import { IndustriesHero } from '../industries-hero/industries-hero';
-import { IndustriesIntegration } from '../industries-integration/industries-integration';
+import { ErpIntegration } from '../../../../shared/ui/erp-integration/erp-integration';
 import { IndustriesVisibility } from '../industries-visibility/industries-visibility';
 import { IndustryFeatures } from '../industry-features/industry-features';
 import type { IndustryPageContent } from './industry-page.model';
@@ -19,7 +19,7 @@ import type { IndustryPageContent } from './industry-page.model';
     RouterLink,
     IndustriesHero,
     IndustryFeatures,
-    IndustriesIntegration,
+    ErpIntegration,
     IndustriesVisibility,
     FooterCta,
     CtaContainer,

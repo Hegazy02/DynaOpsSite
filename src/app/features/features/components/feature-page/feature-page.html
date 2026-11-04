@@ -1,0 +1,51 @@
+<app-feature-hero
+  [eyebrow]="content().hero.eyebrow"
+  [title]="content().hero.title"
+  [subtitle]="content().hero.subtitle"
+  [emphasis]="content().hero.emphasis"
+  [note]="content().hero.note"
+  [image]="content().hero.image"
+/>
+
+<app-feature-capabilities [content]="content().capabilities" />
+
+<app-feature-connections [content]="content().connections" />
+
+<app-erp-integration
+  [title]="content().integration.title"
+  [paragraphs]="content().integration.paragraphs"
+  [allParagraphsOnTablet]="content().integration.allParagraphsOnTablet ?? false"
+  [allParagraphsOnPhone]="content().integration.allParagraphsOnPhone ?? false"
+  [spacedParagraphs]="content().integration.spacedParagraphs ?? false"
+  [textWidth]="content().integration.textWidth ?? 497"
+/>
+
+<ng-template appFooterCta>
+  <app-cta-container
+    [image]="content().footerCta.image.src"
+    [imageWidth]="content().footerCta.image.width"
+    [imageHeight]="content().footerCta.image.height"
+    imagePosition="bottom-end"
+    imageSize="device"
+  >
+    <!-- Figma boxes: 442px English from xl; Arabic 350 / 407px on desktop and a 407px description on tablet. -->
+    <div class="flex max-w-152 flex-col gap-4 xl:max-w-110.5">
+      <h2 class="text-h2 md:text-h1 xl:rtl:max-w-87.5" [class]="ctaTitleClass()">
+        {{ content().footerCta.title }}
+      </h2>
+      <p class="text-body-md md:max-xl:rtl:mx-auto md:rtl:max-w-101.75">
+        {{ content().footerCta.description }}
+      </p>
+    </div>
+    <a
+      appButton
+      variant="secondary"
+      icon="/icons/shared/arrow-right-02.svg"
+      iconHover="/icons/shared/arrow-right-02-brand.svg"
+      directionalIcon
+      [routerLink]="content().footerCta.button.href"
+    >
+      {{ content().footerCta.button.label }}
+    </a>
+  </app-cta-container>
+</ng-template>
