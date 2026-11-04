@@ -8,6 +8,12 @@ export interface IndustriesHeroImage {
   height: number;
 }
 
+export interface IndustriesHeroImageLoaderParams {
+  src3x?: string;
+  // Width NgOptimizedImage asks the loader for at 3x density.
+  width3x: number;
+}
+
 export interface IndustriesHeroCta {
   label: string;
   href: string;

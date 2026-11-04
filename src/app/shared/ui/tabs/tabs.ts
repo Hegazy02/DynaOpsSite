@@ -40,6 +40,8 @@ import type { TabItem, TabPanelContext } from './tabs.model';
               <img
                 [src]="active() === tab.id ? chevronBrand : chevron"
                 alt=""
+                width="16"
+                height="16"
                 class="transition-transform group-hover:hidden"
                 [class]="vertical() ? 'size-6' : 'size-4'"
                 [class.rotate-180]="active() === tab.id"
@@ -47,6 +49,8 @@ import type { TabItem, TabPanelContext } from './tabs.model';
               <img
                 [src]="chevronBrand"
                 alt=""
+                width="16"
+                height="16"
                 class="hidden transition-transform group-hover:block"
                 [class]="vertical() ? 'size-6' : 'size-4'"
                 [class.rotate-180]="active() === tab.id"

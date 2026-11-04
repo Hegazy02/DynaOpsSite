@@ -125,16 +125,19 @@ You plan to build Home, About, Demo and the features. These pages are also linke
 
 - [x] **Made unknown URLs return a real 404 on the temporary IIS host.** `public/web.config` now uses `responseMode="File"` instead of `ExecuteURL`. `/nope`, `/a/b/c`, `/about`, `/ar/nope`, `/ar/a/b/c` and `/ar/about` all return 404 with the "Page not found" page in the right language (confirmed 2026-11-04).
 - [ ] **Repeat the 404 test on the production host at launch.** If production isn't IIS, this rule doesn't apply there, so set up its 404 handling separately.
-- [ ] **Confirm the HTML cache fix.** The temporary host sends `Cache-Control: max-age=31536000` (1 year) on everything by default, so visitors could keep seeing old pages after a deployment. `public/web.config` and `public/.htaccess` now set `public, max-age=0, must-revalidate` on HTML, `robots.txt` and the sitemap, but this isn't confirmed until it's deployed. After deploying, `/industries/fmcg` must return 200 with the new header. Repeat the test on the production host at launch.
-- [ ] **Confirm the image and icon cache fix.** Their file names don't change when they're replaced, so `public/web.config` and `public/.htaccess` now set a 7-day cache instead of the host's 1 year, but this isn't confirmed until it's deployed. After deploying, `/images/industries/fmcg/hero.webp` must return 200 with `max-age=604800`. Hashed JS and CSS files keep 1 year. Repeat the test on the production host at launch.
+- [x] **Fixed the HTML cache on the temporary IIS host.** Pages, `robots.txt` and the sitemap now return `public, max-age=0, must-revalidate`, and unchanged pages answer `304` (confirmed 2026-11-04).
+- [x] **Fixed the image and icon cache on the temporary IIS host.** `/images`, `/icons` and `/brand` now return `max-age=604800` (7 days), and hashed CSS keeps 1 year (confirmed 2026-11-04).
+- [ ] **Repeat both cache tests on the production host at launch.** `/industries/fmcg` must return 200 with `public, max-age=0, must-revalidate`, and `/images/industries/fmcg/hero.webp` must return 200 with `max-age=604800`. If production isn't IIS, the `web.config` rules don't apply. The `.htaccess` rules are untested, and nginx alone reads neither file.
 
 ### Should fix before launch
 
 - [ ] **Add internal links inside page content.** The only link inside `<main>` on the FMCG page is `/demo`, so pages reach each other only through the footer. Link each industry page to its relevant features, and each feature page to the industries that use it.
 - [ ] **Expand the industry pages.** They have about 235 to 285 words. Add real detail such as workflows, common problems, use cases and FAQs. Don't add filler.
 - [ ] **Improve image loading.**
-  - Use `NgOptimizedImage` with `priority` on the hero image, which is likely the largest paint.
-  - Add `width` and `height` to the 13 images on each industry page that don't have them (22 on the customer management page).
+  - [x] Use `NgOptimizedImage` with `priority` on the hero of the 9 industry pages. Browsers now preload the right 2x or 3x file (confirmed in the browser, 2026-11-04).
+  - [ ] Do the same in `feature-hero` for customer management, which is still on `features/customerMangement`, and on the heroes of new pages.
+  - [x] Added `width` and `height` to the icons in `button`, `tabs`, `industry-features` and `header`. The two visibility cursors stay without them, because they're sized by CSS height, and they're absolutely positioned so they can't shift the layout.
+  - [ ] Check the customer management images once `features/customerMangement` is merged, including `feature-connections`.
 - [ ] **Add caching and compression** to `public/.htaccess` and `public/web.config`. Use a long cache for hashed JS and CSS files, a short one for HTML, and compress text files. Check first whether the host already compresses.
 - [ ] **Expand the structured data** in the table in section 4.3.
 

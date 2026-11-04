@@ -28,11 +28,13 @@
 
     <!-- Figma mirrors the artwork in Arabic so it keeps facing the copy. -->
     <img
-      [src]="image().src"
-      [attr.srcset]="srcset()"
+      [ngSrc]="image().src"
+      [ngSrcset]="image().src3x ? '2x, 3x' : '2x'"
+      [loaderParams]="loaderParams()"
       [alt]="image().alt"
       [width]="image().width"
       [height]="image().height"
+      priority
       class="order-first w-full max-w-110 shrink-0 xl:order-none rtl:-scale-x-100"
     />
   </div>

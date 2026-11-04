@@ -21,6 +21,8 @@ import type { ButtonVariant, ButtonSize } from './button.model';
       <img
         [src]="src"
         alt=""
+        width="18"
+        height="18"
         [class.rtl:-scale-x-100]="directionalIcon()"
         [class.group-hover:hidden]="iconHover()"
         [class.group-active:hidden]="iconHover()"
@@ -30,6 +32,8 @@ import type { ButtonVariant, ButtonSize } from './button.model';
       <img
         [src]="src"
         alt=""
+        width="18"
+        height="18"
         class="hidden group-hover:block group-active:block"
         [class.rtl:-scale-x-100]="directionalIcon()"
       />

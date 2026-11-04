@@ -1,3 +1,4 @@
+import { IMAGE_LOADER, ImageLoaderConfig, NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -8,6 +9,7 @@ import type {
   IndustriesHeroCta,
   IndustriesHeroEnglishTitleWidth,
   IndustriesHeroImage,
+  IndustriesHeroImageLoaderParams,
   IndustriesHeroSubtitleRole,
   IndustriesHeroTabletWidth,
 } from './industries-hero.model';
@@ -17,7 +19,8 @@ import type {
 @Component({
   selector: 'app-industries-hero',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Button],
+  imports: [NgOptimizedImage, RouterLink, Button],
+  providers: [{ provide: IMAGE_LOADER, useValue: heroImageLoader }],
   templateUrl: './industries-hero.html',
   host: {
     class:
@@ -60,11 +63,16 @@ export class IndustriesHero {
     ].join(' ');
   });
 
-  // 3x screens pick the larger file; everything else keeps the 2x src.
-  protected readonly srcset = computed(() => {
-    const { src, src3x } = this.image();
-    return src3x ? `${src} 2x, ${src3x} 3x` : null;
+  protected readonly loaderParams = computed<IndustriesHeroImageLoaderParams>(() => {
+    const { src3x, width } = this.image();
+    return { src3x, width3x: width * 3 };
   });
+}
+
+// 3x screens pick the larger file; everything else keeps the 2x src.
+function heroImageLoader({ src, width, loaderParams }: ImageLoaderConfig): string {
+  const { src3x, width3x } = loaderParams as IndustriesHeroImageLoaderParams;
+  return src3x && width === width3x ? src3x : src;
 }
 
 const TABLET_WIDTH = {
