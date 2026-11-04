@@ -116,11 +116,14 @@ You plan to build Home, About, Demo and the features. These pages are also linke
 ### Must fix before launch
 
 - [ ] **Replace the placeholder phone number.** `src/app/layout/footer/footer-content.ts` ships `022`, which outputs `tel:022` and `wa.me/022`. Set the real number or remove both links.
-- [ ] **Shorten the meta descriptions to about 155 characters.** English descriptions run 188 to 240 characters and Arabic 162 to 221, so Google will likely cut them off. Lead with the benefit and keep the industry name early.
-- [ ] **Improve the titles.** They're short and generic, for example `FMCG Field Sales | DynaOps365` (29 characters). Aim for 50 to 60 characters and use the words buyers search for. Check them against the Search Console export. For example: `FMCG Field Sales Software for Dynamics 365 | DynaOps365`.
+- [x] **Shortened the meta descriptions on the 9 industry pages.** English now runs 149 to 157 characters and Arabic 132 to 153. Each page has its own `<page>.description` key, separate from the hero text.
+- [ ] **Shorten the customer management description the same way.** That page is still on `features/customerMangement`, and its description (188 characters) is still built from the hero text. New feature pages should also get their own short description key.
+- [x] **Improved the titles on the 9 industry pages.** They now run 50 to 60 characters, for example `FMCG Field Sales Software for Dynamics 365 | DynaOps365`.
+- [ ] **Check the titles against real search data.** They were written without the Search Console export, which isn't available yet, and the current site's data covers license topics rather than field sales. Use a keyword tool for field sales terms in English and Arabic, and review the titles again after launch.
+- [ ] **Improve the customer management title the same way.** That page is still on `features/customerMangement`, with the title `Customer Management | DynaOps365`. New feature pages should also start with a 50 to 60 character title.
 - [ ] **Remove every dead link.** Each page currently links to 20 pages per language that return 404. Any target that won't exist at launch must be removed from the header and footer.
 
-- [ ] **Make unknown URLs return a real 404 on the static host.** On the temporary IIS host, `/nope` and `/about` show the "Page not found" page with status 200 (tested 2026-11-04). Google treats that as a soft 404. Fix the `httpErrors` rules in `public/web.config`, then retest with `curl`, and repeat the test on the production host.
+- [ ] **Make unknown URLs return a real 404 on the static host.** On the temporary IIS host, `/nope` and `/about` show the "Page not found" page with status 200 (tested 2026-11-04). Google treats that as a soft 404. `public/web.config` now uses `responseMode="File"` instead of `ExecuteURL`, but this isn't confirmed until it's deployed. Test `/nope`, `/a/b/c`, `/ar/nope` and `/ar/a/b/c` with `curl -si` on the temporary host: each must return 404 and show the "Page not found" page in the right language. Repeat the test on the production host. If production isn't IIS, this rule doesn't apply there, so set up its 404 handling separately.
 - [ ] **Check the cache time on HTML pages.** The temporary host sends `Cache-Control: max-age=31536000` (1 year) on HTML pages, and this doesn't come from the project's files. Visitors could keep seeing old pages after a deployment. Confirm what the production host sends, and use a short cache for HTML.
 
 ### Should fix before launch
@@ -155,7 +158,8 @@ You plan to build Home, About, Demo and the features. These pages are also linke
 
 ### 4.2 Content
 
-- [ ] Unique title of 50 to 60 characters, and unique description of about 155.
+- [ ] Unique title of 50 to 60 characters.
+- [ ] Its own description of about 155 characters, leading with the benefit and naming the page's topic early. Give it a dedicated `<page>.description` key in English and Arabic from the start. Don't build it from the hero text.
 - [ ] Exactly one `<h1>`, with headings in logical order.
 - [ ] Meaningful `alt` text on images that carry content, and `alt=""` on decorative ones.
 - [ ] Links to related pages inside the main content.

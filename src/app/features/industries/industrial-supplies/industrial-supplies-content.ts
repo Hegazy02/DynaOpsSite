@@ -93,9 +93,8 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const INDUSTRIAL_SUPPLIES_CONTENT: IndustryPageContent = {
-  title: $localize`:@@industrial-supplies.title:Industrial Supplies Field Sales`,
-  // Reuses the hero paragraph until the page gets dedicated search copy.
-  description: `${HERO.subtitle} ${HERO.emphasis}`,
+  title: $localize`:@@industrial-supplies.title:Industrial Supplies Sales Software for D365`,
+  description: $localize`:@@industrial-supplies.description:Improve industrial supplies sales: manage accounts, product availability, orders, pricing and collections with DynaOps SFA, integrated with Dynamics 365 F&O.`,
   hero: HERO,
   features: FEATURES,
   integration: INTEGRATION,

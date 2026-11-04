@@ -82,9 +82,8 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const FOOD_BEVERAGE_CONTENT: IndustryPageContent = {
-  title: $localize`:@@food-beverage.title:Food & Beverage Field Sales`,
-  // Reuses the hero paragraph until the page gets dedicated search copy.
-  description: `${HERO.subtitle} ${HERO.emphasis}`,
+  title: $localize`:@@food-beverage.title:Food & Beverage Field Sales Software for D365`,
+  description: $localize`:@@food-beverage.description:Simplify food and beverage distribution: manage customer visits, recurring orders, van sales and collections with DynaOps SFA, built for Dynamics 365 F&O.`,
   hero: HERO,
   features: FEATURES,
   integration: INTEGRATION,

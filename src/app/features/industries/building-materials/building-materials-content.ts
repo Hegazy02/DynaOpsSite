@@ -91,9 +91,8 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const BUILDING_MATERIALS_CONTENT: IndustryPageContent = {
-  title: $localize`:@@building-materials.title:Building Materials Field Sales`,
-  // Reuses the hero paragraph until the page gets dedicated search copy.
-  description: HERO.subtitle,
+  title: $localize`:@@building-materials.title:Building Materials Sales Software for D365`,
+  description: $localize`:@@building-materials.description:Simplify building materials sales: manage dealers, contractor orders, customer pricing, approvals and collections with DynaOps SFA and Dynamics 365 F&O.`,
   hero: HERO,
   features: FEATURES,
   integration: INTEGRATION,
