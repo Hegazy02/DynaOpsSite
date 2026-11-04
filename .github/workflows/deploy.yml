@@ -21,6 +21,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        # Full history, so the sitemap's lastmod dates come from each page's own commits.
+        with:
+          fetch-depth: 0
 
       # Angular 21 needs Node ^20.19, ^22.12 or >=24.
       - name: Setup Node

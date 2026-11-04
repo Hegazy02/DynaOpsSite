@@ -6,5 +6,6 @@ export interface SiteConfig {
   name: string;
   // Site-relative path of the default social image (1200x630).
   defaultImage: string;
+  defaultImageAlt: string;
   ogLocale: Record<Lang, string>;
 }

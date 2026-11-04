@@ -1,5 +1,6 @@
 // Writes browser/sitemap.xml from the prerender manifest after `ng build`, listing every
 // language version of each page with its hreflang alternates. Usage: node scripts/generate-sitemap.mjs [distDir]
+import { execFileSync } from 'node:child_process';
 import { existsSync } from 'node:fs';
 import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
@@ -34,6 +35,29 @@ function localeUrl(path, lang) {
   return path === '/' ? `/${lang}` : `/${lang}${path}`;
 }
 
+function git(...args) {
+  try {
+    return execFileSync('git', args, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+  } catch {
+    return '';
+  }
+}
+
+// A shallow clone would date every page by its newest commit, so lastmod is left out instead.
+const hasHistory = git('rev-parse', '--is-shallow-repository') === 'false';
+
+// Last commit to the page's own folder or, for translations, its keys. Shared components don't count.
+function lastmod(path, lang) {
+  const dir = `src/app/features${path}`;
+  if (!hasHistory || path === '/' || !existsSync(dir)) return '';
+  const slug = path.split('/').pop();
+  const dates = [git('log', '-1', '--format=%cs', '--', dir)];
+  if (lang !== DEFAULT_LANG) {
+    dates.push(git('log', '-1', '--format=%cs', `-G"${slug}\\.`, '--', `src/locale/${lang}`));
+  }
+  return dates.filter(Boolean).sort().at(-1) ?? '';
+}
+
 // One page per language-independent path, with the languages it was prerendered in.
 const pages = new Map();
 for (const route of routes) {
@@ -54,8 +78,9 @@ for (const [path, langs] of pages) {
     );
   }
   for (const lang of langs) {
+    const date = lastmod(path, lang);
     urls.push(
-      `  <url>\n    <loc>${ORIGIN}${localeUrl(path, lang)}</loc>\n${alternates.join('\n')}\n  </url>`,
+      `  <url>\n    <loc>${ORIGIN}${localeUrl(path, lang)}</loc>\n${date ? `    <lastmod>${date}</lastmod>\n` : ''}${alternates.join('\n')}\n  </url>`,
     );
   }
 }

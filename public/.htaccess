@@ -18,10 +18,21 @@ RewriteRule ^(.+)/$ /$1 [R=301,L]
 RewriteCond %{REQUEST_FILENAME}/index.html -f
 RewriteRule ^(.+)$ /$1/index.html [L]
 
-# Pages, robots.txt and the sitemap keep unhashed URLs, so browsers must revalidate them.
+# Compress text files, SVGs included; images like webp are already compressed.
+<IfModule mod_filter.c>
+  <IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript image/svg+xml application/manifest+json
+  </IfModule>
+</IfModule>
+
+# Pages, robots.txt, the sitemap and the manifest keep unhashed URLs, so browsers must revalidate them.
 <IfModule mod_headers.c>
-  <FilesMatch "\.(html|txt|xml)$">
+  <FilesMatch "\.(html|txt|xml|webmanifest)$">
     Header set Cache-Control "public, max-age=0, must-revalidate"
+  </FilesMatch>
+  # Every JS and CSS file is hashed by the build, so a changed file gets a new URL.
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
   # Images and icons keep their file names when replaced, so they get 7 days.
   <FilesMatch "\.(png|jpe?g|webp|svg|ico)$">

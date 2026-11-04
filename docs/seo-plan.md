@@ -138,17 +138,19 @@ You plan to build Home, About, Demo and the features. These pages are also linke
   - [ ] Do the same in `feature-hero` for customer management, which is still on `features/customerMangement`, and on the heroes of new pages.
   - [x] Added `width` and `height` to the icons in `button`, `tabs`, `industry-features` and `header`. The two visibility cursors stay without them, because they're sized by CSS height, and they're absolutely positioned so they can't shift the layout.
   - [ ] Check the customer management images once `features/customerMangement` is merged, including `feature-connections`.
-- [ ] **Add caching and compression** to `public/.htaccess` and `public/web.config`. Use a long cache for hashed JS and CSS files, a short one for HTML, and compress text files. Check first whether the host already compresses.
+- [ ] **Confirm the hashed asset and manifest cache rules.** `public/web.config` and `public/.htaccess` now set `public, max-age=31536000, immutable` on JS and CSS, and revalidate `site.webmanifest`, but this isn't confirmed until it's deployed.
+- [x] **Compression:** the temporary IIS host and the current `dynaops365.com` both already compress HTML, CSS and JS (checked 2026-11-04), so `web.config` adds nothing. `public/.htaccess` now compresses text files in case production runs Apache. Confirm the result at launch.
+- [ ] **Reduce the SVG download size.** The temporary host doesn't compress SVGs, and the ERP integration artwork is large (`base.svg` is 89 KB). IIS only allows this setting at server level, so ask the host, or optimize or convert those files.
 - [ ] **Expand the structured data** in the table in section 4.3.
 
 ### Polish
 
-- [ ] Translate `og:image:alt` on Arabic pages. It's hardcoded in English in `src/index.html`.
-- [ ] Add `og:locale:alternate`.
-- [ ] Use a `<header>` element in `src/app/layout/header/header.html`, which currently has no header landmark.
-- [ ] Add visible breadcrumbs to industry and feature pages.
-- [ ] Add `lastmod` to the sitemap, using real content change dates only.
-- [ ] Remove canonical and hreflang tags from `noindex` 404 pages.
+- [x] Translated `og:image:alt` on Arabic pages.
+- [x] Added `og:locale:alternate`.
+- [x] Used a `<header>` element in `src/app/layout/header/header.html`.
+- [ ] Add visible breadcrumbs to industry and feature pages. This needs Home and the `/industries` and `/features` hub pages to link to, and a design, because Figma doesn't include them. Add `BreadcrumbList` JSON-LD at the same time.
+- [x] Added `lastmod` to the sitemap. Each date is the last commit to the page's own folder or its translation keys, so a change to a shared component doesn't update it. The script leaves `lastmod` out if git history is missing, so `.github/workflows/deploy.yml` now fetches full history. Home has no `lastmod` until its folder is added to the script.
+- [x] Removed canonical and hreflang tags from `noindex` 404 pages.
 
 ---
 

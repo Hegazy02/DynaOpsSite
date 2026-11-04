@@ -25,18 +25,25 @@ export class SeoService {
     this.title.setTitle(title);
     this.setName('description', seo.description);
     this.setName('robots', seo.robots);
+    if (this.isNoindex()) {
+      this.removeLocaleLinks();
+    }
 
     this.setProperty('og:title', title);
     this.setProperty('og:description', seo.description);
     this.setProperty('og:url', url);
     this.setProperty('og:locale', SITE_CONFIG.ogLocale[this.lang]);
+    this.setProperty(
+      'og:locale:alternate',
+      SITE_CONFIG.ogLocale[this.lang === DEFAULT_LANG ? 'ar' : DEFAULT_LANG],
+    );
     this.setProperty('og:image', image);
+    this.setProperty('og:image:alt', seo.image ? seo.imageAlt : SITE_CONFIG.defaultImageAlt);
     this.setName('twitter:title', title);
     this.setName('twitter:description', seo.description);
     this.setName('twitter:image', image);
     if (seo.image) {
-      // The static size and alt in index.html describe the default image only.
-      this.setProperty('og:image:alt', seo.imageAlt);
+      // The static size in index.html describes the default image only.
       this.meta.removeTag('property="og:image:width"');
       this.meta.removeTag('property="og:image:height"');
     }
@@ -49,10 +56,12 @@ export class SeoService {
 
   /** Canonical plus one hreflang alternate per language (and x-default) for the current page. */
   setLocaleLinks(path: string, lang: Lang): void {
+    this.removeLocaleLinks();
+    // This effect can run before or after `update`, so both sides check for noindex.
+    if (this.isNoindex()) {
+      return;
+    }
     const head = this.document.head;
-    head
-      .querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]')
-      .forEach((el) => el.remove());
     this.addLink(head, { rel: 'canonical', href: this.absolute(localeUrl(path, lang)) });
     for (const l of LANGS) {
       this.addLink(head, {
@@ -66,6 +75,16 @@ export class SeoService {
       hreflang: 'x-default',
       href: this.absolute(localeUrl(path, DEFAULT_LANG)),
     });
+  }
+
+  private isNoindex(): boolean {
+    return !!this.meta.getTag('name="robots"')?.content.includes('noindex');
+  }
+
+  private removeLocaleLinks(): void {
+    this.document.head
+      .querySelectorAll('link[rel="canonical"], link[rel="alternate"][hreflang]')
+      .forEach((el) => el.remove());
   }
 
   private formatTitle(title: string, raw?: boolean): string {
