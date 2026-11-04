@@ -115,7 +115,7 @@ You plan to build Home, About, Demo and the features. These pages are also linke
 
 ### Must fix before launch
 
-- [ ] **Replace the placeholder phone number.** `src/app/layout/footer/footer-content.ts` ships `022`, which outputs `tel:022` and `wa.me/022`. Set the real number or remove both links.
+- [x] **Replaced the placeholder phone number.** The footer's call and WhatsApp links now use `+201558240154`, set in `src/app/layout/footer/footer-content.ts`.
 - [x] **Shortened the meta descriptions on the 9 industry pages.** English now runs 149 to 157 characters and Arabic 132 to 153. Each page has its own `<page>.description` key, separate from the hero text.
 - [x] **Shortened the customer management description the same way.** English is 145 characters and Arabic 136, with its own `customer-management.description` key. New feature pages should also get their own short description key.
 - [x] **Improved the titles on the 9 industry pages.** They now run 50 to 60 characters, for example `FMCG Field Sales Software for Dynamics 365 | DynaOps365`.

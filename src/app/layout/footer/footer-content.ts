@@ -6,8 +6,8 @@ import type { FooterLink, FooterContent } from './footer.model';
 const CONTACT = {
   linkedin: 'https://www.linkedin.com/company/dyna-system/',
   email: 'dyna@dyna-systems.com',
-  phone: '022',
-  whatsapp: '022',
+  phone: '+201558240154',
+  whatsapp: '+201558240154',
 };
 
 function pick(items: MegaPanelItem[], ids: readonly string[]): FooterLink[] {
@@ -107,7 +107,7 @@ export const FOOTER_CONTENT: FooterContent = {
       id: 'whatsapp',
       icon: '/icons/shared/whatsapp-brand.svg',
       label: $localize`:@@footer.social.whatsapp:WhatsApp`,
-      href: CONTACT.phone && `https://wa.me/${CONTACT.phone.replace(/\D/g, '')}`,
+      href: CONTACT.whatsapp && `https://wa.me/${CONTACT.whatsapp.replace(/\D/g, '')}`,
       external: true,
     },
     {
