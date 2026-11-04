@@ -5,7 +5,7 @@ import { readFile, writeFile } from 'node:fs/promises';
 import { join } from 'node:path';
 
 // Keep in sync with src/app/core/seo/site-config.ts and src/app/core/i18n/language.ts.
-const ORIGIN = process.env.SITE_ORIGIN ?? 'https://www.dynaops365.com';
+const ORIGIN = process.env.SITE_ORIGIN ?? 'https://dynaops365.com';
 const LANGS = ['en', 'ar'];
 const DEFAULT_LANG = 'en';
 

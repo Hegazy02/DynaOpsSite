@@ -32,13 +32,18 @@ Audit date: 2026-11-04.
 
 ### 1.1 Keep the temporary URL out of Google
 
-If the temporary URL gets indexed, Google sees a second copy of your content. The project's `robots.txt` currently allows all crawling and its pages have no `noindex`, so the temporary URL is open to search engines by default.
+If the temporary URL gets indexed, Google sees a second copy of your content. The project's `robots.txt` allows all crawling and its pages have no `noindex`, so the block below is what keeps the temporary URL out of search results.
 
-- [ ] **Turn on the `X-Robots-Tag: noindex, nofollow` header.** In GitHub, go to Settings > Secrets and variables > Actions > Variables and add `SITE_NOINDEX` with the value `true`. The deploy workflow then runs `scripts/add-noindex-header.mjs`, which adds the header to the uploaded `.htaccess` and `web.config` only.
-- [ ] **Confirm it works after the next deploy.** Run `curl -sI https://<temporary-url>/industries/fmcg` and look for `X-Robots-Tag: noindex, nofollow`. If it's missing, the host isn't applying those files (for example, nginx alone or Apache without `mod_headers`), so set the header or a password in the hosting panel instead.
-- [ ] **Don't put the block in the source files** (`public/robots.txt`, `public/.htaccess`, `public/web.config` or `src/index.html`). Those files also deploy to production, and a `noindex` that reaches `dynaops365.com` would remove your site from Google.
-- [ ] **Don't link to the temporary URL** from WordPress or any other public page.
-- [ ] **Serve it from the root of a domain or subdomain**, not a subfolder. The build expects `/` and `/ar/` as its base paths, so assets and links break in a subfolder.
+**Done (confirmed 2026-11-04):**
+
+- [x] **Turned on the `X-Robots-Tag: noindex, nofollow` header.** The `SITE_NOINDEX` GitHub variable is set to `true`, so the deploy workflow runs `scripts/add-noindex-header.mjs`, which adds the header to the uploaded `.htaccess` and `web.config` only.
+- [x] **Confirmed it works.** `curl -sI https://<temporary-url>/industries/fmcg` returns `X-Robots-Tag: noindex, nofollow` on the temporary host, which runs IIS and applies `web.config`. Rerun this check if the host or the deploy workflow changes.
+- [x] **Served it from the root of a subdomain**, not a subfolder. The build expects `/` and `/ar/` as its base paths, so assets and links would break in a subfolder.
+
+**Keep following until launch:**
+
+- **Don't put the block in the source files** (`public/robots.txt`, `public/.htaccess`, `public/web.config` or `src/index.html`). Those files also deploy to production, and a `noindex` that reaches `dynaops365.com` would remove your site from Google.
+- **Don't link to the temporary URL** from WordPress or any other public page.
 
 ### 1.2 Record the current site
 
@@ -58,18 +63,18 @@ WordPress stays live during the build, so these steps have no risk. Repeat the e
 
 ### 2.1 Which domain is canonical?
 
-**Recommendation: `https://dynaops365.com`, with no `www` and no trailing slash.**
+**Decided: `https://dynaops365.com`, with no `www` and no trailing slash.**
 
-WordPress already declares the bare domain as canonical, but this project uses `www`. Launching with `www` would turn a same-domain rebuild into a host change as well, which adds risk for no benefit.
+This matches the canonical WordPress already declares, so the rebuild doesn't add a host change on top of the migration.
 
-If you agree, update these files:
+Updated:
 
-- [ ] `src/app/core/seo/site-config.ts` (`origin`)
-- [ ] `src/index.html` (`og:image`, `twitter:image` and the JSON-LD URLs)
-- [ ] `public/robots.txt` (the sitemap URL)
-- [ ] `scripts/generate-sitemap.mjs` (`ORIGIN`)
+- [x] `src/app/core/seo/site-config.ts` (`origin`)
+- [x] `src/index.html` (`og:image`, `twitter:image` and the JSON-LD URLs)
+- [x] `public/robots.txt` (the sitemap URL)
+- [x] `scripts/generate-sitemap.mjs` (`ORIGIN`)
 
-These files can change now. Pages on the temporary URL will then show `dynaops365.com` in their canonical, hreflang, Open Graph and sitemap URLs. That's correct, because the build is meant for production, so don't change them to the temporary URL.
+Pages on the temporary URL show `dynaops365.com` in their canonical, hreflang, Open Graph and sitemap URLs. That's correct, because the build is meant for production, so don't change them to the temporary URL.
 
 After launch, `www` must 301 to the bare domain on every URL. Today `https://www.dynaops365.com/` returns 200 instead of redirecting, so confirm the production host handles this correctly at launch.
 
@@ -114,6 +119,9 @@ You plan to build Home, About, Demo and the features. These pages are also linke
 - [ ] **Shorten the meta descriptions to about 155 characters.** English descriptions run 188 to 240 characters and Arabic 162 to 221, so Google will likely cut them off. Lead with the benefit and keep the industry name early.
 - [ ] **Improve the titles.** They're short and generic, for example `FMCG Field Sales | DynaOps365` (29 characters). Aim for 50 to 60 characters and use the words buyers search for. Check them against the Search Console export. For example: `FMCG Field Sales Software for Dynamics 365 | DynaOps365`.
 - [ ] **Remove every dead link.** Each page currently links to 20 pages per language that return 404. Any target that won't exist at launch must be removed from the header and footer.
+
+- [ ] **Make unknown URLs return a real 404 on the static host.** On the temporary IIS host, `/nope` and `/about` show the "Page not found" page with status 200 (tested 2026-11-04). Google treats that as a soft 404. Fix the `httpErrors` rules in `public/web.config`, then retest with `curl`, and repeat the test on the production host.
+- [ ] **Check the cache time on HTML pages.** The temporary host sends `Cache-Control: max-age=31536000` (1 year) on HTML pages, and this doesn't come from the project's files. Visitors could keep seeing old pages after a deployment. Confirm what the production host sends, and use a short cache for HTML.
 
 ### Should fix before launch
 
@@ -262,7 +270,7 @@ RewriteRule ^author/ /about [R=301,L]
 </rule>
 ```
 
-**Confirm which server each host runs.** The temporary and production hosts may differ, so rules that work on one may not work on the other. `dynaops365.com` currently responds with an `nginx` header. `.htaccess` only works if Apache runs behind it, and `web.config` only works on IIS. If production is nginx alone, neither file runs, and the redirects, trailing-slash rules and 404 page must be set in the nginx config or the hosting panel.
+**Confirm which server production runs.** The temporary host runs IIS (`Server: Microsoft-IIS/10.0`), so only `web.config` is tested there. Production may differ, so rules that work on one may not work on the other. `dynaops365.com` currently responds with an `nginx` header. `.htaccess` only works if Apache runs behind it, and `web.config` only works on IIS. If production is nginx alone, neither file runs, and the redirects, trailing-slash rules and 404 page must be set in the nginx config or the hosting panel.
 
 ---
 
@@ -356,7 +364,7 @@ curl -s  https://dynaops365.com/sitemap.xml | head -20
 These passed in the 2026-11-04 audit. Keep them working as you add pages.
 
 - All current pages are prerendered, with their text in the HTML.
-- Unknown URLs return a real 404, on the Node server and through the static server rules.
+- Unknown URLs return a real 404 on the Node server. The static IIS host doesn't do this yet (see section 3).
 - Each page has a unique title and description, one `<h1>`, and a correct canonical.
 - Open Graph and hreflang tags are correct in both languages.
 - `lang` and `dir` are correct on English and Arabic pages.
