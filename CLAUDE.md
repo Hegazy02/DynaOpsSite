@@ -16,5 +16,6 @@
 
 ## SEO
 
+- Every new page gets a unique title of 50 to 60 characters, counting the ` | DynaOps365` suffix that `SeoService` appends, in English and Arabic.
 - Every new page gets its own meta description from the start: a dedicated `<page>.description` `$localize` key in its content file, with the Arabic translation in `src/locale/ar/`. Keep it to about 155 characters, lead with the benefit and name the page's topic early. Never build it from the hero text.
 - Every new page's hero image uses `NgOptimizedImage` with `priority`. Other images and icons carry `width` and `height` attributes matching their file, except absolutely positioned ones sized by height alone, where a `width` attribute would distort them.
