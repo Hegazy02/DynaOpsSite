@@ -33,12 +33,36 @@ const FEATURES: IndustryFeaturesContent = {
   titleTabletWidth: 640,
   descriptionWidth: { tablet: 640, desktop: 780, arabicDesktop: 640 },
   items: pickFeatureCards([
-    'customer-management',
-    'sales-order-management',
-    'inventory-visibility',
-    'workflow-approvals',
-    'sales-targets-kpis',
-    'commission-management',
+    {
+      id: 'customer-management',
+      title: $localize`:@@manufacturing.features.customer-management.title:Distributor & Dealer Management`,
+      description: $localize`:@@manufacturing.features.customer-management.description:Plan partner visits, organize sales territories, and maintain customer activity histories to support ongoing distributor and dealer relationships.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@manufacturing.features.sales-order-management.title:Field Sales Order Capture`,
+      description: $localize`:@@manufacturing.features.sales-order-management.description:Create distributor and business customer orders during visits, connecting field sales transactions with your ERP processes.`,
+    },
+    {
+      id: 'inventory-visibility',
+      title: $localize`:@@manufacturing.features.inventory-visibility.title:Finished-Goods Visibility`,
+      description: $localize`:@@manufacturing.features.inventory-visibility.description:Give sales representatives access to finished-product information, customer-specific pricing, and available inventory from Microsoft Dynamics 365.`,
+    },
+    {
+      id: 'workflow-approvals',
+      title: $localize`:@@manufacturing.features.workflow-approvals.title:Sales & Discount Approvals`,
+      description: $localize`:@@manufacturing.features.workflow-approvals.description:Route orders and discount requests through configurable workflows based on transaction values, discount percentages, and defined commercial policies.`,
+    },
+    {
+      id: 'sales-targets-kpis',
+      title: $localize`:@@manufacturing.features.sales-targets-kpis.title:Sales Targets & KPIs`,
+      description: $localize`:@@manufacturing.features.sales-targets-kpis.description:Track performance against assigned sales targets and follow progress throughout the period.`,
+    },
+    {
+      id: 'commission-management',
+      title: $localize`:@@manufacturing.features.commission-management.title:Commission Management`,
+      description: $localize`:@@manufacturing.features.commission-management.description:Create commission structures for individual representatives or sales teams based on how performance is measured.`,
+    },
   ]),
 };
 

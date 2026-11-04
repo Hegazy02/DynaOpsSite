@@ -36,12 +36,36 @@ const FEATURES: IndustryFeaturesContent = {
   titleOneLineFromXl: true,
   descriptionWidth: { tablet: 640, arabicDesktop: 506 },
   items: pickFeatureCards([
-    'visit-planning',
-    'sales-order-management',
-    'inventory-visibility',
-    'route-optimization',
-    'collections-management',
-    'gps-tracking',
+    {
+      id: 'visit-planning',
+      title: $localize`:@@pharmaceuticals.features.visit-planning.title:Pharmacy & Wholesaler Coverage`,
+      description: $localize`:@@pharmaceuticals.features.visit-planning.description:Plan customer visits, organize sales territories, and optimize routes to manage pharmacy and wholesale account coverage.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@pharmaceuticals.features.sales-order-management.title:Pharmacy Order Capture`,
+      description: $localize`:@@pharmaceuticals.features.sales-order-management.description:Create medicine orders during pharmacy visits using product and customer information connected to your ERP.`,
+    },
+    {
+      id: 'inventory-visibility',
+      title: $localize`:@@pharmaceuticals.features.inventory-visibility.title:Medicine & Inventory Visibility`,
+      description: $localize`:@@pharmaceuticals.features.inventory-visibility.description:Access product information, customer pricing, and available inventory from Dynamics 365 when discussing orders with pharmacy customers.`,
+    },
+    {
+      id: 'route-optimization',
+      title: $localize`:@@pharmaceuticals.features.route-optimization.title:Route Management`,
+      description: $localize`:@@pharmaceuticals.features.route-optimization.description:Build optimized routes from planned customer visits without relying entirely on manual route preparation.`,
+    },
+    {
+      id: 'collections-management',
+      title: $localize`:@@pharmaceuticals.features.collections-management.title:Customer Collections`,
+      description: $localize`:@@pharmaceuticals.features.collections-management.description:Record payments during pharmacy and wholesaler visits while keeping collection transactions connected with your ERP processes.`,
+    },
+    {
+      id: 'gps-tracking',
+      title: $localize`:@@pharmaceuticals.features.gps-tracking.title:GPS-Verified Visits`,
+      description: $localize`:@@pharmaceuticals.features.gps-tracking.description:Connect pharmacy visits with GPS location information and customer activity history for better visibility into field execution.`,
+    },
   ]),
 };
 

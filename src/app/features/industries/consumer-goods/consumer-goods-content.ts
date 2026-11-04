@@ -35,12 +35,36 @@ const FEATURES: IndustryFeaturesContent = {
   titleOneLineFromXl: true,
   descriptionWidth: { tablet: 640, desktop: 840, arabicDesktop: 506 },
   items: pickFeatureCards([
-    'trade-promotions',
-    'sales-order-management',
-    'customer-management',
-    'inventory-visibility',
-    'workflow-approvals',
-    'sales-targets-kpis',
+    {
+      id: 'trade-promotions',
+      title: $localize`:@@consumer-goods.features.trade-promotions.title:Trade Promotions`,
+      description: $localize`:@@consumer-goods.features.trade-promotions.description:Make approved promotional offers available to sales representatives during customer sales activities.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@consumer-goods.features.sales-order-management.title:Sales Order Management`,
+      description: $localize`:@@consumer-goods.features.sales-order-management.description:Capture retailer and wholesale orders during customer visits, keeping sales transactions connected with your ERP processes.`,
+    },
+    {
+      id: 'customer-management',
+      title: $localize`:@@consumer-goods.features.customer-management.title:Customer Management`,
+      description: $localize`:@@consumer-goods.features.customer-management.description:Access key account information and customer details needed during sales visits and follow-ups.`,
+    },
+    {
+      id: 'inventory-visibility',
+      title: $localize`:@@consumer-goods.features.inventory-visibility.title:Product & Pricing Visibility`,
+      description: $localize`:@@consumer-goods.features.inventory-visibility.description:Give representatives access to product information, customer-specific pricing, and available inventory from Microsoft Dynamics 365.`,
+    },
+    {
+      id: 'workflow-approvals',
+      title: $localize`:@@consumer-goods.features.workflow-approvals.title:Discount & Order Approvals`,
+      description: $localize`:@@consumer-goods.features.workflow-approvals.description:Use configurable workflows to route sales orders and discount requests for approval based on your business rules.`,
+    },
+    {
+      id: 'sales-targets-kpis',
+      title: $localize`:@@consumer-goods.features.sales-targets-kpis.title:Sales Targets & KPIs`,
+      description: $localize`:@@consumer-goods.features.sales-targets-kpis.description:Track performance against assigned sales targets and follow progress throughout the period.`,
+    },
   ]),
 };
 

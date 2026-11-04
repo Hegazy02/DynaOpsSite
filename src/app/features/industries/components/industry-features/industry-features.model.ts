@@ -26,7 +26,14 @@ export interface IndustryFeaturesDescriptionWidth {
   arabicDesktop?: 506 | 570 | 640;
 }
 
-// Cards in the shared catalog; each industry page picks its own set.
+// A page's card: its own copy, with the artwork looked up by id.
+export interface IndustryFeatureCardCopy {
+  id: IndustryFeatureId;
+  title: string;
+  description: string;
+}
+
+// Artwork in the shared catalog; each industry page picks its own set.
 export type IndustryFeatureId =
   | 'visit-planning'
   | 'route-optimization'

@@ -1,77 +1,24 @@
 import type { IndustryFeatureCardContent } from '../industry-feature-card/industry-feature-card.model';
-import type { IndustryFeatureId } from './industry-features.model';
+import type { IndustryFeatureCardCopy, IndustryFeatureId } from './industry-features.model';
 
-// Cards shared by the industry pages; src/locale/ar/industries.json carries the Arabic copy.
+// Each page writes its own card copy; only the artwork is shared.
 // The artwork contains UI text, so the image path is localized like the copy.
-export const INDUSTRY_FEATURE_CARDS: Record<IndustryFeatureId, IndustryFeatureCardContent> = {
-  'visit-planning': {
-    title: $localize`:@@industries.features.visit-planning.title:Visit Planning`,
-    description: $localize`:@@industries.features.visit-planning.description:Plan customer visits and optimize sales routes using automated, dynamic, and AI-powered route optimization.`,
-    image: $localize`:@@industries.features.visit-planning.image:/images/industries/features/visit-planning.webp`,
-  },
-  'route-optimization': {
-    title: $localize`:@@industries.features.route-optimization.title:Route Optimization`,
-    description: $localize`:@@industries.features.route-optimization.description:Build optimized routes from planned customer visits without relying entirely on manual route preparation.`,
-    image: $localize`:@@industries.features.route-optimization.image:/images/industries/features/route-optimization.webp`,
-  },
-  'van-sales': {
-    title: $localize`:@@industries.features.van-sales.title:Van Sales & Van Stock`,
-    description: $localize`:@@industries.features.van-sales.description:Sell directly from available van inventory during customer visits and keep transactions connected with the stock.`,
-    image: $localize`:@@industries.features.van-sales.image:/images/industries/features/van-sales.webp`,
-  },
-  'inventory-visibility': {
-    title: $localize`:@@industries.features.inventory-visibility.title:Inventory Visibility`,
-    description: $localize`:@@industries.features.inventory-visibility.description:Support direct sales from vehicles with visibility into available van inventory and customer transactions.`,
-    image: $localize`:@@industries.features.inventory-visibility.image:/images/industries/features/inventory-visibility.webp`,
-  },
-  'trade-promotions': {
-    title: $localize`:@@industries.features.trade-promotions.title:Trade Promotions`,
-    description: $localize`:@@industries.features.trade-promotions.description:Evaluate the sales context and identify which approved promotions apply to the customer and current transaction.`,
-    image: $localize`:@@industries.features.trade-promotions.image:/images/industries/features/trade-promotions.webp`,
-  },
-  'sales-order-management': {
-    title: $localize`:@@industries.features.sales-order-management.title:Sales Order Management`,
-    description: $localize`:@@industries.features.sales-order-management.description:Create sales orders directly during customer visits using relevant customer, product, pricing, and inventory information.`,
-    image: $localize`:@@industries.features.sales-order-management.image:/images/industries/features/sales-order-management.webp`,
-  },
-  'collections-management': {
-    title: $localize`:@@industries.features.collections-management.title:Collections Management`,
-    description: $localize`:@@industries.features.collections-management.description:Allow sales representatives to record customer payments and collections directly from the field.`,
-    image: $localize`:@@industries.features.collections-management.image:/images/industries/features/collections-management.webp`,
-  },
-  // The next three descriptions repeat other cards' copy in Figma (both languages); kept as designed.
-  'customer-management': {
-    title: $localize`:@@industries.features.customer-management.title:Customer Management`,
-    description: $localize`:@@industries.features.customer-management.description:Allow sales representatives to record customer payments and collections directly from the field.`,
-    image: $localize`:@@industries.features.customer-management.image:/images/industries/features/customer-management.webp`,
-  },
-  'workflow-approvals': {
-    title: $localize`:@@industries.features.workflow-approvals.title:Workflow & Approvals`,
-    description: $localize`:@@industries.features.workflow-approvals.description:Execute approved trade promotions as part of the sales process and help representatives identify relevant offers during visits.`,
-    image: $localize`:@@industries.features.workflow-approvals.image:/images/industries/features/workflow-approvals.webp`,
-  },
-  'crm-activity-management': {
-    title: $localize`:@@industries.features.crm-activity-management.title:CRM & Activity Management`,
-    description: $localize`:@@industries.features.crm-activity-management.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
-    image: $localize`:@@industries.features.crm-activity-management.image:/images/industries/features/crm-activity-management.webp`,
-  },
-  'gps-tracking': {
-    title: $localize`:@@industries.features.gps-tracking.title:GPS Tracking`,
-    description: $localize`:@@industries.features.gps-tracking.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
-    image: $localize`:@@industries.features.gps-tracking.image:/images/industries/features/gps-tracking.webp`,
-  },
-  'sales-targets-kpis': {
-    title: $localize`:@@industries.features.sales-targets-kpis.title:Sales Targets & KPIs`,
-    description: $localize`:@@industries.features.sales-targets-kpis.description:Set targets by rep, team and region, and track achievement against KPIs in real time from the field activity synced with Dynamics 365.`,
-    image: $localize`:@@industries.features.sales-targets-kpis.image:/images/industries/features/sales-targets-kpis.webp`,
-  },
-  'commission-management': {
-    title: $localize`:@@industries.features.commission-management.title:Commission Management`,
-    description: $localize`:@@industries.features.commission-management.description:Calculate commissions automatically from targets, achievements and company policies, with full transparency for reps and managers.`,
-    image: $localize`:@@industries.features.commission-management.image:/images/industries/features/commission-management.webp`,
-  },
+const INDUSTRY_FEATURE_IMAGES: Record<IndustryFeatureId, string> = {
+  'visit-planning': $localize`:@@industries.features.visit-planning.image:/images/industries/features/visit-planning.webp`,
+  'route-optimization': $localize`:@@industries.features.route-optimization.image:/images/industries/features/route-optimization.webp`,
+  'van-sales': $localize`:@@industries.features.van-sales.image:/images/industries/features/van-sales.webp`,
+  'inventory-visibility': $localize`:@@industries.features.inventory-visibility.image:/images/industries/features/inventory-visibility.webp`,
+  'trade-promotions': $localize`:@@industries.features.trade-promotions.image:/images/industries/features/trade-promotions.webp`,
+  'sales-order-management': $localize`:@@industries.features.sales-order-management.image:/images/industries/features/sales-order-management.webp`,
+  'collections-management': $localize`:@@industries.features.collections-management.image:/images/industries/features/collections-management.webp`,
+  'customer-management': $localize`:@@industries.features.customer-management.image:/images/industries/features/customer-management.webp`,
+  'workflow-approvals': $localize`:@@industries.features.workflow-approvals.image:/images/industries/features/workflow-approvals.webp`,
+  'crm-activity-management': $localize`:@@industries.features.crm-activity-management.image:/images/industries/features/crm-activity-management.webp`,
+  'gps-tracking': $localize`:@@industries.features.gps-tracking.image:/images/industries/features/gps-tracking.webp`,
+  'sales-targets-kpis': $localize`:@@industries.features.sales-targets-kpis.image:/images/industries/features/sales-targets-kpis.webp`,
+  'commission-management': $localize`:@@industries.features.commission-management.image:/images/industries/features/commission-management.webp`,
 };
 
-export function pickFeatureCards(ids: IndustryFeatureId[]): IndustryFeatureCardContent[] {
-  return ids.map((id) => INDUSTRY_FEATURE_CARDS[id]);
+export function pickFeatureCards(cards: IndustryFeatureCardCopy[]): IndustryFeatureCardContent[] {
+  return cards.map(({ id, ...copy }) => ({ ...copy, image: INDUSTRY_FEATURE_IMAGES[id] }));
 }

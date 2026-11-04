@@ -30,12 +30,36 @@ const FEATURES: IndustryFeaturesContent = {
   title: $localize`:@@retail-distribution.features.title:Built for Retail Distribution Networks`,
   description: $localize`:@@retail-distribution.features.description:Managing sales across supermarkets, convenience stores, and independent retailers means coordinating frequent store visits, replenishment orders, and promotional offers.`,
   items: pickFeatureCards([
-    'visit-planning',
-    'route-optimization',
-    'gps-tracking',
-    'trade-promotions',
-    'sales-order-management',
-    'van-sales',
+    {
+      id: 'visit-planning',
+      title: $localize`:@@retail-distribution.features.visit-planning.title:Retail Outlet Coverage`,
+      description: $localize`:@@retail-distribution.features.visit-planning.description:Plan store visits, organize sales territories, and use GPS validation to track customer visits across your retail network.`,
+    },
+    {
+      id: 'route-optimization',
+      title: $localize`:@@retail-distribution.features.route-optimization.title:Route Management`,
+      description: $localize`:@@retail-distribution.features.route-optimization.description:Build optimized routes from planned customer visits without relying entirely on manual route preparation.`,
+    },
+    {
+      id: 'gps-tracking',
+      title: $localize`:@@retail-distribution.features.gps-tracking.title:GPS Tracking`,
+      description: $localize`:@@retail-distribution.features.gps-tracking.description:Connect customer visits with location information and field activities for better visibility into sales execution.`,
+    },
+    {
+      id: 'trade-promotions',
+      title: $localize`:@@retail-distribution.features.trade-promotions.title:Retail Promotions`,
+      description: $localize`:@@retail-distribution.features.trade-promotions.description:Give representatives access to approved trade promotions when creating sales orders for participating retailers.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@retail-distribution.features.sales-order-management.title:In-Store Order Capture`,
+      description: $localize`:@@retail-distribution.features.sales-order-management.description:Create retailer orders during store visits with access to product information, prices, and available inventory.`,
+    },
+    {
+      id: 'van-sales',
+      title: $localize`:@@retail-distribution.features.van-sales.title:Van Sales & Stock`,
+      description: $localize`:@@retail-distribution.features.van-sales.description:Support direct selling to retail outlets with access to van inventory and the ability to record sales transactions.`,
+    },
   ]),
 };
 

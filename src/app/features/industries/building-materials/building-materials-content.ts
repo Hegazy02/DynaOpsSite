@@ -36,12 +36,36 @@ const FEATURES: IndustryFeaturesContent = {
   titleOneLineFromXl: true,
   descriptionWidth: { tablet: 640, arabicDesktop: 570 },
   items: pickFeatureCards([
-    'customer-management',
-    'sales-order-management',
-    'inventory-visibility',
-    'workflow-approvals',
-    'collections-management',
-    'crm-activity-management',
+    {
+      id: 'customer-management',
+      title: $localize`:@@building-materials.features.customer-management.title:Dealer & Contractor Visits`,
+      description: $localize`:@@building-materials.features.customer-management.description:Plan customer visits by territory and maintain a history of sales activities across dealer and contractor accounts.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@building-materials.features.sales-order-management.title:Field Sales Orders`,
+      description: $localize`:@@building-materials.features.sales-order-management.description:Create sales orders directly during customer visits, connecting order information with your company’s ERP processes.`,
+    },
+    {
+      id: 'inventory-visibility',
+      title: $localize`:@@building-materials.features.inventory-visibility.title:Customer-Specific Pricing`,
+      description: $localize`:@@building-materials.features.inventory-visibility.description:Access product information, customer-specific prices, and available inventory from Dynamics 365 when discussing orders with customers.`,
+    },
+    {
+      id: 'workflow-approvals',
+      title: $localize`:@@building-materials.features.workflow-approvals.title:Discount & Order Approvals`,
+      description: $localize`:@@building-materials.features.workflow-approvals.description:Route discount requests and sales orders through configurable workflows based on transaction values, discount percentages, and defined approval rules.`,
+    },
+    {
+      id: 'collections-management',
+      title: $localize`:@@building-materials.features.collections-management.title:Customer Collections`,
+      description: $localize`:@@building-materials.features.collections-management.description:Record payments during customer visits and connect collection transactions with your organization’s financial processes.`,
+    },
+    {
+      id: 'crm-activity-management',
+      title: $localize`:@@building-materials.features.crm-activity-management.title:CRM & Activity Management`,
+      description: $localize`:@@building-materials.features.crm-activity-management.description:See visits, activities, sales orders, collections, and customer interactions in one chronological history.`,
+    },
   ]),
 };
 

@@ -36,12 +36,36 @@ const FEATURES: IndustryFeaturesContent = {
   titleTabletWidth: 640,
   descriptionWidth: { tablet: 640, arabicDesktop: 570 },
   items: pickFeatureCards([
-    'customer-management',
-    'crm-activity-management',
-    'inventory-visibility',
-    'sales-order-management',
-    'workflow-approvals',
-    'collections-management',
+    {
+      id: 'customer-management',
+      title: $localize`:@@industrial-supplies.features.customer-management.title:Industrial Account Management`,
+      description: $localize`:@@industrial-supplies.features.customer-management.description:Plan visits to factories and industrial customers, organize territories, and access previous customer activities to support ongoing account relationships.`,
+    },
+    {
+      id: 'crm-activity-management',
+      title: $localize`:@@industrial-supplies.features.crm-activity-management.title:CRM & Activity Management`,
+      description: $localize`:@@industrial-supplies.features.crm-activity-management.description:See visits, activities, sales orders, collections, and customer interactions in one chronological history.`,
+    },
+    {
+      id: 'inventory-visibility',
+      title: $localize`:@@industrial-supplies.features.inventory-visibility.title:Product & Stock Visibility`,
+      description: $localize`:@@industrial-supplies.features.inventory-visibility.description:Access ERP product information and available inventory when discussing equipment, spare parts, and industrial supplies with customers.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@industrial-supplies.features.sales-order-management.title:Field Sales Order Capture`,
+      description: $localize`:@@industrial-supplies.features.sales-order-management.description:Create sales orders during customer visits using product, pricing, and inventory information connected to your ERP.`,
+    },
+    {
+      id: 'workflow-approvals',
+      title: $localize`:@@industrial-supplies.features.workflow-approvals.title:Sales & Discount Approvals`,
+      description: $localize`:@@industrial-supplies.features.workflow-approvals.description:Route orders and discount requests through configurable workflows based on transaction values, discount percentages, and defined approval rules.`,
+    },
+    {
+      id: 'collections-management',
+      title: $localize`:@@industrial-supplies.features.collections-management.title:Customer Collections`,
+      description: $localize`:@@industrial-supplies.features.collections-management.description:Record payments during industrial customer visits and connect collection transactions with your organization’s financial processes.`,
+    },
   ]),
 };
 

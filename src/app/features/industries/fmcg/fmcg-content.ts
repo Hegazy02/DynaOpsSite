@@ -31,12 +31,36 @@ const FEATURES: IndustryFeaturesContent = {
   description: $localize`:@@fmcg.features.description:FMCG sales teams need to move quickly between customers while always having access to accurate information.`,
   descriptionWidth: { tablet: 492, desktop: 492 },
   items: pickFeatureCards([
-    'visit-planning',
-    'route-optimization',
-    'van-sales',
-    'trade-promotions',
-    'sales-order-management',
-    'collections-management',
+    {
+      id: 'visit-planning',
+      title: $localize`:@@fmcg.features.visit-planning.title:Visit Planning`,
+      description: $localize`:@@fmcg.features.visit-planning.description:Plan customer visits and optimize sales routes using automated, dynamic, and AI-powered route optimization.`,
+    },
+    {
+      id: 'route-optimization',
+      title: $localize`:@@fmcg.features.route-optimization.title:Journey & Route Planning`,
+      description: $localize`:@@fmcg.features.route-optimization.description:Plan customer visits and optimize sales routes using automated, dynamic, and AI-powered route optimization.`,
+    },
+    {
+      id: 'van-sales',
+      title: $localize`:@@fmcg.features.van-sales.title:Van Sales & Van Stock`,
+      description: $localize`:@@fmcg.features.van-sales.description:Support direct sales from vehicles with visibility into available van inventory and customer transactions.`,
+    },
+    {
+      id: 'trade-promotions',
+      title: $localize`:@@fmcg.features.trade-promotions.title:Trade Promotions`,
+      description: $localize`:@@fmcg.features.trade-promotions.description:Execute approved trade promotions as part of the sales process and help representatives identify relevant offers during customer visits.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@fmcg.features.sales-order-management.title:Sales Orders`,
+      description: $localize`:@@fmcg.features.sales-order-management.description:Create sales orders directly during customer visits using relevant customer, product, pricing, and inventory information.`,
+    },
+    {
+      id: 'collections-management',
+      title: $localize`:@@fmcg.features.collections-management.title:Collections`,
+      description: $localize`:@@fmcg.features.collections-management.description:Allow sales representatives to record customer payments and collections directly from the field.`,
+    },
   ]),
 };
 

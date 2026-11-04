@@ -30,12 +30,36 @@ const FEATURES: IndustryFeaturesContent = {
   title: $localize`:@@food-beverage.features.title:Built for the Demands of Food & Beverage Distribution`,
   description: $localize`:@@food-beverage.features.description:From grocery stores and supermarkets to restaurants and wholesalers, food and beverage sales teams manage frequent customer visits, repeat orders, and changing inventory requirements.`,
   items: pickFeatureCards([
-    'van-sales',
-    'inventory-visibility',
-    'sales-order-management',
-    'visit-planning',
-    'route-optimization',
-    'collections-management',
+    {
+      id: 'van-sales',
+      title: $localize`:@@food-beverage.features.van-sales.title:Van Sales & Stock`,
+      description: $localize`:@@food-beverage.features.van-sales.description:Support direct selling from vehicles with visibility into van inventory and customer sales transactions.`,
+    },
+    {
+      id: 'inventory-visibility',
+      title: $localize`:@@food-beverage.features.inventory-visibility.title:Inventory Visibility`,
+      description: $localize`:@@food-beverage.features.inventory-visibility.description:View available stock across relevant warehouses to understand where inventory is currently held.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@food-beverage.features.sales-order-management.title:Faster Order Capture`,
+      description: $localize`:@@food-beverage.features.sales-order-management.description:Create customer orders during visits with access to product information, pricing, and available inventory from your ERP.`,
+    },
+    {
+      id: 'visit-planning',
+      title: $localize`:@@food-beverage.features.visit-planning.title:Visit Planning`,
+      description: $localize`:@@food-beverage.features.visit-planning.description:Plan customer visits and optimize sales routes using automated, dynamic, and AI-powered route optimization.`,
+    },
+    {
+      id: 'route-optimization',
+      title: $localize`:@@food-beverage.features.route-optimization.title:Smarter Sales Routes`,
+      description: $localize`:@@food-beverage.features.route-optimization.description:Plan recurring customer visits and optimize sales routes with AI-powered, automated, and dynamic route optimization.`,
+    },
+    {
+      id: 'collections-management',
+      title: $localize`:@@food-beverage.features.collections-management.title:Customer Collections`,
+      description: $localize`:@@food-beverage.features.collections-management.description:Record customer payments during field visits and keep collection activities connected with your ERP processes.`,
+    },
   ]),
 };
 

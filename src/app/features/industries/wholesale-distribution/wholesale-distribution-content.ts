@@ -31,12 +31,36 @@ const FEATURES: IndustryFeaturesContent = {
   description: $localize`:@@wholesale-distribution.features.description:Wholesale sales teams manage multiple business accounts, recurring orders, negotiated pricing, and outstanding customer payments.`,
   descriptionWidth: { desktop: 586 },
   items: pickFeatureCards([
-    'customer-management',
-    'sales-order-management',
-    'inventory-visibility',
-    'collections-management',
-    'workflow-approvals',
-    'crm-activity-management',
+    {
+      id: 'customer-management',
+      title: $localize`:@@wholesale-distribution.features.customer-management.title:Customer Account Management`,
+      description: $localize`:@@wholesale-distribution.features.customer-management.description:Access customer information and activity history to prepare for visits, follow up on previous interactions, and manage wholesale relationships.`,
+    },
+    {
+      id: 'sales-order-management',
+      title: $localize`:@@wholesale-distribution.features.sales-order-management.title:Wholesale Order Capture`,
+      description: $localize`:@@wholesale-distribution.features.sales-order-management.description:Create sales orders directly during customer visits, keeping repeat purchases and new transactions connected with your ERP processes.`,
+    },
+    {
+      id: 'inventory-visibility',
+      title: $localize`:@@wholesale-distribution.features.inventory-visibility.title:Customer-Specific Pricing & Inventory`,
+      description: $localize`:@@wholesale-distribution.features.inventory-visibility.description:Check account-specific prices, product information, and available stock from Microsoft Dynamics 365 before creating customer orders.`,
+    },
+    {
+      id: 'collections-management',
+      title: $localize`:@@wholesale-distribution.features.collections-management.title:Field Collections`,
+      description: $localize`:@@wholesale-distribution.features.collections-management.description:Record customer payments during account visits and connect collection transactions with your organization’s financial processes.`,
+    },
+    {
+      id: 'workflow-approvals',
+      title: $localize`:@@wholesale-distribution.features.workflow-approvals.title:Sales & Discount Approvals`,
+      description: $localize`:@@wholesale-distribution.features.workflow-approvals.description:Route sales orders and discount requests through configurable workflows based on transaction amounts, discount percentages, or other defined business rules.`,
+    },
+    {
+      id: 'crm-activity-management',
+      title: $localize`:@@wholesale-distribution.features.crm-activity-management.title:CRM & Activity Management`,
+      description: $localize`:@@wholesale-distribution.features.crm-activity-management.description:See visits, activities, sales orders, collections, and customer interactions in one chronological history.`,
+    },
   ]),
 };
 

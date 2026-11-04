@@ -131,7 +131,7 @@ You plan to build Home, About, Demo and the features. These pages are also linke
 
 ### Should fix before launch
 
-- [ ] **Add internal links inside page content.** The only link inside `<main>` on the FMCG page is `/demo`, so pages reach each other only through the footer. Link each industry page to its relevant features, and each feature page to the industries that use it.
+- [ ] **Add internal links inside page content.** The only link inside `<main>` on the FMCG page is `/demo`, so pages reach each other only through the footer. Link each industry page to its relevant features, and each feature page to the industries that use it. The six feature cards on each industry page are the natural place: the content PDF names a target for each card, and each card's `id` already matches that feature page's URL (`/features/<id>`). Add the links as those pages are built, so no card points to a 404.
 - [ ] **Expand the industry pages.** They have about 235 to 285 words. Add real detail such as workflows, common problems, use cases and FAQs. Don't add filler.
 - [ ] **Improve image loading.**
   - [x] Use `NgOptimizedImage` with `priority` on the hero of the 9 industry pages. Browsers now preload the right 2x or 3x file (confirmed in the browser, 2026-11-04).
