@@ -3,7 +3,8 @@
   "translations": {
     "features.hero.cta": "احجز عرضًا تجريبيًا",
     "customer-management.imageDir": "/images/features/customer-management-ar",
-    "customer-management.title": "إدارة العملاء",
+    "customer-management.title": "برنامج إدارة العملاء لفرق المبيعات مع D365",
+    "customer-management.description": "امنح المندوبين صورة متكاملة عن العميل: البيانات والمواقع والأنشطة والسجل البيعي والائتمان، في نظام متكامل مع Microsoft Dynamics 365 F&O.",
     "customer-management.hero.eyebrow": "إدارة العملاء لفرق المبيعات الميدانية",
     "customer-management.hero.title": "امنح المندوب صورة متكاملة عن العميل",
     "customer-management.hero.subtitle": "يجمع DynaOps بيانات العملاء، والمواقع، والأنشطة، والسجل البيعي، والمعلومات المرتبطة بنظام ERP في تجربة واحدة متصلة مع:",

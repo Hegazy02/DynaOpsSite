@@ -45,10 +45,11 @@
 
     <!-- Each language has its own mock, so it is not mirrored. -->
     <img
-      [src]="image().src"
+      [ngSrc]="image().src"
       [alt]="image().alt"
       [width]="image().width"
       [height]="image().height"
+      priority
       class="order-2 w-full max-w-102 shrink-0 xl:order-none"
     />
   </div>

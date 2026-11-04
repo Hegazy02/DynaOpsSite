@@ -113,9 +113,8 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const CUSTOMER_MANAGEMENT_CONTENT: FeaturePageContent = {
-  title: $localize`:@@customer-management.title:Customer Management`,
-  // Reuses the hero paragraph until the page gets dedicated search copy.
-  description: `${HERO.subtitle} ${HERO.emphasis}`,
+  title: $localize`:@@customer-management.title:Customer Management Software for Dynamics 365`,
+  description: $localize`:@@customer-management.description:Give field sales reps a complete customer view: profiles, locations, activity, sales history and credit, connected to Microsoft Dynamics 365 F&O.`,
   hero: HERO,
   capabilities: CAPABILITIES,
   connections: CONNECTIONS,

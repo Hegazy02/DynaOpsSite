@@ -58,6 +58,24 @@ Work through these in order. Each step points to a reference with working code.
 - Do not mutate the DOM before hydration completes; it breaks hydration (`NG0500` errors) and flashes content. Third-party widgets that own their DOM (maps, charts, embeds) get `ngSkipHydration` on their host.
 - `window`, `document.cookie`, `localStorage`, `IntersectionObserver`, analytics SDKs: wrap in `afterNextRender` or an `isPlatformBrowser` guard. They do not exist on the server and will crash the render, which means a 500 instead of a page.
 
+## Checklist for every new page
+
+### Technical setup
+
+- [ ] Add the route to `src/app/app.routes.ts` with `title` and `data.seo.description`.
+- [ ] Add a `RenderMode.Prerender` entry to `src/app/app.routes.server.ts`. Without it, the page isn't prerendered, so it's missing from the static FTP deploy and the sitemap.
+- [ ] Add Arabic translations, and register any new locale file in `angular.json`.
+- [ ] After `npm run build`, confirm the page text and tags are in `dist/DynaOpsSite/browser/<route>/index.html`, in both languages.
+
+### Content
+
+- [ ] Unique title of 50 to 60 characters.
+- [ ] Its own description of about 155 characters, leading with the benefit and naming the page's topic early. Give it a dedicated `<page>.description` key in English and Arabic from the start. Don't build it from the hero text.
+- [ ] Exactly one `<h1>`, with headings in logical order.
+- [ ] Meaningful `alt` text on images that carry content, and `alt=""` on decorative ones.
+- [ ] Links to related pages inside the main content.
+- [ ] Main content isn't behind a plain `@defer`, and nothing important loads only in the browser.
+
 ## Minimal setup for a project that has none of this
 
 1. `SiteConfig` token with origin, site name and default OG image, and a `SeoService` that sets title, description, canonical, OG, Twitter and robots in one call. See [meta-tags.md](references/meta-tags.md).

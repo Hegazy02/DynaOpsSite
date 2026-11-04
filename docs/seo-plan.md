@@ -117,10 +117,10 @@ You plan to build Home, About, Demo and the features. These pages are also linke
 
 - [ ] **Replace the placeholder phone number.** `src/app/layout/footer/footer-content.ts` ships `022`, which outputs `tel:022` and `wa.me/022`. Set the real number or remove both links.
 - [x] **Shortened the meta descriptions on the 9 industry pages.** English now runs 149 to 157 characters and Arabic 132 to 153. Each page has its own `<page>.description` key, separate from the hero text.
-- [ ] **Shorten the customer management description the same way.** That page is still on `features/customerMangement`, and its description (188 characters) is still built from the hero text. New feature pages should also get their own short description key.
+- [x] **Shortened the customer management description the same way.** English is 145 characters and Arabic 136, with its own `customer-management.description` key. New feature pages should also get their own short description key.
 - [x] **Improved the titles on the 9 industry pages.** They now run 50 to 60 characters, for example `FMCG Field Sales Software for Dynamics 365 | DynaOps365`.
 - [ ] **Check the titles against real search data.** They were written without the Search Console export, which isn't available yet, and the current site's data covers license topics rather than field sales. Use a keyword tool for field sales terms in English and Arabic, and review the titles again after launch.
-- [ ] **Improve the customer management title the same way.** That page is still on `features/customerMangement`, with the title `Customer Management | DynaOps365`. New feature pages should also start with a 50 to 60 character title.
+- [x] **Improved the customer management title the same way.** It's now `Customer Management Software for Dynamics 365 | DynaOps365` (58 characters), and Arabic is 55. New feature pages should also start with a 50 to 60 character title.
 - [ ] **Remove every dead link.** Each page currently links to 20 pages per language that return 404. Any target that won't exist at launch must be removed from the header and footer.
 
 - [x] **Made unknown URLs return a real 404 on the temporary IIS host.** `public/web.config` now uses `responseMode="File"` instead of `ExecuteURL`. `/nope`, `/a/b/c`, `/about`, `/ar/nope`, `/ar/a/b/c` and `/ar/about` all return 404 with the "Page not found" page in the right language (confirmed 2026-11-04).
@@ -135,9 +135,9 @@ You plan to build Home, About, Demo and the features. These pages are also linke
 - [ ] **Expand the industry pages.** They have about 235 to 285 words. Add real detail such as workflows, common problems, use cases and FAQs. Don't add filler.
 - [ ] **Improve image loading.**
   - [x] Use `NgOptimizedImage` with `priority` on the hero of the 9 industry pages. Browsers now preload the right 2x or 3x file (confirmed in the browser, 2026-11-04).
-  - [ ] Do the same in `feature-hero` for customer management, which is still on `features/customerMangement`, and on the heroes of new pages.
+  - [x] Did the same in `feature-hero` for customer management (confirmed in the browser, 2026-11-04). The heroes of new pages should follow the same pattern.
   - [x] Added `width` and `height` to the icons in `button`, `tabs`, `industry-features` and `header`. The two visibility cursors stay without them, because they're sized by CSS height, and they're absolutely positioned so they can't shift the layout.
-  - [ ] Check the customer management images once `features/customerMangement` is merged, including `feature-connections`.
+  - [x] Added `width` and `height` to the `feature-connections` icons. Every image on the customer management page now has them.
 - [ ] **Confirm the hashed asset and manifest cache rules.** `public/web.config` and `public/.htaccess` now set `public, max-age=31536000, immutable` on JS and CSS, and revalidate `site.webmanifest`, but this isn't confirmed until it's deployed.
 - [x] **Compression:** the temporary IIS host and the current `dynaops365.com` both already compress HTML, CSS and JS (checked 2026-11-04), so `web.config` adds nothing. `public/.htaccess` now compresses text files in case production runs Apache. Confirm the result at launch.
 - [ ] **Reduce the SVG download size.** The temporary host doesn't compress SVGs, and the ERP integration artwork is large (`base.svg` is 89 KB). IIS only allows this setting at server level, so ask the host, or optimize or convert those files.

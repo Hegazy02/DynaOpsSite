@@ -1,3 +1,4 @@
+import { NgOptimizedImage } from '@angular/common';
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
@@ -10,7 +11,7 @@ import type { FeatureHeroCta, FeatureHeroImage } from './feature-hero.model';
 @Component({
   selector: 'app-feature-hero',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [RouterLink, Button],
+  imports: [NgOptimizedImage, RouterLink, Button],
   templateUrl: './feature-hero.html',
   host: {
     class:
