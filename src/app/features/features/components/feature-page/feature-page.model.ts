@@ -12,7 +12,7 @@ export interface FeaturePageContent {
   description: string;
   hero: FeatureHeroCopy;
   capabilities: FeatureCapabilitiesContent;
-  connections: FeatureConnectionsContent;
+  connections?: FeatureConnectionsContent;
   integration: ErpIntegrationCopy;
   // Rendered at the top of the footer, with the device photo beside the copy.
   footerCta: CtaContent;

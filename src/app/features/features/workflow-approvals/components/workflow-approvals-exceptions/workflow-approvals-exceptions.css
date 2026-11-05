@@ -1,0 +1,90 @@
+/* Pulses over the artwork's resting paths: Figma path trim, 3px round stroke, 6s linear loop in step. */
+.flow {
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-dasharray: 0 1;
+  visibility: hidden;
+  animation: 6s linear infinite;
+}
+
+.flow-incoming {
+  stroke: var(--brand-200);
+  animation-name: flow-incoming;
+}
+
+.flow-approval {
+  stroke: var(--status-warning);
+  animation-name: flow-outcome;
+}
+
+.flow-auto {
+  stroke: var(--status-success);
+  animation-name: flow-outcome;
+}
+
+@keyframes flow-incoming {
+  0%,
+  50% {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: 0;
+    visibility: hidden;
+  }
+  3.85%,
+  53.85% {
+    stroke-dasharray: 0.2821 1;
+    stroke-dashoffset: 0;
+    visibility: visible;
+  }
+  13.65%,
+  63.65% {
+    stroke-dasharray: 0.2821 1;
+    stroke-dashoffset: -0.7179;
+    visibility: visible;
+  }
+  17.5%,
+  49.99%,
+  67.5%,
+  100% {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: -1;
+    visibility: hidden;
+  }
+}
+
+/* Both outcomes leave the rules card together, once the incoming pulse has arrived. */
+@keyframes flow-outcome {
+  0%,
+  15.833%,
+  65.833% {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: 0;
+    visibility: hidden;
+  }
+  21.517%,
+  71.517% {
+    stroke-dasharray: 0.2821 1;
+    stroke-dashoffset: 0;
+    visibility: visible;
+  }
+  35.983%,
+  85.983% {
+    stroke-dasharray: 0.2821 1;
+    stroke-dashoffset: -0.7179;
+    visibility: visible;
+  }
+  41.667%,
+  65.83%,
+  91.667%,
+  100% {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: -1;
+    visibility: hidden;
+  }
+}
+
+/* Without motion only the artwork's resting paths show. */
+@media (prefers-reduced-motion: reduce) {
+  .flow {
+    animation: none;
+  }
+}

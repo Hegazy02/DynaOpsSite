@@ -20,6 +20,8 @@ export interface FeatureHeroCopy {
   emphasis?: string;
   // Second paragraph under the subtitle.
   note?: string;
+  // Arabic tablet title and subtitle at 629px, where the page's frame fits them on fewer lines.
+  wideArabicTabletCopy?: boolean;
   image: FeatureHeroImage;
   cta?: FeatureHeroCta;
 }

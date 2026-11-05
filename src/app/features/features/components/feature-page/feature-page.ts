@@ -10,7 +10,7 @@ import { FeatureConnections } from '../feature-connections/feature-connections';
 import { FeatureHero } from '../feature-hero/feature-hero';
 import type { FeaturePageContent } from './feature-page.model';
 
-// Layout shared by the feature pages: hero, capabilities, connections, ERP integration and the footer CTA, all from `content`.
+// Layout shared by the feature pages: hero, capabilities, connections or a projected section, ERP integration and the footer CTA.
 @Component({
   selector: 'app-feature-page',
   changeDetection: ChangeDetectionStrategy.OnPush,

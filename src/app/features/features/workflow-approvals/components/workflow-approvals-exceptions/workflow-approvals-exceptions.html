@@ -1,0 +1,62 @@
+<div class="container-page py-8 xl:py-16">
+  <div
+    class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 md:gap-16 md:max-xl:rtl:gap-8"
+  >
+    <!-- Figma boxes: 674px English; the Arabic desktop frame widens it to 772px and narrows the last paragraph to 556px. -->
+    <div class="flex max-w-168.5 flex-col gap-4 text-center xl:rtl:max-w-193">
+      <!-- The English phone frame sets this title at H2; the Arabic one stays at H3. -->
+      <h2 class="text-h3 max-md:ltr:text-h2 md:text-h2 xl:text-display-md">
+        {{ content().title }}
+      </h2>
+      @for (paragraph of content().paragraphs; track $index) {
+        <p class="mx-auto text-body-md text-fg-secondary last:xl:rtl:max-w-139">{{ paragraph }}</p>
+      }
+    </div>
+
+    @for (diagram of diagrams; track diagram.breakpoint) {
+      <div class="relative w-full" [class]="diagram.visibilityClass">
+        <img
+          [src]="content().images[diagram.breakpoint]"
+          [alt]="content().imageAlt"
+          loading="lazy"
+          [width]="diagram.width"
+          [height]="diagram.height"
+          class="h-auto w-full"
+        />
+        <svg
+          aria-hidden="true"
+          class="absolute inset-0 size-full"
+          [class]="diagram.overlayClass"
+          [attr.viewBox]="'0 0 ' + diagram.width + ' ' + diagram.height"
+          fill="none"
+        >
+          <mask
+            [attr.id]="'exceptions-flows-' + diagram.breakpoint"
+            maskUnits="userSpaceOnUse"
+            x="0"
+            y="0"
+            [attr.width]="diagram.width"
+            [attr.height]="diagram.height"
+          >
+            <rect [attr.width]="diagram.width" [attr.height]="diagram.height" fill="white" />
+            <!-- Figma stacks the pills above the paths, so the pulse passes behind them. -->
+            @for (hole of diagram.holes; track $index) {
+              <rect
+                [attr.x]="hole.x"
+                [attr.y]="hole.y"
+                [attr.width]="hole.width"
+                [attr.height]="hole.height"
+                fill="black"
+              />
+            }
+          </mask>
+          <g [attr.mask]="'url(#exceptions-flows-' + diagram.breakpoint + ')'">
+            <path class="flow flow-incoming" [attr.d]="diagram.incoming" pathLength="1" />
+            <path class="flow flow-approval" [attr.d]="diagram.approval" pathLength="1" />
+            <path class="flow flow-auto" [attr.d]="diagram.autoProcessed" pathLength="1" />
+          </g>
+        </svg>
+      </div>
+    }
+  </div>
+</div>

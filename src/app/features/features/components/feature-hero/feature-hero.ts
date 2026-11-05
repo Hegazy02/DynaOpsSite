@@ -24,6 +24,7 @@ export class FeatureHero {
   readonly subtitle = input.required<string>();
   readonly emphasis = input<string>();
   readonly note = input<string>();
+  readonly wideArabicTabletCopy = input(false);
   readonly image = input.required<FeatureHeroImage>();
   readonly cta = input<FeatureHeroCta>(FEATURE_HERO_DEFAULTS.cta);
 }

@@ -18,11 +18,26 @@ import type { ErpIntegrationImage, ErpIntegrationTextWidth } from './erp-integra
 export class ErpIntegration {
   readonly title = input.required<string>();
   readonly paragraphs = input.required<string[]>();
+  readonly emphasis = input<string>();
   readonly allParagraphsOnTablet = input(false);
   readonly allParagraphsOnPhone = input(false);
   readonly spacedParagraphs = input(false);
   readonly textWidth = input<ErpIntegrationTextWidth>(497);
   readonly image = input<ErpIntegrationImage>(ERP_INTEGRATION_DEFAULTS.image);
+
+  protected readonly paragraphParts = computed(() => {
+    const emphasis = this.emphasis();
+    return this.paragraphs().map((paragraph) => {
+      const index = emphasis ? paragraph.indexOf(emphasis) : -1;
+      return index < 0
+        ? { before: paragraph, emphasis: '', after: '' }
+        : {
+            before: paragraph.slice(0, index),
+            emphasis,
+            after: paragraph.slice(index + emphasis!.length),
+          };
+    });
+  });
 
   protected readonly textWidthClass = computed(() => TEXT_WIDTH[this.textWidth()]);
 

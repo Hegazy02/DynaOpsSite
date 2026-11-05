@@ -8,15 +8,21 @@
         <p class="order-1 text-body-md font-semibold text-fg-brand xl:order-none">
           {{ eyebrow() }}
         </p>
-        <!-- Figma boxes: 564px English and 554 / 486px Arabic on tablet; 458 / 557px Arabic on desktop. -->
+        <!-- Figma boxes: 564px English and 554 / 486px Arabic on tablet (or 629px where the page asks); 458 / 557px Arabic on desktop. -->
         <div class="order-3 flex w-full flex-col gap-4 md:max-xl:ltr:max-w-141 xl:order-none">
           <h1
-            class="text-h2 md:text-h1 md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-138.5 xl:text-display-md xl:rtl:max-w-114.5"
+            class="text-h2 md:text-h1 md:max-xl:rtl:mx-auto xl:text-display-md xl:rtl:max-w-114.5"
+            [class]="
+              wideArabicTabletCopy() ? 'md:max-xl:rtl:max-w-157.25' : 'md:max-xl:rtl:max-w-138.5'
+            "
           >
             {{ title() }}
           </h1>
           <p
-            class="text-body-md text-fg-secondary md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-121.5 xl:rtl:max-w-139.25"
+            class="text-body-md text-fg-secondary md:max-xl:rtl:mx-auto xl:rtl:max-w-139.25"
+            [class]="
+              wideArabicTabletCopy() ? 'md:max-xl:rtl:max-w-157.25' : 'md:max-xl:rtl:max-w-121.5'
+            "
           >
             {{ subtitle() }}
             @if (emphasis(); as emphasis) {

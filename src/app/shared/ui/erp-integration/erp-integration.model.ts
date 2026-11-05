@@ -16,6 +16,8 @@ export interface ErpIntegrationCopy {
   title: string;
   // Only the first paragraph shows below xl unless allParagraphsOnTablet, as in the tablet and phone frames.
   paragraphs: string[];
+  // Semibold phrase inside the paragraphs, where the frame sets one.
+  emphasis?: string;
   // Shows every paragraph from md when the page's tablet frame keeps them all.
   allParagraphsOnTablet?: boolean;
   // Shows every paragraph at every width when the phone frame keeps them too.

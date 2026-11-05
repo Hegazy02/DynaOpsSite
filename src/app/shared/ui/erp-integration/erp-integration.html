@@ -38,14 +38,18 @@
     </div>
 
     <div class="flex w-full flex-col gap-4" [class]="textWidthClass()">
-      <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ title() }}</h2>
+      <h2 class="text-h3 whitespace-pre-line md:text-h2 xl:text-display-md">{{ title() }}</h2>
       <div
         class="flex flex-col text-body-md whitespace-pre-line text-fg-secondary"
         [class.gap-4]="spacedParagraphs()"
       >
-        @for (paragraph of paragraphs(); track $index) {
+        @for (part of paragraphParts(); track $index) {
           <p [class]="paragraphClass()">
-            {{ paragraph }}
+            {{ part.before }}
+            @if (part.emphasis) {
+              <strong class="font-semibold">{{ part.emphasis }}</strong>
+            }
+            {{ part.after }}
           </p>
         }
       </div>

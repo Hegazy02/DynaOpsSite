@@ -4,16 +4,23 @@
   [subtitle]="content().hero.subtitle"
   [emphasis]="content().hero.emphasis"
   [note]="content().hero.note"
+  [wideArabicTabletCopy]="content().hero.wideArabicTabletCopy ?? false"
   [image]="content().hero.image"
 />
 
 <app-feature-capabilities [content]="content().capabilities" />
 
-<app-feature-connections [content]="content().connections" />
+@if (content().connections; as connections) {
+  <app-feature-connections [content]="connections" />
+}
+
+<!-- A page's own section between the capabilities and the ERP integration. -->
+<ng-content />
 
 <app-erp-integration
   [title]="content().integration.title"
   [paragraphs]="content().integration.paragraphs"
+  [emphasis]="content().integration.emphasis"
   [allParagraphsOnTablet]="content().integration.allParagraphsOnTablet ?? false"
   [allParagraphsOnPhone]="content().integration.allParagraphsOnPhone ?? false"
   [spacedParagraphs]="content().integration.spacedParagraphs ?? false"
