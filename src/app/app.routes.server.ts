@@ -15,5 +15,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'industries/industrial-supplies', renderMode: RenderMode.Prerender },
   { path: 'features/customer-management', renderMode: RenderMode.Prerender },
   { path: 'features/workflow-approvals', renderMode: RenderMode.Prerender },
+  { path: 'features/gps-tracking', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];

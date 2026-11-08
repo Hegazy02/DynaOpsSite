@@ -37,6 +37,36 @@
   }
 }
 
+/* Same pulse timing, then a 4s rest (Figma: 6s loop). */
+.connector-pulse-spaced {
+  animation-name: connector-pulse-spaced;
+  animation-duration: 6s;
+}
+
+@keyframes connector-pulse-spaced {
+  0% {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: 0;
+    visibility: hidden;
+  }
+  5.833% {
+    stroke-dasharray: 0.2188 1;
+    stroke-dashoffset: 0;
+    visibility: visible;
+  }
+  26.667% {
+    stroke-dasharray: 0.2188 1;
+    stroke-dashoffset: -0.7812;
+    visibility: visible;
+  }
+  32.5%,
+  100% {
+    stroke-dasharray: 0 1;
+    stroke-dashoffset: -1;
+    visibility: hidden;
+  }
+}
+
 /* Without motion the connectors rest fully drawn, as the static Figma frame shows them. */
 @media (prefers-reduced-motion: reduce) {
   .connector-pulse {

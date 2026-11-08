@@ -7,6 +7,10 @@ export interface FeatureConnectionNode {
 export interface FeatureConnectionsContent {
   title: string;
   paragraphs: string[];
+  // Hub hugs its label instead of the fixed 270px pill, where the page's frame does.
+  compactHub?: boolean;
+  // Pulse fires once every 6s instead of looping every 2s, where the page's frame does.
+  spacedPulse?: boolean;
   hub: FeatureConnectionNode;
   // Exactly five: the connector curves are drawn for five evenly spaced columns.
   items: FeatureConnectionNode[];
