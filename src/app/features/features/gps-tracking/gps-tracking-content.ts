@@ -77,7 +77,7 @@ const CONNECTIONS: FeatureConnectionsContent = {
   spacedPulse: true,
   hub: {
     label: $localize`:@@gps-tracking.connections.hub:Location context`,
-    icon: '/icons/features/location-01.svg', // stand-in: Figma's glyph in white
+    icon: '/icons/features/location-01-white.svg',
   },
   items: [
     {
@@ -86,7 +86,7 @@ const CONNECTIONS: FeatureConnectionsContent = {
     },
     {
       label: $localize`:@@gps-tracking.connections.activities:Activities`,
-      icon: '/icons/features/add-to-list.svg', // stand-in: Figma's glyph in brand
+      icon: '/icons/features/add-to-list-brand.svg',
     },
     {
       label: $localize`:@@gps-tracking.connections.orders:Orders`,
@@ -98,7 +98,7 @@ const CONNECTIONS: FeatureConnectionsContent = {
     },
     {
       label: $localize`:@@gps-tracking.connections.route-execution:Route execution`,
-      icon: '/icons/shared/route-02.svg', // stand-in: Figma's glyph in brand
+      icon: '/icons/shared/route-02-brand.svg',
     },
   ],
 };
