@@ -12,6 +12,6 @@ export interface FeatureConnectionsContent {
   // Pulse fires once every 6s instead of looping every 2s, where the page's frame does.
   spacedPulse?: boolean;
   hub: FeatureConnectionNode;
-  // Exactly five: the connector curves are drawn for five evenly spaced columns.
+  // Four or five: the connector curves are drawn for those column counts.
   items: FeatureConnectionNode[];
 }

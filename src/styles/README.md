@@ -84,5 +84,8 @@ width/height attributes are only Figma's default export size.
 - `text-subtitle` (16px Medium, -4%, 24px leading in English; Body/Medium metrics in Arabic) has no
   Figma text style: the Retail, Manufacturing and Pharmaceuticals hero subtitles override
   Body/Medium by hand. Add the style to the design-system file if it spreads.
+- `text-h2-sm` (24px SemiBold, 30px leading in both languages) has no Figma text style: phone frames
+  set section titles at 24px by hand. Used for the feature connections title on phones; add the
+  style to the design-system file if it spreads.
 - The typography frames are labelled "Inter" and "Cairo", but every text style in the file
   uses Montserrat and IBM Plex Sans Arabic. The code follows the styles.

@@ -2,11 +2,15 @@
   <div
     class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 md:gap-16 md:max-xl:rtl:gap-8"
   >
-    <!-- Figma boxes: 674px English; the Arabic desktop frame widens it to 772px and narrows the last paragraph to 556px. -->
+    <!-- Figma boxes: 674px English; the Arabic desktop frame widens it to 772px and narrows the later paragraphs to 556px. -->
     <div class="flex max-w-168.5 flex-col gap-4 text-center xl:rtl:max-w-193">
-      <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ content().title }}</h2>
-      @for (paragraph of content().paragraphs; track $index) {
-        <p class="mx-auto text-body-md text-fg-secondary last:xl:rtl:max-w-139">{{ paragraph }}</p>
+      <h2 class="text-h2-sm md:text-h2 xl:text-display-md">
+        {{ content().title }}
+      </h2>
+      @for (paragraph of content().paragraphs; track $index; let first = $first) {
+        <p class="mx-auto text-body-md text-fg-secondary" [class]="first ? '' : 'xl:rtl:max-w-139'">
+          {{ paragraph }}
+        </p>
       }
     </div>
 
@@ -29,7 +33,7 @@
           viewBox="0 0 688 110"
           fill="none"
         >
-          @for (path of connectorPaths; track $index) {
+          @for (path of connectorPaths(); track $index) {
             <path class="connector-base" [attr.d]="path" />
             <path
               class="connector-pulse"

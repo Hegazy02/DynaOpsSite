@@ -40,6 +40,14 @@
   letter-spacing: var(--letter-spacing-heading);
 }
 
+/* Phone section title — 24px · 600 · 30px leading in both languages (code-side, no Figma style) */
+@utility text-h2-sm {
+  font-size: var(--font-size-h2-sm);
+  line-height: var(--line-height-h2-sm);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-heading);
+}
+
 /* Heading/H3 — 22px · 600 */
 @utility text-h3 {
   font-size: var(--font-size-lg);
