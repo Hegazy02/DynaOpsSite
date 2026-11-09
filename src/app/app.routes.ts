@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import type { RouteSeo } from './core/seo/seo.model';
 import { CUSTOMER_MANAGEMENT_CONTENT } from './features/features/customer-management/customer-management-content';
 import { GPS_TRACKING_CONTENT } from './features/features/gps-tracking/gps-tracking-content';
+import { INVENTORY_VISIBILITY_CONTENT } from './features/features/inventory-visibility/inventory-visibility-content';
 import { ROUTE_OPTIMIZATION_CONTENT } from './features/features/route-optimization/route-optimization-content';
 import { SALES_ORDER_MANAGEMENT_CONTENT } from './features/features/sales-order-management/sales-order-management-content';
 import { TRADE_PROMOTIONS_CONTENT } from './features/features/trade-promotions/trade-promotions-content';
@@ -145,6 +146,15 @@ export const routes: Routes = [
       ),
     title: ROUTE_OPTIMIZATION_CONTENT.title,
     data: { seo: { description: ROUTE_OPTIMIZATION_CONTENT.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features/inventory-visibility',
+    loadComponent: () =>
+      import('./features/features/inventory-visibility/inventory-visibility').then(
+        (m) => m.InventoryVisibility,
+      ),
+    title: INVENTORY_VISIBILITY_CONTENT.title,
+    data: { seo: { description: INVENTORY_VISIBILITY_CONTENT.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {
