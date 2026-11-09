@@ -17,5 +17,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'features/workflow-approvals', renderMode: RenderMode.Prerender },
   { path: 'features/gps-tracking', renderMode: RenderMode.Prerender },
   { path: 'features/trade-promotions', renderMode: RenderMode.Prerender },
+  { path: 'features/sales-order-management', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];

@@ -34,6 +34,9 @@
               class="text-body-md text-fg-secondary md:max-xl:rtl:mx-auto md:max-xl:rtl:max-w-121.5 xl:rtl:max-w-139.25"
             >
               {{ note }}
+              @if (noteEmphasis(); as noteEmphasis) {
+                <strong class="font-semibold">{{ noteEmphasis }}</strong>
+              }
             </p>
           }
         </div>

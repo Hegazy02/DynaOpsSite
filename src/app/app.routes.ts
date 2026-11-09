@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import type { RouteSeo } from './core/seo/seo.model';
 import { CUSTOMER_MANAGEMENT_CONTENT } from './features/features/customer-management/customer-management-content';
 import { GPS_TRACKING_CONTENT } from './features/features/gps-tracking/gps-tracking-content';
+import { SALES_ORDER_MANAGEMENT_CONTENT } from './features/features/sales-order-management/sales-order-management-content';
 import { TRADE_PROMOTIONS_CONTENT } from './features/features/trade-promotions/trade-promotions-content';
 import { WORKFLOW_APPROVALS_CONTENT } from './features/features/workflow-approvals/workflow-approvals-content';
 import { BUILDING_MATERIALS_CONTENT } from './features/industries/building-materials/building-materials-content';
@@ -125,6 +126,15 @@ export const routes: Routes = [
       ),
     title: TRADE_PROMOTIONS_CONTENT.title,
     data: { seo: { description: TRADE_PROMOTIONS_CONTENT.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features/sales-order-management',
+    loadComponent: () =>
+      import('./features/features/sales-order-management/sales-order-management').then(
+        (m) => m.SalesOrderManagement,
+      ),
+    title: SALES_ORDER_MANAGEMENT_CONTENT.title,
+    data: { seo: { description: SALES_ORDER_MANAGEMENT_CONTENT.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {
