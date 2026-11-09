@@ -44,13 +44,9 @@
         [class.gap-4]="spacedParagraphs()"
       >
         @for (part of paragraphParts(); track $index) {
-          <p [class]="paragraphClass()">
-            {{ part.before }}
-            @if (part.emphasis) {
-              <strong class="font-semibold">{{ part.emphasis }}</strong>
-            }
-            {{ part.after }}
-          </p>
+          <!-- One line, so no space is rendered beside the emphasis (before a comma, for one). -->
+          <!-- prettier-ignore -->
+          <p [class]="paragraphClass()">{{ part.before }}@if (part.emphasis) {<strong class="font-semibold">{{ part.emphasis }}</strong>}{{ part.after }}</p>
         }
       </div>
     </div>
