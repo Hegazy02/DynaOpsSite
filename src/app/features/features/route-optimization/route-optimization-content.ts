@@ -5,8 +5,8 @@ import type { FeatureCapabilitiesContent } from '../components/feature-capabilit
 import type { FeatureConnectionsContent } from '../components/feature-connections/feature-connections.model';
 import type { CtaContent } from '../../../shared/ui/cta-container/cta-container.model';
 import type { ErpIntegrationCopy } from '../../../shared/ui/erp-integration/erp-integration.model';
-import type { RouteOptimizationDashboardContent } from './components/route-optimization-dashboard/route-optimization-dashboard.model';
-import type { RouteOptimizationContent } from './route-optimization.model';
+import type { FeatureShowcaseContent } from '../components/feature-showcase/feature-showcase.model';
+import type { FeaturePageContent } from '../components/feature-page/feature-page.model';
 
 // Copy is English here; src/locale/ar/features.json carries the Arabic under the same ids.
 // The mocks carry UI text, so the artwork folder is localized like the copy.
@@ -102,7 +102,7 @@ const CONNECTIONS: FeatureConnectionsContent = {
   ],
 };
 
-const DASHBOARD: RouteOptimizationDashboardContent = {
+const SHOWCASE: FeatureShowcaseContent = {
   title: $localize`:@@route-optimization.dashboard.title:Know What's Happening Across Your Distribution Network`,
   paragraphs: [
     $localize`:@@route-optimization.dashboard.paragraph-1:Monitor customer coverage, completed visits, sales orders, collections, and representative performance through DynaOps dashboards.`,
@@ -136,13 +136,13 @@ const FOOTER_CTA: CtaContent = {
   image: CUSTOMER_MANAGEMENT_CONTENT.footerCta.image,
 };
 
-export const ROUTE_OPTIMIZATION_CONTENT: RouteOptimizationContent = {
+export const ROUTE_OPTIMIZATION_CONTENT: FeaturePageContent = {
   title: $localize`:@@route-optimization.title:AI Route Optimization for Field Sales`,
   description: $localize`:@@route-optimization.description:Plan and optimize daily field sales routes with AI, link them to visit planning and GPS execution, and see coverage gaps across every territory.`,
   hero: HERO,
   capabilities: CAPABILITIES,
   connections: CONNECTIONS,
-  dashboard: DASHBOARD,
+  showcase: SHOWCASE,
   integration: INTEGRATION,
   footerCta: FOOTER_CTA,
 };

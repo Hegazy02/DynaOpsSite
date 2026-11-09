@@ -20,5 +20,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'features/sales-order-management', renderMode: RenderMode.Prerender },
   { path: 'features/route-optimization', renderMode: RenderMode.Prerender },
   { path: 'features/inventory-visibility', renderMode: RenderMode.Prerender },
+  { path: 'features/sales-targets-kpis', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];

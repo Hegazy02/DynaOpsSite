@@ -8,9 +8,10 @@ import { ErpIntegration } from '../../../../shared/ui/erp-integration/erp-integr
 import { FeatureCapabilities } from '../feature-capabilities/feature-capabilities';
 import { FeatureConnections } from '../feature-connections/feature-connections';
 import { FeatureHero } from '../feature-hero/feature-hero';
+import { FeatureShowcase } from '../feature-showcase/feature-showcase';
 import type { FeaturePageContent } from './feature-page.model';
 
-// Layout shared by the feature pages: hero, capabilities, connections or a projected section, ERP integration and the footer CTA.
+// Layout shared by the feature pages: hero, capabilities, connections, showcase or a projected section, ERP integration and the footer CTA.
 @Component({
   selector: 'app-feature-page',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -19,6 +20,7 @@ import type { FeaturePageContent } from './feature-page.model';
     FeatureHero,
     FeatureCapabilities,
     FeatureConnections,
+    FeatureShowcase,
     ErpIntegration,
     FooterCta,
     CtaContainer,
