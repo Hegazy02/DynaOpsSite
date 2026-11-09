@@ -125,8 +125,6 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const COLLECTIONS_MANAGEMENT_CONTENT: FeaturePageContent = {
-  title: $localize`:@@collections-management.title:Collections Management for Field Sales`,
-  description: $localize`:@@collections-management.description:See balances and aging, record payments, settle invoices and issue receipts during customer visits, with collections posted to Microsoft Dynamics 365 F&O.`,
   hero: HERO,
   capabilities: CAPABILITIES,
   connections: CONNECTIONS,

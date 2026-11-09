@@ -22,5 +22,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'features/inventory-visibility', renderMode: RenderMode.Prerender },
   { path: 'features/sales-targets-kpis', renderMode: RenderMode.Prerender },
   { path: 'features/collections-management', renderMode: RenderMode.Prerender },
+  { path: 'features/crm-activity-management', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];

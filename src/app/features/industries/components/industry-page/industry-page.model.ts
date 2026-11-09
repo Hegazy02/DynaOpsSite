@@ -4,12 +4,8 @@ import type { ErpIntegrationCopy } from '../../../../shared/ui/erp-integration/e
 import type { IndustriesVisibilityCopy } from '../industries-visibility/industries-visibility.model';
 import type { IndustryFeaturesContent } from '../industry-features/industry-features.model';
 
-// Everything an industry page supplies: route metadata plus the copy, artwork and icons of each section.
+// Copy, artwork and icons of each section of an industry page; its title and description live in <page>-seo.ts.
 export interface IndustryPageContent {
-  // Document title; the site name is appended by the title strategy.
-  title: string;
-  // Meta description.
-  description: string;
   hero: IndustriesHeroCopy;
   features: IndustryFeaturesContent;
   integration: ErpIntegrationCopy;

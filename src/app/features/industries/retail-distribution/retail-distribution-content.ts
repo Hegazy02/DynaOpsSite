@@ -108,8 +108,6 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const RETAIL_DISTRIBUTION_CONTENT: IndustryPageContent = {
-  title: $localize`:@@retail-distribution.title:Retail Field Sales Software for Dynamics 365`,
-  description: $localize`:@@retail-distribution.description:Streamline retail distribution: manage store visits, retailer orders, van sales and promotions with DynaOps SFA, integrated with Microsoft Dynamics 365 F&O.`,
   hero: HERO,
   features: FEATURES,
   integration: INTEGRATION,

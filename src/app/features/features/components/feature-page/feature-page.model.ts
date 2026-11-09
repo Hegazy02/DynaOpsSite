@@ -5,12 +5,8 @@ import type { FeatureConnectionsContent } from '../feature-connections/feature-c
 import type { FeatureHeroCopy } from '../feature-hero/feature-hero.model';
 import type { FeatureShowcaseContent } from '../feature-showcase/feature-showcase.model';
 
-// Everything a feature page supplies: route metadata plus the copy and artwork of each section.
+// Copy and artwork of each section of a feature page; its title and description live in <page>-seo.ts.
 export interface FeaturePageContent {
-  // Document title; the site name is appended by the title strategy.
-  title: string;
-  // Meta description.
-  description: string;
   hero: FeatureHeroCopy;
   capabilities: FeatureCapabilitiesContent;
   connections?: FeatureConnectionsContent;

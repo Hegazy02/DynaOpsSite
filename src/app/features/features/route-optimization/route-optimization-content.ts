@@ -137,8 +137,6 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const ROUTE_OPTIMIZATION_CONTENT: FeaturePageContent = {
-  title: $localize`:@@route-optimization.title:AI Route Optimization for Field Sales`,
-  description: $localize`:@@route-optimization.description:Plan and optimize daily field sales routes with AI, link them to visit planning and GPS execution, and see coverage gaps across every territory.`,
   hero: HERO,
   capabilities: CAPABILITIES,
   connections: CONNECTIONS,

@@ -116,8 +116,6 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const PHARMACEUTICALS_CONTENT: IndustryPageContent = {
-  title: $localize`:@@pharmaceuticals.title:Pharma Field Sales Software for Dynamics 365`,
-  description: $localize`:@@pharmaceuticals.description:Support pharmaceutical distributors in the field: manage pharmacy visits, medicine orders, availability and collections, integrated with Dynamics 365 F&O.`,
   hero: HERO,
   features: FEATURES,
   integration: INTEGRATION,

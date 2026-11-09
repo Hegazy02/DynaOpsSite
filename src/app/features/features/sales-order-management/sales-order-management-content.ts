@@ -116,8 +116,6 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const SALES_ORDER_MANAGEMENT_CONTENT: FeaturePageContent = {
-  title: $localize`:@@sales-order-management.title:Sales Order Management for Field Sales`,
-  description: $localize`:@@sales-order-management.description:Create sales orders during customer visits with customer pricing, live inventory, promotions and approvals, connected to Microsoft Dynamics 365 F&O.`,
   hero: HERO,
   capabilities: CAPABILITIES,
   connections: CONNECTIONS,

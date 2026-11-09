@@ -114,8 +114,6 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const TRADE_PROMOTIONS_CONTENT: FeaturePageContent = {
-  title: $localize`:@@trade-promotions.title:Trade Promotions Management for Field Sales`,
-  description: $localize`:@@trade-promotions.description:Create flexible trade promotions and help field reps apply eligible offers automatically on every sales order, connected to Microsoft Dynamics 365 F&O.`,
   hero: HERO,
   capabilities: CAPABILITIES,
   connections: CONNECTIONS,

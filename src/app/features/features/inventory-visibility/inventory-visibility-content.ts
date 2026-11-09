@@ -115,8 +115,6 @@ const FOOTER_CTA: CtaContent = {
 };
 
 export const INVENTORY_VISIBILITY_CONTENT: FeaturePageContent = {
-  title: $localize`:@@inventory-visibility.title:Inventory Visibility for Field Sales Teams`,
-  description: $localize`:@@inventory-visibility.description:Check stock across warehouses during customer visits and order entry, with inventory data from Microsoft Dynamics 365 F&O right in the field sales app.`,
   hero: HERO,
   capabilities: CAPABILITIES,
   connections: CONNECTIONS,
