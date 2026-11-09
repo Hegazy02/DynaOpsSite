@@ -1,0 +1,23 @@
+<!-- Figma centres the 342px row in a 519px desktop band. -->
+<div class="container-page py-8 xl:py-22">
+  <div
+    class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 md:gap-16 xl:flex-row xl:items-end xl:justify-between xl:gap-6"
+  >
+    <div class="flex flex-col gap-4 text-center xl:max-w-130 xl:text-start">
+      <h2 class="text-h2 xl:text-display-md">{{ content().title }}</h2>
+      @for (paragraph of content().paragraphs; track $index) {
+        <p class="text-body-md text-fg-secondary">{{ paragraph }}</p>
+      }
+    </div>
+
+    <!-- Each language has its own export, so it is not mirrored. -->
+    <img
+      [src]="content().image.src"
+      [alt]="content().image.alt"
+      [width]="content().image.width"
+      [height]="content().image.height"
+      loading="lazy"
+      class="h-auto w-full xl:w-140 xl:shrink-0"
+    />
+  </div>
+</div>

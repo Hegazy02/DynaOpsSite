@@ -1,10 +1,10 @@
 import { NgOptimizedImage } from '@angular/common';
-import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 import { Button } from '../../../../shared/ui/button/button';
 import { FEATURE_HERO_DEFAULTS } from './feature-hero-content';
-import type { FeatureHeroCta, FeatureHeroImage } from './feature-hero.model';
+import type { FeatureHeroCta, FeatureHeroImage, FeatureHeroNoteParts } from './feature-hero.model';
 
 // Opener of the feature pages: copy beside the product mock from xl.
 // Below xl the copy column dissolves (`contents`) so the eyebrow can sit above the mock, as in the tablet and phone frames.
@@ -28,4 +28,18 @@ export class FeatureHero {
   readonly wideArabicTabletCopy = input(false);
   readonly image = input.required<FeatureHeroImage>();
   readonly cta = input<FeatureHeroCta>(FEATURE_HERO_DEFAULTS.cta);
+
+  protected readonly noteParts = computed<FeatureHeroNoteParts | null>(() => {
+    const note = this.note();
+    if (!note) return null;
+    const emphasis = this.noteEmphasis() ?? '';
+    const index = emphasis ? note.indexOf(emphasis) : -1;
+    return index < 0
+      ? { before: note, emphasis: '', after: '' }
+      : {
+          before: note.slice(0, index),
+          emphasis,
+          after: note.slice(index + emphasis.length),
+        };
+  });
 }

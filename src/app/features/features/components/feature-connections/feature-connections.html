@@ -46,14 +46,16 @@
       </div>
       <ul class="flex w-175.5 gap-2">
         @for (item of content().items; track item.label) {
-          <!-- Figma keeps labels on one line, so a long one overflows its column evenly and the icons stay under the connectors. -->
+          <!-- Figma never wraps labels, only breaks them where the copy does, so a long one overflows its column evenly and the icons stay under the connectors. -->
           <li class="flex min-w-0 flex-1 flex-col items-center gap-2">
             <span
               class="flex size-13.5 items-center justify-center rounded-md border border-surface bg-brand-200"
             >
               <img [src]="item.icon" alt="" width="32" height="32" class="size-8" />
             </span>
-            <span class="text-h4 whitespace-nowrap text-fg-secondary">{{ item.label }}</span>
+            <span class="text-center text-h4 whitespace-pre text-fg-secondary">{{
+              item.label
+            }}</span>
           </li>
         }
       </ul>
@@ -86,7 +88,9 @@
               <img [src]="item.icon" alt="" width="32" height="32" class="size-8" />
             </span>
             <!-- The phone frame sets these labels at 16px semibold; no type role carries that weight. -->
-            <span class="text-body-md font-semibold text-fg-secondary">{{ item.label }}</span>
+            <span class="text-body-md font-semibold whitespace-pre-line text-fg-secondary">{{
+              item.label
+            }}</span>
           </li>
         }
       </ul>

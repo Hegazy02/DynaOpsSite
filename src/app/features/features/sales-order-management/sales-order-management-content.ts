@@ -17,7 +17,7 @@ const HERO: FeatureHeroCopy = {
   eyebrow: $localize`:@@sales-order-management.hero.eyebrow:Sales Order Management for Field Sales`,
   title: $localize`:@@sales-order-management.hero.title:Create the Right Order While You Are With the Customer`,
   subtitle: $localize`:@@sales-order-management.hero.subtitle:DynaOps gives sales representatives the information and tools they need to create customer orders directly in the field.`,
-  note: $localize`:@@sales-order-management.hero.note:Work with customer data, products, pricing, inventory, promotions, and approval rules while keeping the sales process connected with`,
+  note: $localize`:@@sales-order-management.hero.note:Work with customer data, products, pricing, inventory, promotions, and approval rules while keeping the sales process connected with Microsoft Dynamics 365 Finance & Operations.`,
   noteEmphasis: $localize`:@@sales-order-management.hero.noteEmphasis:Microsoft Dynamics 365 Finance & Operations.`,
   image: {
     src: `${dir}/hero.webp`,
@@ -108,7 +108,7 @@ const INTEGRATION: ErpIntegrationCopy = {
 
 // The English frames keep Trade Promotions' call to action; this copy follows the Arabic frames.
 const FOOTER_CTA: CtaContent = {
-  title: $localize`:@@sales-order-management.cta.title:Turn Every Visit into a Real Sales Opportunity`,
+  title: $localize`:@@sales-order-management.cta.title:Turn Every Customer Visit into a Real Sales Opportunity`,
   description: $localize`:@@sales-order-management.cta.description:Give your team the information it needs to build the customer order during the visit, while keeping sales execution connected to your ERP.`,
   button: FEATURE_HERO_DEFAULTS.cta,
   // Figma uses the same device photo across the feature pages.

@@ -20,12 +20,19 @@ export interface FeatureHeroCopy {
   emphasis?: string;
   // Second paragraph under the subtitle.
   note?: string;
-  // Semibold closing phrase of the note.
+  // Semibold phrase inside the note, where the frame sets one.
   noteEmphasis?: string;
   // Arabic tablet title and subtitle at 629px, where the page's frame fits them on fewer lines.
   wideArabicTabletCopy?: boolean;
   image: FeatureHeroImage;
   cta?: FeatureHeroCta;
+}
+
+// The note split around its emphasis.
+export interface FeatureHeroNoteParts {
+  before: string;
+  emphasis: string;
+  after: string;
 }
 
 export interface FeatureHeroDefaults {
