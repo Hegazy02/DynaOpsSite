@@ -4,6 +4,7 @@ import type { RouteSeo } from './core/seo/seo.model';
 import { COLLECTIONS_MANAGEMENT_SEO } from './features/features/collections-management/collections-management-seo';
 import { CRM_ACTIVITY_MANAGEMENT_SEO } from './features/features/crm-activity-management/crm-activity-management-seo';
 import { CUSTOMER_MANAGEMENT_SEO } from './features/features/customer-management/customer-management-seo';
+import { DASHBOARDS_ANALYTICS_SEO } from './features/features/dashboards-analytics/dashboards-analytics-seo';
 import { GPS_TRACKING_SEO } from './features/features/gps-tracking/gps-tracking-seo';
 import { INVENTORY_VISIBILITY_SEO } from './features/features/inventory-visibility/inventory-visibility-seo';
 import { ROUTE_OPTIMIZATION_SEO } from './features/features/route-optimization/route-optimization-seo';
@@ -200,6 +201,15 @@ export const routes: Routes = [
     loadComponent: () => import('./features/features/van-sales/van-sales').then((m) => m.VanSales),
     title: VAN_SALES_SEO.title,
     data: { seo: { description: VAN_SALES_SEO.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features/dashboards-analytics',
+    loadComponent: () =>
+      import('./features/features/dashboards-analytics/dashboards-analytics').then(
+        (m) => m.DashboardsAnalytics,
+      ),
+    title: DASHBOARDS_ANALYTICS_SEO.title,
+    data: { seo: { description: DASHBOARDS_ANALYTICS_SEO.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {
