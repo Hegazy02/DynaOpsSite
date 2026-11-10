@@ -104,7 +104,7 @@ const FEATURE_ITEMS = withRoutes('/features', [
 const FEATURED_ITEM: MegaPanelItem = {
   id: 'dynaops365-ai',
   image: '/icons/shared/dyna-ai-logo.svg',
-  comingSoon: true,
+  href: '/features/dynaops365-ai',
   title: $localize`:@@header.featured.title:DynaOps365 AI`,
   description: $localize`:@@header.featured.description:An evolving AI layer for sales insights, field operations, and decision support`,
 };

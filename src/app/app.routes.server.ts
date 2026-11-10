@@ -27,5 +27,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'features/van-sales', renderMode: RenderMode.Prerender },
   { path: 'features/dashboards-analytics', renderMode: RenderMode.Prerender },
   { path: 'features/offline-mode', renderMode: RenderMode.Prerender },
+  { path: 'features/dynaops365-ai', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];

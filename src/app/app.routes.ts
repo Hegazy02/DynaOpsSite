@@ -5,6 +5,7 @@ import { COLLECTIONS_MANAGEMENT_SEO } from './features/features/collections-mana
 import { CRM_ACTIVITY_MANAGEMENT_SEO } from './features/features/crm-activity-management/crm-activity-management-seo';
 import { CUSTOMER_MANAGEMENT_SEO } from './features/features/customer-management/customer-management-seo';
 import { DASHBOARDS_ANALYTICS_SEO } from './features/features/dashboards-analytics/dashboards-analytics-seo';
+import { DYNAOPS_AI_SEO } from './features/features/dynaops365-ai/dynaops365-ai-seo';
 import { GPS_TRACKING_SEO } from './features/features/gps-tracking/gps-tracking-seo';
 import { INVENTORY_VISIBILITY_SEO } from './features/features/inventory-visibility/inventory-visibility-seo';
 import { OFFLINE_MODE_SEO } from './features/features/offline-mode/offline-mode-seo';
@@ -218,6 +219,13 @@ export const routes: Routes = [
       import('./features/features/offline-mode/offline-mode').then((m) => m.OfflineMode),
     title: OFFLINE_MODE_SEO.title,
     data: { seo: { description: OFFLINE_MODE_SEO.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features/dynaops365-ai',
+    loadComponent: () =>
+      import('./features/features/dynaops365-ai/dynaops365-ai').then((m) => m.DynaopsAi),
+    title: DYNAOPS_AI_SEO.title,
+    data: { seo: { description: DYNAOPS_AI_SEO.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {

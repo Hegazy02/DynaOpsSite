@@ -23,12 +23,10 @@ function tab(id: string): FooterLink {
 }
 
 const FEATURES_PANEL = HEADER_CONTENT.panels['features'];
-// The header shows DynaOps365 AI as an unlinked coming-soon card; the footer lists it with the other features.
+// The header shows DynaOps365 AI as a featured card; the footer lists it with the other features.
 const FEATURES = [
   ...FEATURES_PANEL.items,
-  ...(FEATURES_PANEL.featured
-    ? [{ ...FEATURES_PANEL.featured, href: '/features/dynaops365-ai' }]
-    : []),
+  ...(FEATURES_PANEL.featured ? [FEATURES_PANEL.featured] : []),
 ];
 const INDUSTRIES = HEADER_CONTENT.panels['industries'].items;
 
