@@ -2,6 +2,7 @@ import { Routes } from '@angular/router';
 
 import type { RouteSeo } from './core/seo/seo.model';
 import { COLLECTIONS_MANAGEMENT_SEO } from './features/features/collections-management/collections-management-seo';
+import { COMMISSION_MANAGEMENT_SEO } from './features/features/commission-management/commission-management-seo';
 import { CRM_ACTIVITY_MANAGEMENT_SEO } from './features/features/crm-activity-management/crm-activity-management-seo';
 import { CUSTOMER_MANAGEMENT_SEO } from './features/features/customer-management/customer-management-seo';
 import { DASHBOARDS_ANALYTICS_SEO } from './features/features/dashboards-analytics/dashboards-analytics-seo';
@@ -226,6 +227,15 @@ export const routes: Routes = [
       import('./features/features/dynaops365-ai/dynaops365-ai').then((m) => m.DynaopsAi),
     title: DYNAOPS_AI_SEO.title,
     data: { seo: { description: DYNAOPS_AI_SEO.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features/commission-management',
+    loadComponent: () =>
+      import('./features/features/commission-management/commission-management').then(
+        (m) => m.CommissionManagement,
+      ),
+    title: COMMISSION_MANAGEMENT_SEO.title,
+    data: { seo: { description: COMMISSION_MANAGEMENT_SEO.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {
