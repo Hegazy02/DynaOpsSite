@@ -15,7 +15,7 @@ const HERO: FeatureHeroCopy = {
   eyebrow: $localize`:@@trade-promotions.hero.eyebrow:Trade Promotions for Field Sales`,
   title: $localize`:@@trade-promotions.hero.title:Put the Right Promotion in Every Sales Opportunity`,
   subtitle: $localize`:@@trade-promotions.hero.subtitle:DynaOps helps businesses create and manage flexible trade promotions and make them available directly within the field sales process.`,
-  note: $localize`:@@trade-promotions.hero.note:Sales representatives can identify applicable offers and apply them while serving customers — without relying on spreadsheets, manual calculations, or disconnected communication.`,
+  note: $localize`:@@trade-promotions.hero.note:Sales representatives can identify applicable offers and apply them while serving customers, without relying on spreadsheets, manual calculations, or disconnected communication.`,
   image: {
     src: `${dir}/hero.webp`,
     alt: $localize`:@@trade-promotions.hero.imageAlt:DynaOps sales order for Al Rawad Trading with a buy 10 get 1 free promotion and a 5% discount applied to the order total`,

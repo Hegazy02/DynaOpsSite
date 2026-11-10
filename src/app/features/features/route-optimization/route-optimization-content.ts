@@ -16,7 +16,7 @@ const HERO: FeatureHeroCopy = {
   eyebrow: $localize`:@@route-optimization.hero.eyebrow:AI Route Optimization for Field Sales`,
   title: $localize`:@@route-optimization.hero.title:Turn Customer Visit Plans into Smarter Sales Routes`,
   subtitle: $localize`:@@route-optimization.hero.subtitle:DynaOps helps field sales teams plan and optimize daily routes across customers, territories, and sales representatives.`,
-  note: $localize`:@@route-optimization.hero.note:Combine AI-powered, automated, and dynamic route optimization with visit planning and field execution to make route management part of the sales process — not a separate planning exercise.`,
+  note: $localize`:@@route-optimization.hero.note:Combine AI-powered, automated, and dynamic route optimization with visit planning and field execution to make route management part of the sales process, not a separate planning exercise.`,
   noteEmphasis: $localize`:@@route-optimization.hero.noteEmphasis:AI-powered, automated, and dynamic route`,
   image: {
     src: `${dir}/hero.webp`,
@@ -74,7 +74,7 @@ const CONNECTIONS: FeatureConnectionsContent = {
   paragraphs: [
     $localize`:@@route-optimization.connections.paragraph-1:A route is only useful if the sales team can execute it.`,
     $localize`:@@route-optimization.connections.paragraph-2:DynaOps connects route optimization with visit planning, GPS activity, customer management, and sales operations.`,
-    $localize`:@@route-optimization.connections.paragraph-3:Managers can plan coverage while representatives work from a clear daily journey — with actual execution visible after the visit.`,
+    $localize`:@@route-optimization.connections.paragraph-3:Managers can plan coverage while representatives work from a clear daily journey, with actual execution visible after the visit.`,
   ],
   compactHub: true,
   spacedPulse: true,

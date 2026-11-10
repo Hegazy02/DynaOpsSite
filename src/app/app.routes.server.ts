@@ -24,5 +24,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'features/collections-management', renderMode: RenderMode.Prerender },
   { path: 'features/crm-activity-management', renderMode: RenderMode.Prerender },
   { path: 'features/visit-planning', renderMode: RenderMode.Prerender },
+  { path: 'features/van-sales', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];

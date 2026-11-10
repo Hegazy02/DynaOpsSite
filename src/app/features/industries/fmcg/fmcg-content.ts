@@ -78,7 +78,7 @@ const VISIBILITY: IndustriesVisibilityCopy = {
   title: $localize`:@@fmcg.visibility.title:Better visibility for sales managers`,
   paragraphs: [
     $localize`:@@fmcg.visibility.paragraph-1:Monitor sales performance, customer coverage, routes, visits, orders, and collections through DynaOps dashboards.`,
-    $localize`:@@fmcg.visibility.paragraph-2:Identify execution gaps and understand what is happening in the field — not just the final sales numbers.`,
+    $localize`:@@fmcg.visibility.paragraph-2:Identify execution gaps and understand what is happening in the field, not just the final sales numbers.`,
     $localize`:@@fmcg.visibility.paragraph-3:Follow live rep locations, planned versus actual visits on every route, and daily orders and collections in one view, so you can step in while there is still time to act.`,
   ],
 };

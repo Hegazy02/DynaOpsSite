@@ -10,6 +10,7 @@ import { ROUTE_OPTIMIZATION_SEO } from './features/features/route-optimization/r
 import { SALES_TARGETS_KPIS_SEO } from './features/features/sales-targets-kpis/sales-targets-kpis-seo';
 import { SALES_ORDER_MANAGEMENT_SEO } from './features/features/sales-order-management/sales-order-management-seo';
 import { TRADE_PROMOTIONS_SEO } from './features/features/trade-promotions/trade-promotions-seo';
+import { VAN_SALES_SEO } from './features/features/van-sales/van-sales-seo';
 import { VISIT_PLANNING_SEO } from './features/features/visit-planning/visit-planning-seo';
 import { WORKFLOW_APPROVALS_SEO } from './features/features/workflow-approvals/workflow-approvals-seo';
 import { BUILDING_MATERIALS_SEO } from './features/industries/building-materials/building-materials-seo';
@@ -193,6 +194,12 @@ export const routes: Routes = [
       import('./features/features/visit-planning/visit-planning').then((m) => m.VisitPlanning),
     title: VISIT_PLANNING_SEO.title,
     data: { seo: { description: VISIT_PLANNING_SEO.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features/van-sales',
+    loadComponent: () => import('./features/features/van-sales/van-sales').then((m) => m.VanSales),
+    title: VAN_SALES_SEO.title,
+    data: { seo: { description: VAN_SALES_SEO.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {
