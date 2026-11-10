@@ -7,6 +7,7 @@ import { CUSTOMER_MANAGEMENT_SEO } from './features/features/customer-management
 import { DASHBOARDS_ANALYTICS_SEO } from './features/features/dashboards-analytics/dashboards-analytics-seo';
 import { GPS_TRACKING_SEO } from './features/features/gps-tracking/gps-tracking-seo';
 import { INVENTORY_VISIBILITY_SEO } from './features/features/inventory-visibility/inventory-visibility-seo';
+import { OFFLINE_MODE_SEO } from './features/features/offline-mode/offline-mode-seo';
 import { ROUTE_OPTIMIZATION_SEO } from './features/features/route-optimization/route-optimization-seo';
 import { SALES_TARGETS_KPIS_SEO } from './features/features/sales-targets-kpis/sales-targets-kpis-seo';
 import { SALES_ORDER_MANAGEMENT_SEO } from './features/features/sales-order-management/sales-order-management-seo';
@@ -210,6 +211,13 @@ export const routes: Routes = [
       ),
     title: DASHBOARDS_ANALYTICS_SEO.title,
     data: { seo: { description: DASHBOARDS_ANALYTICS_SEO.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features/offline-mode',
+    loadComponent: () =>
+      import('./features/features/offline-mode/offline-mode').then((m) => m.OfflineMode),
+    title: OFFLINE_MODE_SEO.title,
+    data: { seo: { description: OFFLINE_MODE_SEO.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {

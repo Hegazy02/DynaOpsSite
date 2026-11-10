@@ -26,5 +26,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'features/visit-planning', renderMode: RenderMode.Prerender },
   { path: 'features/van-sales', renderMode: RenderMode.Prerender },
   { path: 'features/dashboards-analytics', renderMode: RenderMode.Prerender },
+  { path: 'features/offline-mode', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];
