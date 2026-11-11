@@ -311,6 +311,9 @@
     "industrial-supplies.visibility.paragraph-2": "قارن الأداء بين المناطق البيعية، وحدد الحسابات الصناعية التي تحتاج إلى متابعة إضافية، لدعم قرارات إدارة المبيعات.",
     "industrial-supplies.visibility.paragraph-3": "تابع عملاء المشاريع والعقود من عرض السعر حتى الطلب المتكرر، وراجع حدود الائتمان والأرصدة المستحقة قبل اعتماد الطلبات الجديدة.",
     "industrial-supplies.cta.title": "اجمع عمليات مبيعات المستلزمات الصناعية في نظام متصل",
-    "industrial-supplies.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبي المبيعات وحسابات العملاء الصناعيين وأوامر البيع بنظام Microsoft Dynamics 365 F&O"
+    "industrial-supplies.cta.description": "اكتشف كيف يساعد DynaOps على ربط مندوبي المبيعات وحسابات العملاء الصناعيين وأوامر البيع بنظام Microsoft Dynamics 365 F&O",
+    "industries.features.offline-mode.image": "/images/industries/features/offline-mode-ar.webp",
+    "industries.features.dashboards-analytics.image": "/images/industries/features/dashboards-analytics-ar.webp",
+    "industries.features.dynaops365-ai.image": "/images/industries/features/dynaops365-ai-ar.webp"
   }
 }

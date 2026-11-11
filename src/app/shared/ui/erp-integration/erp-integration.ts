@@ -50,4 +50,9 @@ export class ErpIntegration {
   });
 }
 
-const TEXT_WIDTH = { 497: 'xl:max-w-124.25', 512: 'xl:max-w-128' } as const;
+// 485 is the All Features English column; its Arabic frame keeps the shared 497px.
+const TEXT_WIDTH = {
+  485: 'xl:max-w-121.25 xl:rtl:max-w-124.25',
+  497: 'xl:max-w-124.25',
+  512: 'xl:max-w-128',
+} as const;

@@ -1,0 +1,12 @@
+<div class="flex flex-col gap-2 xl:sticky xl:top-0 xl:w-90 xl:shrink-0 xl:gap-3 xl:self-start">
+  <p class="text-eyebrow text-fg-brand">{{ content().eyebrow }}</p>
+  <h3 class="text-h3 md:text-h2">{{ content().title }}</h3>
+  <p class="text-body-md text-fg-secondary">{{ content().description }}</p>
+  <p class="text-label-md text-fg-brand">{{ content().count }}</p>
+</div>
+
+<div class="grid min-w-0 flex-1 gap-6 xl:grid-cols-2">
+  @for (item of content().items; track item.title) {
+    <app-feature-card class="xl:snap-start xl:snap-always" [content]="item" />
+  }
+</div>

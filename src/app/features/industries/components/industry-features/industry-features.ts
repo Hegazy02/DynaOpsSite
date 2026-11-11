@@ -1,13 +1,13 @@
 import { ChangeDetectionStrategy, Component, computed, input } from '@angular/core';
 
-import { IndustryFeatureCard } from '../industry-feature-card/industry-feature-card';
+import { FeatureCard } from '../../../../shared/ui/feature-card/feature-card';
 import type { IndustryFeaturesContent } from './industry-features.model';
 
 // Feature grid shared by the industry pages: one column up to lg, three from xl.
 @Component({
   selector: 'app-industry-features',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [IndustryFeatureCard],
+  imports: [FeatureCard],
   templateUrl: './industry-features.html',
   host: { class: 'block' },
 })

@@ -1,0 +1,8 @@
+/* Figma shows no scrollbar beside the one-row card window; wheel, touch and keyboard still scroll it. */
+.groups-viewport {
+  scrollbar-width: none;
+}
+
+.groups-viewport::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,31 @@
+<div role="group" aria-roledescription="carousel" [attr.aria-label]="label()">
+  <!-- Every slide shares one grid cell, so the first sizes the stack. Only the active slide fades: in, over the
+       previous one; every other slide hides at once so an older image never shows through. -->
+  <div class="grid">
+    @for (slide of slides(); track slide.src; let i = $index) {
+      <img
+        [ngSrc]="slide.src"
+        [alt]="slide.alt"
+        [width]="slide.width"
+        [height]="slide.height"
+        [priority]="i === 0"
+        [attr.aria-hidden]="i !== active()"
+        class="col-start-1 row-start-1 h-auto w-full"
+        [class]="layerClass(i)"
+      />
+    }
+  </div>
+
+  <div class="mt-3 flex justify-center gap-1.5">
+    @for (slide of slides(); track slide.src; let i = $index) {
+      <button
+        type="button"
+        class="relative h-1.5 cursor-pointer rounded-full transition-all duration-600 ease-in-out before:absolute before:-inset-x-0.5 before:-inset-y-2 motion-reduce:transition-none"
+        [class]="i === active() ? 'w-5.5 bg-brand' : 'w-1.5 bg-brand/18'"
+        [attr.aria-label]="slide.label"
+        [attr.aria-current]="i === active() ? 'true' : null"
+        (click)="select(i)"
+      ></button>
+    }
+  </div>
+</div>

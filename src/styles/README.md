@@ -14,7 +14,7 @@ Tailwind v4 (CSS-first) configuration generated from the Figma design system
 ## Global or component stylesheet
 
 The global layer holds the design system only: tokens, theme, base, type roles and recipes used across areas.
-CSS for a single section lives next to that component in its own stylesheet (`styleUrl`), for example the feature-card illustration slot in `industry-feature-card.css`.
+CSS for a single section lives next to that component in its own stylesheet (`styleUrl`), for example the feature-card illustration slot in `shared/ui/feature-card/feature-card.css`.
 Component stylesheets use plain `var(--token)` values, which need no import, and Angular scopes them and ships them with the page that uses them.
 Promote a pattern to a global recipe or `@utility` only once a second area of the site needs it.
 Component styles sit outside Tailwind's layers, so they win over utilities on the same element: keep their properties distinct from the template's utilities.
@@ -31,23 +31,23 @@ Component styles sit outside Tailwind's layers, so they win over utilities on th
 
 ## Token → utility map
 
-| Figma                                                              | CSS variable                          | Tailwind                                                                                                                        |
-| ------------------------------------------------------------------ | ------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| `bg/canvas`, `bg/surface`, `bg/subtle`, `bg/inverse`               | `--bg-canvas` …                       | `bg-canvas`, `bg-surface`, `bg-subtle`, `bg-inverse`                                                                            |
-| `bg/brand`, `bg/brand-subtle`                                      | `--bg-brand`, `--bg-brand-subtle`     | `bg-brand`, `bg-brand-subtle`                                                                                                   |
-| `text/primary`, `text/secondary`, `text/tertiary`                  | `--text-primary` …                    | `text-fg`, `text-fg-secondary`, `text-fg-tertiary`                                                                              |
-| `text/inverse`, `text/brand`, `text/on-brand`                      | `--text-inverse` …                    | `text-fg-inverse`, `text-fg-brand`, `text-fg-on-brand`                                                                          |
-| `border/default`, `border/subtle`, `border/strong`, `border/brand` | `--border-default` …                  | `border-line`, `border-line-subtle`, `border-line-strong`, `border-line-brand`                                                  |
-| `action/primary`, `-hover`, `-pressed`                             | `--action-primary` …                  | `bg-action`, `hover:bg-action-hover`, `active:bg-action-pressed`                                                                |
-| `action/secondary`, `-hover`                                       | `--action-secondary` …                | `bg-action-secondary`, `hover:bg-action-secondary-hover`                                                                        |
-| `status/success`, `status/success-subtle` (also warning, error)    | `--status-success` …                  | `text-success`, `bg-success-subtle`                                                                                             |
-| `brand/50…900`, `neutral/0…950`                                    | `--brand-500`, `--neutral-900`        | `bg-brand-500`, `text-neutral-900`                                                                                              |
-| — (raw `#33c8cf` in the footer backdrop gradient)                  | `--accent-teal`                       | `bg-accent`, `to-accent/20` (decorative only)                                                                                   |
-| `font-size/2xs…4xl` (12 14 16 18 22 28 36 44 56)                   | `--font-size-md`                      | `text-2xs` … `text-4xl`                                                                                                         |
-| `space/2…96`                                                       | `--space-16`                          | default spacing scale (`p-4` = 16px, `gap-6` = 24px, `py-24` = 96px)                                                            |
-| `radius/sm md lg xl full` (6 10 16 24 pill)                        | `--radius-md`                         | `rounded-sm` `rounded-md` `rounded-lg` `rounded-xl` `rounded-full`                                                              |
-| `Shadow/xs sm md lg`                                               | `--shadow-md`                         | `shadow-xs` `shadow-sm` `shadow-md` `shadow-lg`                                                                                 |
-| `border/hairline`, `border/thick`                                  | `--border-hairline`, `--border-thick` | `border`, `border-2`                                                                                                            |
+| Figma                                                              | CSS variable                          | Tailwind                                                                                                                                        |
+| ------------------------------------------------------------------ | ------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| `bg/canvas`, `bg/surface`, `bg/subtle`, `bg/inverse`               | `--bg-canvas` …                       | `bg-canvas`, `bg-surface`, `bg-subtle`, `bg-inverse`                                                                                            |
+| `bg/brand`, `bg/brand-subtle`                                      | `--bg-brand`, `--bg-brand-subtle`     | `bg-brand`, `bg-brand-subtle`                                                                                                                   |
+| `text/primary`, `text/secondary`, `text/tertiary`                  | `--text-primary` …                    | `text-fg`, `text-fg-secondary`, `text-fg-tertiary`                                                                                              |
+| `text/inverse`, `text/brand`, `text/on-brand`                      | `--text-inverse` …                    | `text-fg-inverse`, `text-fg-brand`, `text-fg-on-brand`                                                                                          |
+| `border/default`, `border/subtle`, `border/strong`, `border/brand` | `--border-default` …                  | `border-line`, `border-line-subtle`, `border-line-strong`, `border-line-brand`                                                                  |
+| `action/primary`, `-hover`, `-pressed`                             | `--action-primary` …                  | `bg-action`, `hover:bg-action-hover`, `active:bg-action-pressed`                                                                                |
+| `action/secondary`, `-hover`                                       | `--action-secondary` …                | `bg-action-secondary`, `hover:bg-action-secondary-hover`                                                                                        |
+| `status/success`, `status/success-subtle` (also warning, error)    | `--status-success` …                  | `text-success`, `bg-success-subtle`                                                                                                             |
+| `brand/50…900`, `neutral/0…950`                                    | `--brand-500`, `--neutral-900`        | `bg-brand-500`, `text-neutral-900`                                                                                                              |
+| — (raw `#33c8cf` in the footer backdrop gradient)                  | `--accent-teal`                       | `bg-accent`, `to-accent/20` (decorative only)                                                                                                   |
+| `font-size/2xs…4xl` (12 14 16 18 22 28 36 44 56)                   | `--font-size-md`                      | `text-2xs` … `text-4xl`                                                                                                                         |
+| `space/2…96`                                                       | `--space-16`                          | default spacing scale (`p-4` = 16px, `gap-6` = 24px, `py-24` = 96px)                                                                            |
+| `radius/sm md lg xl full` (6 10 16 24 pill)                        | `--radius-md`                         | `rounded-sm` `rounded-md` `rounded-lg` `rounded-xl` `rounded-full`                                                                              |
+| `Shadow/xs sm md lg`                                               | `--shadow-md`                         | `shadow-xs` `shadow-sm` `shadow-md` `shadow-lg`                                                                                                 |
+| `border/hairline`, `border/thick`                                  | `--border-hairline`, `--border-thick` | `border`, `border-2`                                                                                                                            |
 | Text styles `EN/*` and `AR/*`                                      | —                                     | `text-display-lg` `text-display-md` `text-h1` … `text-h4` `text-body-lg/md/sm` `text-label-md/sm` `text-caption` `text-eyebrow` `text-subtitle` |
 
 The default Tailwind colour palette is intentionally removed (`bg-blue-500` will not compile),

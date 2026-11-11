@@ -24,11 +24,11 @@ export interface ErpIntegrationCopy {
   allParagraphsOnPhone?: boolean;
   // Separate paragraphs 16px apart; the industry frames set them as one text with line breaks.
   spacedParagraphs?: boolean;
-  // Copy column from xl; the feature frames widen it to 512px.
+  // Copy column from xl; the feature frames widen it to 512px, the All Features English frame narrows it to 485px.
   textWidth?: ErpIntegrationTextWidth;
 }
 
-export type ErpIntegrationTextWidth = 497 | 512;
+export type ErpIntegrationTextWidth = 485 | 497 | 512;
 
 export interface ErpIntegrationDefaults {
   image: ErpIntegrationImage;

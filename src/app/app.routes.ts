@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 
 import type { RouteSeo } from './core/seo/seo.model';
+import { ALL_FEATURES_SEO } from './features/features/all-features/all-features-seo';
 import { COLLECTIONS_MANAGEMENT_SEO } from './features/features/collections-management/collections-management-seo';
 import { COMMISSION_MANAGEMENT_SEO } from './features/features/commission-management/commission-management-seo';
 import { CRM_ACTIVITY_MANAGEMENT_SEO } from './features/features/crm-activity-management/crm-activity-management-seo';
@@ -236,6 +237,13 @@ export const routes: Routes = [
       ),
     title: COMMISSION_MANAGEMENT_SEO.title,
     data: { seo: { description: COMMISSION_MANAGEMENT_SEO.description } satisfies RouteSeo },
+  },
+  {
+    path: 'features',
+    loadComponent: () =>
+      import('./features/features/all-features/all-features').then((m) => m.AllFeatures),
+    title: ALL_FEATURES_SEO.title,
+    data: { seo: { description: ALL_FEATURES_SEO.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {

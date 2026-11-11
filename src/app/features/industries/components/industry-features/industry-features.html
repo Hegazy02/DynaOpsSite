@@ -23,7 +23,7 @@
 
     <div class="grid w-full max-w-160 gap-6 xl:max-w-none xl:grid-cols-3">
       @for (item of content().items; track item.title) {
-        <app-industry-feature-card [content]="item" />
+        <app-feature-card [content]="item" />
       }
     </div>
   </div>

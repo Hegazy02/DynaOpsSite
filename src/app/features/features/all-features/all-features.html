@@ -1,0 +1,81 @@
+<app-all-features-hero [content]="content.hero" />
+
+<!-- scroll-mt clears the sticky header when the hero's explore button scrolls here. -->
+<section [id]="content.catalog.id" class="container-page scroll-mt-24">
+  <div class="mx-auto flex w-full max-w-160 flex-col gap-12 xl:max-w-300 xl:gap-16">
+    <div class="flex flex-col items-center gap-4 text-center">
+      <h2 class="text-h3 md:text-h2 xl:text-display-md">{{ content.catalog.title }}</h2>
+      <p class="max-w-123 text-body-md text-fg-secondary">{{ content.catalog.description }}</p>
+    </div>
+
+    <div class="relative">
+      <!-- From xl the groups scroll inside a one-row window, snapping to each pair of cards. -->
+      <div
+        #viewport
+        class="groups-viewport flex flex-col xl:h-110.5 xl:snap-y xl:snap-mandatory xl:gap-6 xl:overflow-y-auto"
+        (scroll)="syncRow()"
+      >
+        @for (group of content.catalog.groups; track group.title) {
+          <app-all-features-group [content]="group" />
+        }
+      </div>
+
+      <!-- One dot per pair of cards, stacked beside the window to show where the scroll stands. -->
+      <div
+        class="hidden xl:absolute xl:top-1/2 xl:-end-10 xl:flex xl:-translate-y-1/2 xl:flex-col xl:gap-1.5"
+        role="group"
+        [attr.aria-label]="content.catalog.title"
+      >
+        @for (label of rowLabels; track $index; let i = $index) {
+          <button
+            type="button"
+            class="relative w-1.5 cursor-pointer rounded-full transition-all duration-300 ease-in-out before:absolute before:-inset-x-2 before:-inset-y-0.5 motion-reduce:transition-none"
+            [class]="i === activeRow() ? 'h-5.5 bg-brand' : 'h-1.5 bg-brand/18'"
+            [attr.aria-label]="label"
+            [attr.aria-current]="i === activeRow() ? 'true' : null"
+            (click)="goToRow(i)"
+          ></button>
+        }
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-erp-integration
+  [title]="content.integration.title"
+  [paragraphs]="content.integration.paragraphs"
+  [allParagraphsOnTablet]="content.integration.allParagraphsOnTablet ?? false"
+  [allParagraphsOnPhone]="content.integration.allParagraphsOnPhone ?? false"
+  [spacedParagraphs]="content.integration.spacedParagraphs ?? false"
+  [textWidth]="content.integration.textWidth ?? 497"
+/>
+
+<ng-template appFooterCta>
+  <app-cta-container
+    [image]="content.footerCta.image.src"
+    [imageWidth]="content.footerCta.image.width"
+    [imageHeight]="content.footerCta.image.height"
+    imagePosition="bottom-end"
+    imageSize="device"
+  >
+    <!-- Figma boxes: English title 646px on one line from md, description 432px; Arabic 608px on tablet, 407px from xl. -->
+    <div class="flex flex-col gap-4">
+      <h2 class="mx-auto max-w-162 text-h2 md:text-h1 rtl:max-w-152 xl:mx-0 xl:rtl:max-w-101.75">
+        {{ content.footerCta.title }}
+      </h2>
+      <p class="mx-auto max-w-108 text-body-md rtl:max-w-101.75 xl:mx-0">
+        {{ content.footerCta.description }}
+      </p>
+    </div>
+    <a
+      appButton
+      variant="secondary"
+      icon="/icons/shared/arrow-right-02.svg"
+      iconHover="/icons/shared/arrow-right-02-brand.svg"
+      directionalIcon
+      [routerLink]="content.footerCta.button.href"
+    >
+      {{ content.footerCta.button.label }}
+    </a>
+  </app-cta-container>
+</ng-template>

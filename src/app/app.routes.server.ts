@@ -29,5 +29,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'features/offline-mode', renderMode: RenderMode.Prerender },
   { path: 'features/dynaops365-ai', renderMode: RenderMode.Prerender },
   { path: 'features/commission-management', renderMode: RenderMode.Prerender },
+  { path: 'features', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];

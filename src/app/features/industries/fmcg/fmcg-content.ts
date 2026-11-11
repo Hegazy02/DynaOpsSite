@@ -2,7 +2,7 @@ import { INDUSTRIES_HERO_DEFAULTS } from '../components/industries-hero/industri
 import type { IndustriesHeroCopy } from '../components/industries-hero/industries-hero.model';
 import type { ErpIntegrationCopy } from '../../../shared/ui/erp-integration/erp-integration.model';
 import type { IndustriesVisibilityCopy } from '../components/industries-visibility/industries-visibility.model';
-import { pickFeatureCards } from '../components/industry-features/industry-features-content';
+import { pickFeatureCards } from '../../../shared/ui/feature-card/feature-card-content';
 import type { IndustryFeaturesContent } from '../components/industry-features/industry-features.model';
 import type { IndustryPageContent } from '../components/industry-page/industry-page.model';
 import type { CtaContent } from '../../../shared/ui/cta-container/cta-container.model';

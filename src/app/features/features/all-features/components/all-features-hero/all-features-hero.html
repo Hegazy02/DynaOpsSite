@@ -1,0 +1,45 @@
+<!-- Figma's desktop hero is a fixed 684px tall, leaving 117px under the 421px carousel. -->
+<div class="container-page pt-8 pb-16 md:pb-20 xl:pt-16 xl:pb-29">
+  <div
+    class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 text-center xl:flex-row xl:justify-between xl:gap-6 xl:text-start"
+  >
+    <app-all-features-carousel
+      class="w-full max-w-102 shrink-0 xl:order-last"
+      [slides]="content().slides"
+      [label]="content().carouselLabel"
+    />
+
+    <!-- Figma boxes: 640px on tablet, 577px from xl. -->
+    <div class="flex w-full flex-col gap-6 md:max-w-160 xl:max-w-144.25 xl:gap-8">
+      <div class="flex flex-col gap-6 xl:gap-4">
+        <!-- One line each, so no space is rendered beside the highlighted parts. -->
+        <!-- prettier-ignore -->
+        <h1 class="text-h2 md:text-display-md">{{ title().before }}<span class="text-fg-brand">{{ title().match }}</span>{{ title().after }}</h1>
+        <!-- prettier-ignore -->
+        <p class="text-body-md text-fg-secondary">{{ subtitle().before }}<strong class="font-bold">{{ subtitle().match }}</strong>{{ subtitle().after }}</p>
+      </div>
+
+      <div class="flex flex-col gap-3 md:flex-row md:justify-center xl:justify-start">
+        <a
+          appButton
+          class="md:min-w-50 xl:min-w-0"
+          icon="/icons/shared/arrow-right-02-white.svg"
+          directionalIcon
+          [routerLink]="content().cta.href"
+        >
+          {{ content().cta.label }}
+        </a>
+        <!-- Figma leaves this secondary button unfilled over the hero gradient. -->
+        <button
+          type="button"
+          appButton
+          variant="secondary"
+          class="bg-transparent"
+          (click)="explore()"
+        >
+          {{ content().explore.label }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
