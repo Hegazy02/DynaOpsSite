@@ -21,11 +21,11 @@ const FEATURE_CARD_IMAGES: Record<FeatureCardId, string> = {
   'dynaops365-ai': $localize`:@@industries.features.dynaops365-ai.image:/images/industries/features/dynaops365-ai.webp`,
 };
 
-// `linked` points each card at its feature page, whose route matches the id.
-export function pickFeatureCards(cards: FeatureCardCopy[], linked = false): FeatureCardContent[] {
+// Each card links to its feature page, whose route matches the id.
+export function pickFeatureCards(cards: FeatureCardCopy[]): FeatureCardContent[] {
   return cards.map(({ id, ...copy }) => ({
     ...copy,
     image: FEATURE_CARD_IMAGES[id],
-    ...(linked ? { href: `/features/${id}` } : {}),
+    href: `/features/${id}`,
   }));
 }

@@ -19,124 +19,112 @@ const GROUPS: AllFeaturesGroupContent[] = [
     title: $localize`:@@all-features.field-execution.title:Field Execution`,
     description: $localize`:@@all-features.field-execution.description:Plan the day, guide representatives along the best routes, and verify every visit even without a connection.`,
     count: $localize`:@@all-features.field-execution.count:4 features`,
-    items: pickFeatureCards(
-      [
-        {
-          id: 'visit-planning',
-          title: $localize`:@@all-features.visit-planning.title:Visit Planning`,
-          description: $localize`:@@all-features.visit-planning.description:Plan daily customer visits, assign journeys to representatives, and compare planned versus actual visits.`,
-        },
-        {
-          id: 'route-optimization',
-          title: $localize`:@@all-features.route-optimization.title:Route Optimization`,
-          description: $localize`:@@all-features.route-optimization.description:Build optimized sales routes with automated, dynamic, and AI-powered route optimization across your territories.`,
-        },
-        {
-          id: 'gps-tracking',
-          title: $localize`:@@all-features.gps-tracking.title:GPS Tracking`,
-          description: $localize`:@@all-features.gps-tracking.description:Verify check-ins and check-outs with GPS and give managers live visibility into field team activity.`,
-        },
-        {
-          id: 'offline-mode',
-          title: $localize`:@@all-features.offline-mode.title:Offline Mode`,
-          description: $localize`:@@all-features.offline-mode.description:Keep visiting customers, taking orders, and collecting payments without connectivity, then sync automatically.`,
-        },
-      ],
-      true,
-    ),
+    items: pickFeatureCards([
+      {
+        id: 'visit-planning',
+        title: $localize`:@@all-features.visit-planning.title:Visit Planning`,
+        description: $localize`:@@all-features.visit-planning.description:Plan daily customer visits, assign journeys to representatives, and compare planned versus actual visits.`,
+      },
+      {
+        id: 'route-optimization',
+        title: $localize`:@@all-features.route-optimization.title:Route Optimization`,
+        description: $localize`:@@all-features.route-optimization.description:Build optimized sales routes with automated, dynamic, and AI-powered route optimization across your territories.`,
+      },
+      {
+        id: 'gps-tracking',
+        title: $localize`:@@all-features.gps-tracking.title:GPS Tracking`,
+        description: $localize`:@@all-features.gps-tracking.description:Verify check-ins and check-outs with GPS and give managers live visibility into field team activity.`,
+      },
+      {
+        id: 'offline-mode',
+        title: $localize`:@@all-features.offline-mode.title:Offline Mode`,
+        description: $localize`:@@all-features.offline-mode.description:Keep visiting customers, taking orders, and collecting payments without connectivity, then sync automatically.`,
+      },
+    ]),
   },
   {
     eyebrow: $localize`:@@all-features.sales-orders.eyebrow:SELL & COLLECT`,
     title: $localize`:@@all-features.sales-orders.title:Sales & Orders`,
     description: $localize`:@@all-features.sales-orders.description:Take orders, sell from vans, apply promotions, and collect payments with ERP data at every step.`,
     count: $localize`:@@all-features.sales-orders.count:6 features`,
-    items: pickFeatureCards(
-      [
-        {
-          id: 'sales-order-management',
-          title: $localize`:@@all-features.sales-order-management.title:Sales Order Management`,
-          description: $localize`:@@all-features.sales-order-management.description:Create sales orders during visits using products, customer-specific pricing, and available inventory from your ERP.`,
-        },
-        {
-          id: 'van-sales',
-          title: $localize`:@@all-features.van-sales.title:Van Sales & Van Stock`,
-          description: $localize`:@@all-features.van-sales.description:Sell directly from vehicles with full visibility into van inventory, loading, and customer transactions.`,
-        },
-        {
-          id: 'trade-promotions',
-          title: $localize`:@@all-features.trade-promotions.title:Trade Promotions`,
-          description: $localize`:@@all-features.trade-promotions.description:Apply approved trade promotions during the sales process so representatives never miss a relevant offer.`,
-        },
-        {
-          id: 'inventory-visibility',
-          title: $localize`:@@all-features.inventory-visibility.title:Inventory Visibility`,
-          description: $localize`:@@all-features.inventory-visibility.description:View available stock across warehouses and vans in real time before committing to customer orders.`,
-        },
-        {
-          id: 'collections-management',
-          title: $localize`:@@all-features.collections-management.title:Collections Management`,
-          description: $localize`:@@all-features.collections-management.description:Record cash, cheques, and payments in the field and keep every collection connected to your financial processes.`,
-        },
-        {
-          id: 'workflow-approvals',
-          title: $localize`:@@all-features.workflow-approvals.title:Workflow & Approvals`,
-          description: $localize`:@@all-features.workflow-approvals.description:Route discounts and sales orders through configurable, multi-level approval workflows based on your business rules.`,
-        },
-      ],
-      true,
-    ),
+    items: pickFeatureCards([
+      {
+        id: 'sales-order-management',
+        title: $localize`:@@all-features.sales-order-management.title:Sales Order Management`,
+        description: $localize`:@@all-features.sales-order-management.description:Create sales orders during visits using products, customer-specific pricing, and available inventory from your ERP.`,
+      },
+      {
+        id: 'van-sales',
+        title: $localize`:@@all-features.van-sales.title:Van Sales & Van Stock`,
+        description: $localize`:@@all-features.van-sales.description:Sell directly from vehicles with full visibility into van inventory, loading, and customer transactions.`,
+      },
+      {
+        id: 'trade-promotions',
+        title: $localize`:@@all-features.trade-promotions.title:Trade Promotions`,
+        description: $localize`:@@all-features.trade-promotions.description:Apply approved trade promotions during the sales process so representatives never miss a relevant offer.`,
+      },
+      {
+        id: 'inventory-visibility',
+        title: $localize`:@@all-features.inventory-visibility.title:Inventory Visibility`,
+        description: $localize`:@@all-features.inventory-visibility.description:View available stock across warehouses and vans in real time before committing to customer orders.`,
+      },
+      {
+        id: 'collections-management',
+        title: $localize`:@@all-features.collections-management.title:Collections Management`,
+        description: $localize`:@@all-features.collections-management.description:Record cash, cheques, and payments in the field and keep every collection connected to your financial processes.`,
+      },
+      {
+        id: 'workflow-approvals',
+        title: $localize`:@@all-features.workflow-approvals.title:Workflow & Approvals`,
+        description: $localize`:@@all-features.workflow-approvals.description:Route discounts and sales orders through configurable, multi-level approval workflows based on your business rules.`,
+      },
+    ]),
   },
   {
     eyebrow: $localize`:@@all-features.customers-crm.eyebrow:KNOW EVERY ACCOUNT`,
     title: $localize`:@@all-features.customers-crm.title:Customers & CRM`,
     description: $localize`:@@all-features.customers-crm.description:Keep complete customer context in the field, from account details to every past interaction.`,
     count: $localize`:@@all-features.customers-crm.count:2 features`,
-    items: pickFeatureCards(
-      [
-        {
-          id: 'customer-management',
-          title: $localize`:@@all-features.customer-management.title:Customer Management`,
-          description: $localize`:@@all-features.customer-management.description:Access customer profiles, locations, balances, and account activity before and during every visit.`,
-        },
-        {
-          id: 'crm-activity-management',
-          title: $localize`:@@all-features.crm-activity-management.title:CRM & Activity Management`,
-          description: $localize`:@@all-features.crm-activity-management.description:See visits, activities, orders, collections, and follow-ups for each customer in one chronological timeline.`,
-        },
-      ],
-      true,
-    ),
+    items: pickFeatureCards([
+      {
+        id: 'customer-management',
+        title: $localize`:@@all-features.customer-management.title:Customer Management`,
+        description: $localize`:@@all-features.customer-management.description:Access customer profiles, locations, balances, and account activity before and during every visit.`,
+      },
+      {
+        id: 'crm-activity-management',
+        title: $localize`:@@all-features.crm-activity-management.title:CRM & Activity Management`,
+        description: $localize`:@@all-features.crm-activity-management.description:See visits, activities, orders, collections, and follow-ups for each customer in one chronological timeline.`,
+      },
+    ]),
   },
   {
     eyebrow: $localize`:@@all-features.performance-insights.eyebrow:MEASURE & IMPROVE`,
     title: $localize`:@@all-features.performance-insights.title:Performance & Insights`,
     description: $localize`:@@all-features.performance-insights.description:Track targets, reward performance, and use analytics and AI to see what is happening in the field.`,
     count: $localize`:@@all-features.performance-insights.count:4 features`,
-    items: pickFeatureCards(
-      [
-        {
-          id: 'sales-targets-kpis',
-          title: $localize`:@@all-features.sales-targets-kpis.title:Sales Targets & KPIs`,
-          description: $localize`:@@all-features.sales-targets-kpis.description:Set sales targets by representative or team and track coverage and performance throughout the period.`,
-        },
-        {
-          id: 'commission-management',
-          title: $localize`:@@all-features.commission-management.title:Commission Management`,
-          description: $localize`:@@all-features.commission-management.description:Create flexible commission schemes for individual representatives or teams based on how you measure performance.`,
-        },
-        {
-          id: 'dashboards-analytics',
-          title: $localize`:@@all-features.dashboards-analytics.title:Dashboards & Analytics`,
-          description: $localize`:@@all-features.dashboards-analytics.description:Monitor sales, representatives, routes, and territories with dashboards that turn field data into decisions.`,
-        },
-        {
-          id: 'dynaops365-ai',
-          title: $localize`:@@all-features.dynaops365-ai.title:DynaOps AI`,
-          description: $localize`:@@all-features.dynaops365-ai.description:An evolving AI layer that delivers sales insights, supports field operations, and helps managers decide faster.`,
-        },
-      ],
-      true,
-    ),
+    items: pickFeatureCards([
+      {
+        id: 'sales-targets-kpis',
+        title: $localize`:@@all-features.sales-targets-kpis.title:Sales Targets & KPIs`,
+        description: $localize`:@@all-features.sales-targets-kpis.description:Set sales targets by representative or team and track coverage and performance throughout the period.`,
+      },
+      {
+        id: 'commission-management',
+        title: $localize`:@@all-features.commission-management.title:Commission Management`,
+        description: $localize`:@@all-features.commission-management.description:Create flexible commission schemes for individual representatives or teams based on how you measure performance.`,
+      },
+      {
+        id: 'dashboards-analytics',
+        title: $localize`:@@all-features.dashboards-analytics.title:Dashboards & Analytics`,
+        description: $localize`:@@all-features.dashboards-analytics.description:Monitor sales, representatives, routes, and territories with dashboards that turn field data into decisions.`,
+      },
+      {
+        id: 'dynaops365-ai',
+        title: $localize`:@@all-features.dynaops365-ai.title:DynaOps AI`,
+        description: $localize`:@@all-features.dynaops365-ai.description:An evolving AI layer that delivers sales insights, supports field operations, and helps managers decide faster.`,
+      },
+    ]),
   },
 ];
 
