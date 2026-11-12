@@ -1,0 +1,32 @@
+<app-integration-hero [content]="content.hero" />
+
+<app-integration-features [content]="content.features" />
+
+<app-integration-erp [content]="content.erp" />
+
+<ng-template appFooterCta>
+  <app-cta-container
+    [image]="content.footerCta.image.src"
+    [imageWidth]="content.footerCta.image.width"
+    [imageHeight]="content.footerCta.image.height"
+    imagePosition="center-end"
+    imageSize="compact"
+    imageFirst
+  >
+    <!-- Figma box: 500px from xl. -->
+    <div class="flex max-w-152 flex-col gap-4 xl:max-w-125">
+      <h2 class="text-h2 whitespace-pre-line md:text-h1">{{ content.footerCta.title }}</h2>
+      <p class="text-body-md">{{ content.footerCta.description }}</p>
+    </div>
+    <a
+      appButton
+      variant="secondary"
+      icon="/icons/shared/arrow-right-02.svg"
+      iconHover="/icons/shared/arrow-right-02-brand.svg"
+      directionalIcon
+      [routerLink]="content.footerCta.button.href"
+    >
+      {{ content.footerCta.button.label }}
+    </a>
+  </app-cta-container>
+</ng-template>

@@ -9,9 +9,11 @@ import {
 import type { CtaImagePosition, CtaImageSize } from './cta-container.model';
 
 // Width of a positioned image: 440px by default; the device photo of the feature pages is 400 / 500 / full width.
+// Compact is the Integration page's 344x170 artwork, exported with 42px of shadow below that stays out of the layout.
 const IMAGE_SIZES: Record<CtaImageSize, string> = {
   default: 'block w-full max-w-110',
   device: 'block w-full md:max-w-125 xl:max-w-100',
+  compact: 'block w-full max-w-86 -mb-10.5',
 };
 
 const IMAGE_POSITIONS: Record<CtaImagePosition, { layer: string; content: string }> = {
@@ -69,6 +71,8 @@ export class CtaContainer {
   // From xl a cover image fits the frame width; this percent of its height is cropped off the top.
   readonly imageCoverOffset = input(0);
   readonly imageSize = input<CtaImageSize>('default');
+  // Up to lg, place a positioned image above the copy instead of below it.
+  readonly imageFirst = input(false, { transform: booleanAttribute });
 
   protected readonly IMAGE_SIZES = IMAGE_SIZES;
 
@@ -85,7 +89,11 @@ export class CtaContainer {
       return `absolute inset-0 ${depth}`;
     }
     const { layer } = IMAGE_POSITIONS[this.imagePosition()];
-    return `relative order-last flex justify-center px-4 md:px-12 xl:absolute xl:inset-0 xl:order-none ${layer} ${depth}`;
+    // order-first also paints the layer first, under the gradient, so it is lifted back above it.
+    const order = this.imageFirst()
+      ? `order-first pt-8 md:pt-16 xl:pt-0 ${depth ? '' : 'z-10 xl:z-auto'}`
+      : 'order-last';
+    return `relative ${order} flex justify-center px-4 md:px-12 xl:absolute xl:inset-0 xl:order-none ${layer} ${depth}`;
   });
 
   // The copy stays centred unless an image is positioned beside it from xl.

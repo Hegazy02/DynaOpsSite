@@ -1,0 +1,215 @@
+/* The artwork scales with its width, labels included, so their sizes are Figma px over the 440px frame in cqw. */
+:host {
+  container-type: inline-size;
+}
+
+.stage {
+  position: relative;
+  aspect-ratio: 440 / 309;
+}
+
+/* Base styles are the Figma "Default" frame (spread out, every label shown): what reduced motion keeps. */
+.labels {
+  position: absolute;
+  inset-block: 0;
+  inset-inline-start: 46.82%;
+  width: 53.18%;
+}
+
+.label {
+  position: absolute;
+  inset-inline: 0;
+  display: flex;
+  align-items: flex-start;
+}
+
+.label-0 {
+  top: 18.77%;
+}
+
+.label-1 {
+  top: 46.6%;
+}
+
+.label-2 {
+  top: 74.43%;
+}
+
+.connector {
+  flex: none;
+  width: 6.364cqw;
+  height: auto;
+}
+
+.label-title {
+  font-size: 3.182cqw;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+  /* Figma sets the titles on one line; the web Montserrat runs a few px wider than the 206px box. */
+  white-space: nowrap;
+}
+
+.label-description {
+  margin-top: 0.909cqw;
+  font-size: 2.273cqw;
+  line-height: 3.636cqw;
+  color: var(--text-secondary);
+}
+
+.label-description:lang(ar) {
+  font-weight: 500;
+  line-height: 4.545cqw;
+}
+
+/*
+ * Figma loops seven variants with Smart Animate (600ms ease-out) and after-delay holds, 12.2s in all:
+ * stacked at the end side, spread out, slide to the start, labels appear bottom to top, fade out, then the stack collapses back.
+ */
+.stack,
+.tier,
+.glow,
+.label {
+  animation-duration: 12.2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-out;
+}
+
+.stack {
+  animation-name: stack-slide;
+}
+
+.tier-middle {
+  animation-name: middle-lift;
+}
+
+.tier-top {
+  animation-name: top-lift;
+}
+
+.glow {
+  animation-name: glow;
+}
+
+.label-2 {
+  animation-name: label-bottom;
+}
+
+.label-1 {
+  animation-name: label-middle;
+}
+
+.label-0 {
+  animation-name: label-top;
+}
+
+@keyframes stack-slide {
+  0%,
+  18.033% {
+    translate: 52.27% 0;
+  }
+  22.951%,
+  95.082% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 52.27% 0;
+  }
+}
+
+/* Collapsed, the middle tile sits 74px and the top tile 149px lower on the 309px frame. */
+@keyframes middle-lift {
+  0%,
+  6.557% {
+    translate: 0 23.95%;
+  }
+  11.475%,
+  95.082% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 0 23.95%;
+  }
+}
+
+@keyframes top-lift {
+  0%,
+  6.557% {
+    translate: 0 48.22%;
+  }
+  11.475%,
+  95.082% {
+    translate: 0 0;
+  }
+  100% {
+    translate: 0 48.22%;
+  }
+}
+
+@keyframes glow {
+  0%,
+  6.557% {
+    opacity: 0;
+  }
+  11.475%,
+  95.082% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes label-bottom {
+  0%,
+  29.508% {
+    opacity: 0;
+  }
+  34.426%,
+  88.525% {
+    opacity: 1;
+  }
+  93.443%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes label-middle {
+  0%,
+  50.82% {
+    opacity: 0;
+  }
+  55.738%,
+  88.525% {
+    opacity: 1;
+  }
+  93.443%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes label-top {
+  0%,
+  72.131% {
+    opacity: 0;
+  }
+  77.049%,
+  88.525% {
+    opacity: 1;
+  }
+  93.443%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stack,
+  .tier,
+  .glow,
+  .label {
+    animation: none;
+  }
+}

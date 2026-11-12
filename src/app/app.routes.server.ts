@@ -30,5 +30,6 @@ export const serverRoutes: ServerRoute[] = [
   { path: 'features/dynaops365-ai', renderMode: RenderMode.Prerender },
   { path: 'features/commission-management', renderMode: RenderMode.Prerender },
   { path: 'features', renderMode: RenderMode.Prerender },
+  { path: 'integration', renderMode: RenderMode.Prerender },
   { path: '**', renderMode: RenderMode.Server },
 ];

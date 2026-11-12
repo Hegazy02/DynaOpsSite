@@ -1,0 +1,67 @@
+<div class="stage">
+  <!-- Figma mirrors the artwork in Arabic; translating inside the flip mirrors the slide too. -->
+  <div aria-hidden="true" class="absolute inset-0 rtl:-scale-x-100">
+    <div class="stack absolute inset-0">
+      <img
+        [ngSrc]="content().images.tileBottom"
+        alt=""
+        width="440"
+        height="309"
+        priority
+        class="absolute start-0 top-0 w-full"
+      />
+      <div class="tier tier-middle absolute inset-0">
+        <img
+          [src]="content().images.glowLower"
+          alt=""
+          width="440"
+          height="309"
+          class="glow absolute start-0 top-0 w-full"
+        />
+        <img
+          [ngSrc]="content().images.tileMiddle"
+          alt=""
+          width="440"
+          height="309"
+          priority
+          class="absolute start-0 top-0 w-full"
+        />
+      </div>
+      <div class="tier tier-top absolute inset-0">
+        <img
+          [src]="content().images.glowUpper"
+          alt=""
+          width="440"
+          height="309"
+          class="glow absolute start-0 top-0 w-full"
+        />
+        <img
+          [ngSrc]="content().images.tileTop"
+          alt=""
+          width="440"
+          height="309"
+          priority
+          class="absolute start-0 top-0 w-full"
+        />
+      </div>
+    </div>
+  </div>
+
+  <ul class="labels">
+    @for (label of content().labels; track label.title; let i = $index) {
+      <li class="label" [class]="'label-' + i">
+        <img
+          [src]="content().images.connector"
+          alt=""
+          width="28"
+          height="20"
+          class="connector rtl:-scale-x-100"
+        />
+        <div class="flex flex-col">
+          <p class="label-title">{{ label.title }}</p>
+          <p class="label-description">{{ label.description }}</p>
+        </div>
+      </li>
+    }
+  </ul>
+</div>

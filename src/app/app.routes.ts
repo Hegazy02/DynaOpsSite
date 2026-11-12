@@ -27,6 +27,7 @@ import { MANUFACTURING_SEO } from './features/industries/manufacturing/manufactu
 import { PHARMACEUTICALS_SEO } from './features/industries/pharmaceuticals/pharmaceuticals-seo';
 import { RETAIL_DISTRIBUTION_SEO } from './features/industries/retail-distribution/retail-distribution-seo';
 import { WHOLESALE_DISTRIBUTION_SEO } from './features/industries/wholesale-distribution/wholesale-distribution-seo';
+import { INTEGRATION_SEO } from './features/integration/integration-seo';
 import { NOT_FOUND_CONTENT } from './features/not-found/not-found-content';
 
 // Pages are registered once; each language build serves them under its own base href.
@@ -244,6 +245,12 @@ export const routes: Routes = [
       import('./features/features/all-features/all-features').then((m) => m.AllFeatures),
     title: ALL_FEATURES_SEO.title,
     data: { seo: { description: ALL_FEATURES_SEO.description } satisfies RouteSeo },
+  },
+  {
+    path: 'integration',
+    loadComponent: () => import('./features/integration/integration').then((m) => m.Integration),
+    title: INTEGRATION_SEO.title,
+    data: { seo: { description: INTEGRATION_SEO.description } satisfies RouteSeo },
   },
   // Static copy of NotFound for FTP hosting; the server rules in public/ serve it as the 404 page.
   {

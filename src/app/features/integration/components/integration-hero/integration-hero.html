@@ -1,0 +1,44 @@
+<div class="container-page py-8 xl:py-16">
+  <div
+    class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 xl:flex-row xl:justify-between xl:gap-6"
+  >
+    <div
+      class="flex w-full max-w-160 flex-col items-center gap-8 text-center xl:max-w-122.75 xl:items-start xl:text-start xl:rtl:max-w-139.25"
+    >
+      <!-- Figma boxes: title 554px on tablet, 480 / 534px (English / Arabic) from xl; subtitle 491 / 486px on tablet. -->
+      <!-- The Arabic desktop frame widens the whole column to 557px. -->
+      <div class="flex flex-col items-center gap-4 xl:items-start">
+        <p
+          class="flex items-center gap-2 rounded-md border border-surface py-1 ps-1 pe-3 text-label-md"
+        >
+          <span class="flex size-10 shrink-0 items-center justify-center rounded-sm bg-surface">
+            <img [src]="content().badge.icon" alt="" width="25" height="25" class="size-6.25" />
+          </span>
+          {{ content().badge.label }}
+        </p>
+        <h1
+          class="text-h2 md:max-xl:max-w-138.5 md:text-h1 xl:max-w-120 xl:text-display-md xl:rtl:max-w-133.5"
+        >
+          {{ content().title }}
+        </h1>
+        <!-- One line, so no space is rendered beside the emphasis (before a comma, for one). -->
+        <!-- prettier-ignore -->
+        <p class="text-body-md text-fg-secondary md:max-xl:max-w-122.75 md:max-xl:rtl:max-w-121.5">{{ subtitle().before }}<strong class="font-semibold">{{ subtitle().emphasis }}</strong>{{ subtitle().after }}</p>
+      </div>
+      <a
+        appButton
+        class="w-full md:w-auto md:min-w-50 xl:min-w-0"
+        icon="/icons/shared/arrow-right-02-white.svg"
+        directionalIcon
+        [routerLink]="content().cta.href"
+      >
+        {{ content().cta.label }}
+      </a>
+    </div>
+
+    <app-integration-stack
+      class="order-first w-full max-w-110 shrink-0 xl:order-none"
+      [content]="content().stack"
+    />
+  </div>
+</div>

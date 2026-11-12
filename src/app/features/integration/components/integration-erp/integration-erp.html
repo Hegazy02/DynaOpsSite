@@ -1,0 +1,26 @@
+<div class="container-page py-8 xl:py-16">
+  <div
+    class="mx-auto flex w-full max-w-300 flex-col items-center gap-8 xl:flex-row xl:items-start xl:justify-between xl:gap-6"
+  >
+    <div class="flex w-full  flex-col gap-4 xl:max-w-121.25">
+      <h2
+        class="text-h3 whitespace-pre-line md:text-h2 md:max-xl:whitespace-normal xl:text-display-md"
+      >
+        {{ content().title }}
+      </h2>
+      @for (paragraph of content().paragraphs; track $index) {
+        <p class="text-body-md text-fg-secondary">{{ paragraph }}</p>
+      }
+    </div>
+
+    <!-- The export carries the card shadow; negative margins keep the 453x357 diagram on Figma's grid. -->
+    <img
+      [src]="content().image.src"
+      [alt]="content().image.alt"
+      [width]="content().image.width"
+      [height]="content().image.height"
+      loading="lazy"
+      class="order-first -mx-2 -mt-1.75 -mb-10.5 w-full max-w-117.5 shrink-0 xl:order-none"
+    />
+  </div>
+</div>
